@@ -1,0 +1,37 @@
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Build and Dependencies
+node_modules/
+*.log
+*.lock
+dist/
+build/
+*.tmp
+*.temp
+
+# OS files
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+
+# Temporary files
+*.cache
+.cache/
+*.bak
+*.backup
