@@ -4,7 +4,7 @@ OpenCode Skills 备份仓库 - 包含所有 opencode 代理技能集
 
 ## 简介
 
-本仓库备份了我本地的所有 OpenCode Skills，共包含 23 个技能模块。这些技能可以扩展 AI 代理的能力，使其能够处理各种特定任务。
+本仓库备份了我本地的所有 OpenCode Skills，共包含 25 个技能模块。这些技能可以扩展 AI 代理的能力，使其能够处理各种特定任务。
 
 ## 包含的 Skills
 
@@ -39,9 +39,13 @@ OpenCode Skills 备份仓库 - 包含所有 opencode 代理技能集
 
 ### 技能管理类
 - **skill-creator** - 创建新的技能指南
-- **sequential-thinking** - 通过结构化顺序思考进行动态问题解决
 - **code-review** - 代码审查反馈和实践指导
 - **deep-wiki** - 通过 DeepWiki 访问 GitHub 仓库的 AI 生成文档
+- **find-skills** - 搜索并安装合适的 Skills
+
+### 科研图表类
+- **figures4papers-playbook** - 从 figures4papers 快速定位并改造图表示例
+- **scientific-figure-pro** - 生成论文风格的高质量科研图表
 
 ## 使用方法
 
@@ -53,18 +57,18 @@ OpenCode Skills 备份仓库 - 包含所有 opencode 代理技能集
 
 1. 克隆此仓库：
    ```bash
-   git clone https://github.com/L-yifan/my-skills.git
+   git clone https://github.com/L-yifan/skills.git
    ```
 
 2. 复制到 opencode 配置目录：
    ```bash
-   cp -r my-skills/* ~/.config/opencode/skills/
+   cp -r skills/* ~/.config/opencode/skills/
    ```
 
 ## 项目结构
 
 ```
-my-skills/
+skills/
 ├── algorithmic-art/          # 算法艺术
 ├── brand-guidelines/         # 品牌指南
 ├── canvas-design/            # Canvas 设计
@@ -73,6 +77,8 @@ my-skills/
 ├── deep-wiki/                # DeepWiki
 ├── doc-coauthoring/          # 文档协作
 ├── docx/                     # Word 文档处理
+├── figures4papers-playbook/  # 科研图表示例定位
+├── find-skills/              # Skills 搜索与安装
 ├── frontend-design/          # 前端设计
 ├── gh-grep/                  # GitHub Grep
 ├── github/                   # GitHub 操作
@@ -81,7 +87,7 @@ my-skills/
 ├── mcp-builder/              # MCP 构建器
 ├── pdf/                      # PDF 处理
 ├── pptx/                     # PPT 处理
-├── sequential-thinking/      # 顺序思考
+├── scientific-figure-pro/    # 科研图表增强
 ├── skill-creator/            # 技能创建器
 ├── slack-gif-creator/        # Slack GIF 创建器
 ├── theme-factory/            # 主题工厂
@@ -92,9 +98,9 @@ my-skills/
 
 ## 版本信息
 
-- **备份日期**: 2026-02-22
-- **Total Skills**: 23
-- **Total Size**: ~11MB
+- **备份日期**: 2026-02-28
+- **Total Skills**: 25
+- **Total Size**: ~12MB
 
 ## License
 
@@ -106,4 +112,4 @@ my-skills/
 
 ## 联系方式
 
-如有问题，请通过 [GitHub Issues](https://github.com/L-yifan/my-skills/issues) 联系。
+如有问题，请通过 [GitHub Issues](https://github.com/L-yifan/skills/issues) 联系。
