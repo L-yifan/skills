@@ -1,10 +1,45 @@
 # My Skills
 
-OpenCode Skills 备份仓库 - 包含所有 opencode 代理技能集
+OpenCode Skills 备份仓库 - 可在多个 AI 代理中使用
 
 ## 简介
 
-本仓库备份了我本地的所有 OpenCode Skills，共包含 45 个技能模块。这些技能可以扩展 AI 代理的能力，使其能够处理各种特定任务。
+本仓库备份了常用的 Agent Skills，共包含 45 个技能模块。这些技能可以扩展 AI 代理的能力，使其能够处理各种特定任务。
+
+**注意**：本仓库使用 `npx skills` 工具管理，不仅限于 OpenCode，还支持 Claude Code、Cursor、Codex 等 40+ 种 AI 代理。
+
+## 使用方法
+
+### 安装到本地（全局安装）
+
+```bash
+npx skills add https://github.com/L-yifan/skills -g
+```
+
+### 安装到项目（项目级别）
+
+```bash
+npx skills add https://github.com/L-yifan/skills
+```
+
+### 管理已安装的 Skills
+
+```bash
+# 列出所有已安装的 skills
+npx skills list -g
+
+# 移除特定 skill
+npx skills remove <skill-name> -g
+
+# 检查更新
+npx skills check -g
+
+# 更新所有 skills
+npx skills update -g
+
+# 搜索新 skills
+npx skills find
+```
 
 ## 包含的 Skills
 
@@ -75,23 +110,21 @@ OpenCode Skills 备份仓库 - 包含所有 opencode 代理技能集
 ### 可观测性
 - **langsmith-observability** - LLM 应用追踪与调试
 
-## 使用方法
+## 支持的 Agents
 
-### 本地使用
+本仓库的 skills 可以在以下 AI 代理中使用：
 
-这些 skills 配置在 `~/.config/opencode/skills/` 目录中。OpenCode 会自动加载这些技能。
+- OpenCode
+- Claude Code
+- Cursor
+- Codex
+- GitHub Copilot
+- Cline
+- Continue
+- OpenHands
+- ... 以及 30+ 其他代理
 
-### 安装到其他环境
-
-1. 克隆此仓库：
-   ```bash
-   git clone https://github.com/L-yifan/skills.git
-   ```
-
-2. 复制到 opencode 配置目录：
-   ```bash
-   cp -r skills/* ~/.config/opencode/skills/
-   ```
+完整列表请参考：https://github.com/vercel-labs/skills#supported-agents
 
 ## 项目结构
 
@@ -126,7 +159,7 @@ skills/
 ├── langsmith-observability/      # LLM 可观测性
 ├── llamaindex/                  # RAG 框架
 ├── mcp-builder/                 # MCP 构建器
-├── ml-paper-writing/            # 论文写作
+├── ml-paper-writing/             # 论文写作
 ├── outlines/                    # 结构化输出
 ├── pdf/                         # PDF 处理
 ├── pptx/                        # PPT 处理
@@ -144,8 +177,9 @@ skills/
 
 ## 版本信息
 
-- **备份日期**: 2026-03-04
+- **更新日期**: 2026-03-04
 - **Total Skills**: 45
+- **Skills 工具**: https://github.com/vercel-labs/skills
 
 ## License
 
