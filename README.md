@@ -4,7 +4,7 @@ OpenCode Skills 备份仓库 - 包含所有 opencode 代理技能集
 
 ## 简介
 
-本仓库备份了我本地的所有 OpenCode Skills，共包含 25 个技能模块。这些技能可以扩展 AI 代理的能力，使其能够处理各种特定任务。
+本仓库备份了我本地的所有 OpenCode Skills，共包含 45 个技能模块。这些技能可以扩展 AI 代理的能力，使其能够处理各种特定任务。
 
 ## 包含的 Skills
 
@@ -13,6 +13,24 @@ OpenCode Skills 备份仓库 - 包含所有 opencode 代理技能集
 - **gkg** - 代码库全局知识图谱分析
 - **gh-grep** - 搜索 GitHub 上的真实代码示例
 - **context7** - 获取库和框架的最新文档和代码示例
+
+### Agent 开发类
+- **langchain** - 构建 LLM 应用的框架
+- **llamaindex** - RAG（检索增强生成）框架
+- **autogpt-agents** - Autonomous AI agent 平台
+- **crewai-multi-agent** - 多 Agent 编排框架
+- **mcp-builder** - 创建 MCP 服务器以集成外部 API
+
+### RAG 与向量数据库
+- **chroma** - 开源向量数据库
+- **faiss** - Facebook 相似性搜索库
+- **sentence-transformers** - 文本嵌入模型
+
+### Prompt 工程
+- **dspy** - 声明式 Prompt 优化框架
+- **guidance** - 结构化 Prompt 控制 LLM 输出
+- **instructor** - LLM 输出解析
+- **outlines** - 结构化输出保证
 
 ### 内容创建类
 - **docx** - 处理 Word 文档（.docx）
@@ -23,7 +41,6 @@ OpenCode Skills 备份仓库 - 包含所有 opencode 代理技能集
 ### 测试与构建类
 - **webapp-testing** - 使用 Playwright 测试本地 Web 应用
 - **web-artifacts-builder** - 使用现代前端技术创建复杂的 HTML artifacts
-- **mcp-builder** - 创建 MCP 服务器以集成外部 API
 
 ### 设计与艺术类
 - **frontend-design** - 创建生产级前端界面
@@ -31,21 +48,32 @@ OpenCode Skills 备份仓库 - 包含所有 opencode 代理技能集
 - **algorithmic-art** - 使用 p5.js 创建算法艺术
 - **brand-guidelines** - 应用 Anthropic 官方品牌颜色和排版
 - **theme-factory** - 为 artifacts 应用主题
+- **web-design-guidelines** - Web UI 设计指南
 
 ### 文档与沟通类
 - **doc-coauthoring** - 协作编写文档的结构化工作流
 - **internal-comms** - 编写各种内部通信格式
 - **slack-gif-creator** - 创建针对 Slack 优化的动画 GIF
+- **humanizer** - AI 写作润色，去除 AI 写作痕迹
 
 ### 技能管理类
 - **skill-creator** - 创建新的技能指南
 - **code-review** - 代码审查反馈和实践指导
 - **deep-wiki** - 通过 DeepWiki 访问 GitHub 仓库的 AI 生成文档
 - **find-skills** - 搜索并安装合适的 Skills
+- **template-skill** - Skill 创建模板
 
 ### 科研图表类
 - **figures4papers-playbook** - 从 figures4papers 快速定位并改造图表示例
 - **scientific-figure-pro** - 生成论文风格的高质量科研图表
+- **ml-paper-writing** - ML/AI 论文写作指南
+
+### 创意思维类
+- **brainstorming-research-ideas** - 研究头脑风暴框架
+- **creative-thinking-for-research** - 研究创意思维框架
+
+### 可观测性
+- **langsmith-observability** - LLM 应用追踪与调试
 
 ## 使用方法
 
@@ -69,38 +97,55 @@ OpenCode Skills 备份仓库 - 包含所有 opencode 代理技能集
 
 ```
 skills/
-├── algorithmic-art/          # 算法艺术
-├── brand-guidelines/         # 品牌指南
-├── canvas-design/            # Canvas 设计
-├── code-review/              # 代码审查
-├── context7/                 # Context7 文档
-├── deep-wiki/                # DeepWiki
-├── doc-coauthoring/          # 文档协作
-├── docx/                     # Word 文档处理
-├── figures4papers-playbook/  # 科研图表示例定位
-├── find-skills/              # Skills 搜索与安装
-├── frontend-design/          # 前端设计
-├── gh-grep/                  # GitHub Grep
-├── github/                   # GitHub 操作
-├── gkg/                      # 全局知识图谱
-├── internal-comms/           # 内部沟通
-├── mcp-builder/              # MCP 构建器
-├── pdf/                      # PDF 处理
-├── pptx/                     # PPT 处理
-├── scientific-figure-pro/    # 科研图表增强
-├── skill-creator/            # 技能创建器
-├── slack-gif-creator/        # Slack GIF 创建器
-├── theme-factory/            # 主题工厂
-├── web-artifacts-builder/    # Web artifacts 构建器
-├── webapp-testing/           # Web 应用测试
-└── xlsx/                     # Excel 处理
+├── algorithmic-art/              # 算法艺术
+├── autogpt-agents/              # Agent 平台
+├── brainstorming-research-ideas/ # 研究头脑风暴
+├── brand-guidelines/            # 品牌指南
+├── canvas-design/               # Canvas 设计
+├── chroma/                      # 向量数据库
+├── code-review/                 # 代码审查
+├── context7/                    # Context7 文档
+├── creative-thinking-for-research/ # 创意思维
+├── crewai-multi-agent/          # 多 Agent 编排
+├── deep-wiki/                   # DeepWiki
+├── doc-coauthoring/             # 文档协作
+├── docx/                        # Word 文档处理
+├── dspy/                        # Prompt 优化
+├── faiss/                       # 相似性搜索
+├── figures4papers-playbook/     # 科研图表示例定位
+├── find-skills/                 # Skills 搜索与安装
+├── frontend-design/             # 前端设计
+├── gh-grep/                     # GitHub Grep
+├── github/                      # GitHub 操作
+├── gkg/                         # 全局知识图谱
+├── guidance/                    # 结构化 Prompt
+├── humanizer/                   # AI 写作润色
+├── instructor/                  # LLM 输出解析
+├── internal-comms/              # 内部沟通
+├── langchain/                   # LLM 应用框架
+├── langsmith-observability/      # LLM 可观测性
+├── llamaindex/                  # RAG 框架
+├── mcp-builder/                 # MCP 构建器
+├── ml-paper-writing/            # 论文写作
+├── outlines/                    # 结构化输出
+├── pdf/                         # PDF 处理
+├── pptx/                        # PPT 处理
+├── scientific-figure-pro/       # 科研图表增强
+├── sentence-transformers/       # 文本嵌入
+├── skill-creator/               # 技能创建器
+├── slack-gif-creator/           # Slack GIF 创建器
+├── template-skill/              # Skill 模板
+├── theme-factory/               # 主题工厂
+├── web-artifacts-builder/       # Web artifacts 构建器
+├── web-design-guidelines/       # UI 设计指南
+├── webapp-testing/              # Web 应用测试
+└── xlsx/                        # Excel 处理
 ```
 
 ## 版本信息
 
-- **备份日期**: 2026-02-28
-- **Total Skills**: 25
-- **Total Size**: ~12MB
+- **备份日期**: 2026-03-04
+- **Total Skills**: 45
 
 ## License
 
