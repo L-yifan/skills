@@ -1,6 +1,8 @@
 # DeepWiki API Reference
 
-DeepWiki MCP server endpoint: `https://mcp.deepwiki.com/sse`
+DeepWiki MCP server endpoint: `https://mcp.deepwiki.com/mcp`
+
+Legacy SSE endpoint: `https://mcp.deepwiki.com/sse` (deprecated; returns `410 Gone` and instructs clients to migrate to `/mcp`)
 
 ## Tools
 

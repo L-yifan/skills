@@ -5,7 +5,7 @@ description: Access AI-generated documentation and insights for GitHub repositor
 
 # DeepWiki
 
-Base directory for this skill: C:\Users\lyf1143312445\.config\opencode\skills\deep-wiki
+Base directory for this skill: C:\Users\lyf1143312445\.agents\skills\deep-wiki
 
 DeepWiki provides AI-generated documentation and Q&A for GitHub repositories. Use it to quickly understand codebases, explore architecture, and get answers about how projects work.
 
@@ -22,8 +22,11 @@ DeepWiki provides AI-generated documentation and Q&A for GitHub repositories. Us
 Run the CLI script with bun (use absolute path):
 
 ```bash
-bun C:\Users\lyf1143312445\.config\opencode\skills\deep-wiki/scripts/deepwiki.ts <command> [options]
+bun C:/Users/lyf1143312445/.agents/skills/deep-wiki/scripts/deepwiki.ts <command> [options]
 ```
+
+DeepWiki now uses the Streamable HTTP MCP endpoint at `https://mcp.deepwiki.com/mcp`.
+If a repository has not been indexed yet, DeepWiki may return a "Repository not found" error and ask you to visit the repository page on DeepWiki first.
 
 ## Available Commands
 
@@ -32,7 +35,7 @@ bun C:\Users\lyf1143312445\.config\opencode\skills\deep-wiki/scripts/deepwiki.ts
 Get a list of documentation topics available for a repository.
 
 ```bash
-bun C:\Users\lyf1143312445\.config\opencode\skills\deep-wiki/scripts/deepwiki.ts read-wiki-structure --repo-name "facebook/react"
+bun C:/Users/lyf1143312445/.agents/skills/deep-wiki/scripts/deepwiki.ts read-wiki-structure --repo-name "facebook/react"
 ```
 
 ### read-wiki-contents
@@ -40,7 +43,7 @@ bun C:\Users\lyf1143312445\.config\opencode\skills\deep-wiki/scripts/deepwiki.ts
 View the full AI-generated documentation for a repository.
 
 ```bash
-bun C:\Users\lyf1143312445\.config\opencode\skills\deep-wiki/scripts/deepwiki.ts read-wiki-contents --repo-name "vercel/next.js"
+bun C:/Users/lyf1143312445/.agents/skills/deep-wiki/scripts/deepwiki.ts read-wiki-contents --repo-name "vercel/next.js"
 ```
 
 ### ask-question
@@ -48,7 +51,7 @@ bun C:\Users\lyf1143312445\.config\opencode\skills\deep-wiki/scripts/deepwiki.ts
 Ask any question about a repository and get an AI-generated answer.
 
 ```bash
-bun C:\Users\lyf1143312445\.config\opencode\skills\deep-wiki/scripts/deepwiki.ts ask-question \
+bun C:/Users/lyf1143312445/.agents/skills/deep-wiki/scripts/deepwiki.ts ask-question \
   --repo-name "prisma/prisma" --question "How does the query engine work?"
 ```
 
