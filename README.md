@@ -4,7 +4,7 @@ OpenCode Skills 备份仓库 - 可在多个 AI 代理中使用
 
 ## 简介
 
-本仓库备份了常用的 Agent Skills，共包含 45 个技能模块。这些技能可以扩展 AI 代理的能力，使其能够处理各种特定任务。
+本仓库备份了常用的 Agent Skills，共包含 51 个技能模块。这些技能可以扩展 AI 代理的能力，使其能够处理各种特定任务。
 
 **注意**：本仓库使用 `npx skills` 工具管理，不仅限于 OpenCode，还支持 Claude Code、Cursor、Codex 等 40+ 种 AI 代理。
 
@@ -77,6 +77,14 @@ npx skills find
 - **webapp-testing** - 使用 Playwright 测试本地 Web 应用
 - **web-artifacts-builder** - 使用现代前端技术创建复杂的 HTML artifacts
 
+### Web 研究与自动化类
+- **agent-browser** - 浏览器自动化 CLI，可用于网页交互、表单填写、抓取与测试
+- **search** - 使用 Tavily 搜索 Web 内容并返回面向 LLM 的结果
+- **extract** - 从指定 URL 提取清洗后的页面正文内容
+- **crawl** - 抓取整站内容并保存为本地 Markdown 文档
+- **research** - 基于多来源 Web 数据进行带引用的综合研究
+- **tavily-best-practices** - 构建生产级 Tavily 集成的最佳实践参考
+
 ### 设计与艺术类
 - **frontend-design** - 创建生产级前端界面
 - **canvas-design** - 使用设计理念创建视觉艺术
@@ -97,6 +105,8 @@ npx skills find
 - **deep-wiki** - 通过 DeepWiki 访问 GitHub 仓库的 AI 生成文档
 - **find-skills** - 搜索并安装合适的 Skills
 - **template-skill** - Skill 创建模板
+- **self-improving** - 自我反思、自我纠错与持续学习工作流
+- **skill-vetter** - 第三方 skill 安装前的安全审查
 
 ### 科研图表类
 - **figures4papers-playbook** - 从 figures4papers 快速定位并改造图表示例
@@ -130,6 +140,8 @@ npx skills find
 
 ```
 skills/
+├── _tavily_common.py            # Tavily 相关 skills 共享辅助脚本
+├── agent-browser/               # 浏览器自动化
 ├── algorithmic-art/              # 算法艺术
 ├── autogpt-agents/              # Agent 平台
 ├── brainstorming-research-ideas/ # 研究头脑风暴
@@ -144,6 +156,7 @@ skills/
 ├── doc-coauthoring/             # 文档协作
 ├── docx/                        # Word 文档处理
 ├── dspy/                        # Prompt 优化
+├── extract/                     # 页面正文提取
 ├── faiss/                       # 相似性搜索
 ├── figures4papers-playbook/     # 科研图表示例定位
 ├── find-skills/                 # Skills 搜索与安装
@@ -163,12 +176,18 @@ skills/
 ├── outlines/                    # 结构化输出
 ├── pdf/                         # PDF 处理
 ├── pptx/                        # PPT 处理
+├── research/                    # 多来源研究
+├── search/                      # Web 搜索
 ├── scientific-figure-pro/       # 科研图表增强
 ├── sentence-transformers/       # 文本嵌入
+├── self-improving/              # 自我改进
 ├── skill-creator/               # 技能创建器
+├── skill-vetter/                # Skill 安全审查
 ├── slack-gif-creator/           # Slack GIF 创建器
+├── tavily-best-practices/       # Tavily 最佳实践
 ├── template-skill/              # Skill 模板
 ├── theme-factory/               # 主题工厂
+├── crawl/                       # 网站抓取
 ├── web-artifacts-builder/       # Web artifacts 构建器
 ├── web-design-guidelines/       # UI 设计指南
 ├── webapp-testing/              # Web 应用测试
@@ -177,8 +196,8 @@ skills/
 
 ## 版本信息
 
-- **更新日期**: 2026-03-04
-- **Total Skills**: 45
+- **更新日期**: 2026-03-12
+- **Total Skills**: 51
 - **Skills 工具**: https://github.com/vercel-labs/skills
 
 ## License
