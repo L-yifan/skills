@@ -47,7 +47,6 @@ npx skills find
 - **github** - 与 GitHub 仓库交互（创建 PR、管理 issues、代码搜索等）
 - **gkg** - 代码库全局知识图谱分析
 - **gh-grep** - 搜索 GitHub 上的真实代码示例
-- **context7** - 获取库和框架的最新文档和代码示例
 
 ### Agent 开发类
 - **langchain** - 构建 LLM 应用的框架
@@ -149,7 +148,6 @@ skills/
 ├── canvas-design/               # Canvas 设计
 ├── chroma/                      # 向量数据库
 ├── code-review/                 # 代码审查
-├── context7/                    # Context7 文档
 ├── creative-thinking-for-research/ # 创意思维
 ├── crewai-multi-agent/          # 多 Agent 编排
 ├── deep-wiki/                   # DeepWiki
