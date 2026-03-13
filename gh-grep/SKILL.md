@@ -5,7 +5,7 @@ description: Search real-world code examples across millions of GitHub repositor
 
 # GitHub Grep
 
-Base directory for this skill: C:\Users\lyf1143312445\.config\opencode\skills\gh-grep
+Base directory for this skill: C:\Users\lyf1143312445\.agents\skills\gh-grep
 
 Search for real-world code examples across over a million public GitHub repositories via grep.app.
 
@@ -18,10 +18,10 @@ Search for real-world code examples across over a million public GitHub reposito
 
 ## Quick Start
 
-Run the CLI script with bun (use absolute path):
+Run the CLI script with bun from this skill directory:
 
 ```bash
-bun C:\Users\lyf1143312445\.config\opencode\skills\gh-grep/scripts/grep.ts searchGitHub --query "<code-pattern>" [options]
+bun ./scripts/grep.ts searchGitHub --query "<code-pattern>" [options]
 ```
 
 ## Core Options
@@ -61,23 +61,23 @@ For detailed pattern examples and regex usage, see `references/api_reference.md`
 
 ```bash
 # Find Authentication Patterns
-bun C:\Users\lyf1143312445\.config\opencode\skills\gh-grep/scripts/grep.ts searchGitHub \
+bun ./scripts/grep.ts searchGitHub \
   --query "getServerSession" --language "TypeScript,TSX"
 
 # Find Error Boundary Implementations
-bun C:\Users\lyf1143312445\.config\opencode\skills\gh-grep/scripts/grep.ts searchGitHub \
+bun ./scripts/grep.ts searchGitHub \
   --query "ErrorBoundary" --language "TSX"
 
 # Find useEffect Cleanup with Regex
-bun C:\Users\lyf1143312445\.config\opencode\skills\gh-grep/scripts/grep.ts searchGitHub \
+bun ./scripts/grep.ts searchGitHub \
   --query "(?s)useEffect\(\(\) => {.*removeEventListener" --use-regexp true
 
 # Find CORS Handling in Flask
-bun C:\Users\lyf1143312445\.config\opencode\skills\gh-grep/scripts/grep.ts searchGitHub \
+bun ./scripts/grep.ts searchGitHub \
   --query "CORS(" --match-case true --language "Python"
 
 # Search Within Specific Repository
-bun C:\Users\lyf1143312445\.config\opencode\skills\gh-grep/scripts/grep.ts searchGitHub \
+bun ./scripts/grep.ts searchGitHub \
   --query "createContext" --repo "facebook/react"
 ```
 

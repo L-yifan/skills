@@ -5,7 +5,7 @@ description: Interact with GitHub repositories, issues, pull requests, and code 
 
 # GitHub
 
-Base directory for this skill: C:\Users\lyf1143312445\.config\opencode\skills\github
+Base directory for this skill: C:\Users\lyf1143312445\.agents\skills\github
 
 Interact with GitHub repositories through the Model Context Protocol (MCP) server for GitHub.
 
@@ -20,10 +20,10 @@ Interact with GitHub repositories through the Model Context Protocol (MCP) serve
 
 ## Quick Start
 
-Run the CLI script with bun (use absolute path):
+Run the CLI script with bun from this skill directory:
 
 ```bash
-bun C:\Users\lyf1143312445\.config\opencode\skills\github/scripts/github.ts <command> [options]
+bun ./scripts/github.ts <command> [options]
 ```
 
 ## Available Commands
@@ -94,23 +94,23 @@ bun C:\Users\lyf1143312445\.config\opencode\skills\github/scripts/github.ts <com
 
 ```bash
 # Get file contents
-bun C:\Users\lyf1143312445\.config\opencode\skills\github/scripts/github.ts get-file-contents \
+bun ./scripts/github.ts get-file-contents \
   --owner facebook --repo react --path README.md
 
 # Create an issue
-bun C:\Users\lyf1143312445\.config\opencode\skills\github/scripts/github.ts create-issue \
+bun ./scripts/github.ts create-issue \
   --owner myorg --repo myrepo --title "Bug report" --body "Description here"
 
 # List open PRs
-bun C:\Users\lyf1143312445\.config\opencode\skills\github/scripts/github.ts list-pull-requests \
+bun ./scripts/github.ts list-pull-requests \
   --owner facebook --repo react --state open
 
 # Search code
-bun C:\Users\lyf1143312445\.config\opencode\skills\github/scripts/github.ts search-code \
+bun ./scripts/github.ts search-code \
   --q "useState filename:*.tsx"
 
 # Create a PR review
-bun C:\Users\lyf1143312445\.config\opencode\skills\github/scripts/github.ts create-pull-request-review \
+bun ./scripts/github.ts create-pull-request-review \
   --owner myorg --repo myrepo --pull-number 123 \
   --body "LGTM!" --event APPROVE
 ```

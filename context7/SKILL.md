@@ -5,16 +5,16 @@ description: Fetch up-to-date documentation and code examples for any library or
 
 # Context7
 
-Base directory for this skill: C:\Users\lyf1143312445\.config\opencode\skills\context7
+Base directory for this skill: C:\Users\lyf1143312445\.agents\skills\context7
 
 Retrieve up-to-date documentation and code examples for any library via the Context7 MCP service.
 
 ## Quick Start
 
-Run the CLI script with bun (use absolute path):
+Run the CLI script with bun from this skill directory:
 
 ```bash
-bun C:\Users\lyf1143312445\.config\opencode\skills\context7/scripts/context7.ts <command> [options]
+bun ./scripts/context7.ts <command> [options]
 ```
 
 ## Available Commands
@@ -24,8 +24,8 @@ bun C:\Users\lyf1143312445\.config\opencode\skills\context7/scripts/context7.ts 
 Resolve a package/product name to a Context7-compatible library ID.
 
 ```bash
-bun C:\Users\lyf1143312445\.config\opencode\skills\context7/scripts/context7.ts resolve-library-id --library-name "react"
-bun C:\Users\lyf1143312445\.config\opencode\skills\context7/scripts/context7.ts resolve-library-id --library-name "next.js"
+bun ./scripts/context7.ts resolve-library-id --library-name "react"
+bun ./scripts/context7.ts resolve-library-id --library-name "next.js"
 ```
 
 **Required before `get-library-docs`** unless user provides library ID in format `/org/project`.
@@ -36,15 +36,15 @@ Fetch documentation for a library.
 
 ```bash
 # Basic usage
-bun C:\Users\lyf1143312445\.config\opencode\skills\context7/scripts/context7.ts get-library-docs \
+bun ./scripts/context7.ts get-library-docs \
   --context7-compatible-library-i-d "/vercel/next.js"
 
 # With topic focus
-bun C:\Users\lyf1143312445\.config\opencode\skills\context7/scripts/context7.ts get-library-docs \
+bun ./scripts/context7.ts get-library-docs \
   --context7-compatible-library-i-d "/vercel/next.js" --topic "routing"
 
 # Different modes: code (API refs) or info (conceptual guides)
-bun C:\Users\lyf1143312445\.config\opencode\skills\context7/scripts/context7.ts get-library-docs \
+bun ./scripts/context7.ts get-library-docs \
   --context7-compatible-library-i-d "/mongodb/docs" --mode "info"
 ```
 

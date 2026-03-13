@@ -11,10 +11,10 @@ GKG provides semantic code analysis tools for exploring and understanding codeba
 
 ## Quick Start
 
-Run from the opencode config directory (required for dependencies). Use `--raw` with JSON for parameters:
+Run from this skill directory. Use `--raw` with JSON for parameters:
 
 ```bash
-cd C:\Users\lyf1143312445\.config\opencode && bun skills/gkg/scripts/gkg.ts <command> --raw '<json>'
+bun ./scripts/gkg.ts <command> --raw '<json>'
 ```
 
 ## Core Commands
@@ -23,14 +23,14 @@ cd C:\Users\lyf1143312445\.config\opencode && bun skills/gkg/scripts/gkg.ts <com
 List all indexed projects in the knowledge graph.
 
 ```bash
-cd C:\Users\lyf1143312445\.config\opencode && bun skills/gkg/scripts/gkg.ts list-projects
+bun ./scripts/gkg.ts list-projects
 ```
 
 ### index-project
 Rebuild the knowledge graph index for a project.
 
 ```bash
-cd C:\Users\lyf1143312445\.config\opencode && bun skills/gkg/scripts/gkg.ts index-project \
+bun ./scripts/gkg.ts index-project \
   --raw '{"project_absolute_path":"/path/to/project"}'
 ```
 
@@ -38,7 +38,7 @@ cd C:\Users\lyf1143312445\.config\opencode && bun skills/gkg/scripts/gkg.ts inde
 Find functions, classes, methods, constants across the codebase.
 
 ```bash
-cd C:\Users\lyf1143312445\.config\opencode && bun skills/gkg/scripts/gkg.ts search-codebase-definitions \
+bun ./scripts/gkg.ts search-codebase-definitions \
   --raw '{"search_terms":["functionName","ClassName"],"project_absolute_path":"/path/to/project"}'
 ```
 
@@ -46,7 +46,7 @@ cd C:\Users\lyf1143312445\.config\opencode && bun skills/gkg/scripts/gkg.ts sear
 Find all usages of a symbol across the codebase.
 
 ```bash
-cd C:\Users\lyf1143312445\.config\opencode && bun skills/gkg/scripts/gkg.ts get-references \
+bun ./scripts/gkg.ts get-references \
   --raw '{"absolute_file_path":"/path/to/file.ts","definition_name":"myFunction"}'
 ```
 
@@ -54,7 +54,7 @@ cd C:\Users\lyf1143312445\.config\opencode && bun skills/gkg/scripts/gkg.ts get-
 Read complete implementation of definitions.
 
 ```bash
-cd C:\Users\lyf1143312445\.config\opencode && bun skills/gkg/scripts/gkg.ts read-definitions \
+bun ./scripts/gkg.ts read-definitions \
   --raw '{"definitions":[{"names":["myFunc"],"file_path":"/path/to/file.ts"}]}'
 ```
 
@@ -62,7 +62,7 @@ cd C:\Users\lyf1143312445\.config\opencode && bun skills/gkg/scripts/gkg.ts read
 Go to definition for a symbol on a specific line.
 
 ```bash
-cd C:\Users\lyf1143312445\.config\opencode && bun skills/gkg/scripts/gkg.ts get-definition \
+bun ./scripts/gkg.ts get-definition \
   --raw '{"absolute_file_path":"/path/to/file.ts","line":"const result = myFunc()","symbol_name":"myFunc"}'
 ```
 
@@ -70,7 +70,7 @@ cd C:\Users\lyf1143312445\.config\opencode && bun skills/gkg/scripts/gkg.ts get-
 Generate a compact API-style map of repository structure.
 
 ```bash
-cd C:\Users\lyf1143312445\.config\opencode && bun skills/gkg/scripts/gkg.ts repo-map \
+bun ./scripts/gkg.ts repo-map \
   --raw '{"project_absolute_path":"/path/to/project","relative_paths":["src","lib"]}'
 ```
 
@@ -78,7 +78,7 @@ cd C:\Users\lyf1143312445\.config\opencode && bun skills/gkg/scripts/gkg.ts repo
 Analyze import usages across the project.
 
 ```bash
-cd C:\Users\lyf1143312445\.config\opencode && bun skills/gkg/scripts/gkg.ts import-usage \
+bun ./scripts/gkg.ts import-usage \
   --raw '{"project_absolute_path":"/path/to/project","packages":[{"import_path":"react"}]}'
 ```
 

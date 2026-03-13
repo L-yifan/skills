@@ -9,7 +9,7 @@ const embeddedServer = {
   "description": "DeepWiki",
   "command": {
     "kind": "http",
-    "url": "https://mcp.deepwiki.com/sse"
+    "url": "https://mcp.deepwiki.com/mcp"
   }
 } as const;
 const embeddedSchemas = {
@@ -98,7 +98,7 @@ const embeddedMetadata = {
       "description": "DeepWiki",
       "command": {
         "kind": "http",
-        "url": "https://mcp.deepwiki.com/sse"
+        "url": "https://mcp.deepwiki.com/mcp"
       }
     }
   },
@@ -107,7 +107,7 @@ const embeddedMetadata = {
     "kind": "template"
   },
   "invocation": {
-    "serverRef": "{\"name\":\"deepwiki\",\"command\":\"https://mcp.deepwiki.com/sse\"}",
+    "serverRef": "{\"name\":\"deepwiki\",\"command\":\"https://mcp.deepwiki.com/mcp\"}",
     "runtime": "bun",
     "bundler": "bun",
     "timeoutMs": 30000,

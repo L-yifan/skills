@@ -1,10 +1,45 @@
 # My Skills
 
-OpenCode Skills 备份仓库 - 包含所有 opencode 代理技能集
+OpenCode Skills 备份仓库 - 可在多个 AI 代理中使用
 
 ## 简介
 
-本仓库备份了我本地的所有 OpenCode Skills，共包含 23 个技能模块。这些技能可以扩展 AI 代理的能力，使其能够处理各种特定任务。
+本仓库备份了常用的 Agent Skills，共包含 51 个技能模块。这些技能可以扩展 AI 代理的能力，使其能够处理各种特定任务。
+
+**注意**：本仓库使用 `npx skills` 工具管理，不仅限于 OpenCode，还支持 Claude Code、Cursor、Codex 等 40+ 种 AI 代理。
+
+## 使用方法
+
+### 安装到本地（全局安装）
+
+```bash
+npx skills add https://github.com/L-yifan/skills -g
+```
+
+### 安装到项目（项目级别）
+
+```bash
+npx skills add https://github.com/L-yifan/skills
+```
+
+### 管理已安装的 Skills
+
+```bash
+# 列出所有已安装的 skills
+npx skills list -g
+
+# 移除特定 skill
+npx skills remove <skill-name> -g
+
+# 检查更新
+npx skills check -g
+
+# 更新所有 skills
+npx skills update -g
+
+# 搜索新 skills
+npx skills find
+```
 
 ## 包含的 Skills
 
@@ -13,6 +48,24 @@ OpenCode Skills 备份仓库 - 包含所有 opencode 代理技能集
 - **gkg** - 代码库全局知识图谱分析
 - **gh-grep** - 搜索 GitHub 上的真实代码示例
 - **context7** - 获取库和框架的最新文档和代码示例
+
+### Agent 开发类
+- **langchain** - 构建 LLM 应用的框架
+- **llamaindex** - RAG（检索增强生成）框架
+- **autogpt-agents** - Autonomous AI agent 平台
+- **crewai-multi-agent** - 多 Agent 编排框架
+- **mcp-builder** - 创建 MCP 服务器以集成外部 API
+
+### RAG 与向量数据库
+- **chroma** - 开源向量数据库
+- **faiss** - Facebook 相似性搜索库
+- **sentence-transformers** - 文本嵌入模型
+
+### Prompt 工程
+- **dspy** - 声明式 Prompt 优化框架
+- **guidance** - 结构化 Prompt 控制 LLM 输出
+- **instructor** - LLM 输出解析
+- **outlines** - 结构化输出保证
 
 ### 内容创建类
 - **docx** - 处理 Word 文档（.docx）
@@ -23,7 +76,14 @@ OpenCode Skills 备份仓库 - 包含所有 opencode 代理技能集
 ### 测试与构建类
 - **webapp-testing** - 使用 Playwright 测试本地 Web 应用
 - **web-artifacts-builder** - 使用现代前端技术创建复杂的 HTML artifacts
-- **mcp-builder** - 创建 MCP 服务器以集成外部 API
+
+### Web 研究与自动化类
+- **agent-browser** - 浏览器自动化 CLI，可用于网页交互、表单填写、抓取与测试
+- **search** - 使用 Tavily 搜索 Web 内容并返回面向 LLM 的结果
+- **extract** - 从指定 URL 提取清洗后的页面正文内容
+- **crawl** - 抓取整站内容并保存为本地 Markdown 文档
+- **research** - 基于多来源 Web 数据进行带引用的综合研究
+- **tavily-best-practices** - 构建生产级 Tavily 集成的最佳实践参考
 
 ### 设计与艺术类
 - **frontend-design** - 创建生产级前端界面
@@ -31,70 +91,114 @@ OpenCode Skills 备份仓库 - 包含所有 opencode 代理技能集
 - **algorithmic-art** - 使用 p5.js 创建算法艺术
 - **brand-guidelines** - 应用 Anthropic 官方品牌颜色和排版
 - **theme-factory** - 为 artifacts 应用主题
+- **web-design-guidelines** - Web UI 设计指南
 
 ### 文档与沟通类
 - **doc-coauthoring** - 协作编写文档的结构化工作流
 - **internal-comms** - 编写各种内部通信格式
 - **slack-gif-creator** - 创建针对 Slack 优化的动画 GIF
+- **humanizer** - AI 写作润色，去除 AI 写作痕迹
 
 ### 技能管理类
 - **skill-creator** - 创建新的技能指南
-- **sequential-thinking** - 通过结构化顺序思考进行动态问题解决
 - **code-review** - 代码审查反馈和实践指导
 - **deep-wiki** - 通过 DeepWiki 访问 GitHub 仓库的 AI 生成文档
+- **find-skills** - 搜索并安装合适的 Skills
+- **template-skill** - Skill 创建模板
+- **self-improving** - 自我反思、自我纠错与持续学习工作流
+- **skill-vetter** - 第三方 skill 安装前的安全审查
 
-## 使用方法
+### 科研图表类
+- **figures4papers-playbook** - 从 figures4papers 快速定位并改造图表示例
+- **scientific-figure-pro** - 生成论文风格的高质量科研图表
+- **ml-paper-writing** - ML/AI 论文写作指南
 
-### 本地使用
+### 创意思维类
+- **brainstorming-research-ideas** - 研究头脑风暴框架
+- **creative-thinking-for-research** - 研究创意思维框架
 
-这些 skills 配置在 `~/.config/opencode/skills/` 目录中。OpenCode 会自动加载这些技能。
+### 可观测性
+- **langsmith-observability** - LLM 应用追踪与调试
 
-### 安装到其他环境
+## 支持的 Agents
 
-1. 克隆此仓库：
-   ```bash
-   git clone https://github.com/L-yifan/my-skills.git
-   ```
+本仓库的 skills 可以在以下 AI 代理中使用：
 
-2. 复制到 opencode 配置目录：
-   ```bash
-   cp -r my-skills/* ~/.config/opencode/skills/
-   ```
+- OpenCode
+- Claude Code
+- Cursor
+- Codex
+- GitHub Copilot
+- Cline
+- Continue
+- OpenHands
+- ... 以及 30+ 其他代理
+
+完整列表请参考：https://github.com/vercel-labs/skills#supported-agents
 
 ## 项目结构
 
 ```
-my-skills/
-├── algorithmic-art/          # 算法艺术
-├── brand-guidelines/         # 品牌指南
-├── canvas-design/            # Canvas 设计
-├── code-review/              # 代码审查
-├── context7/                 # Context7 文档
-├── deep-wiki/                # DeepWiki
-├── doc-coauthoring/          # 文档协作
-├── docx/                     # Word 文档处理
-├── frontend-design/          # 前端设计
-├── gh-grep/                  # GitHub Grep
-├── github/                   # GitHub 操作
-├── gkg/                      # 全局知识图谱
-├── internal-comms/           # 内部沟通
-├── mcp-builder/              # MCP 构建器
-├── pdf/                      # PDF 处理
-├── pptx/                     # PPT 处理
-├── sequential-thinking/      # 顺序思考
-├── skill-creator/            # 技能创建器
-├── slack-gif-creator/        # Slack GIF 创建器
-├── theme-factory/            # 主题工厂
-├── web-artifacts-builder/    # Web artifacts 构建器
-├── webapp-testing/           # Web 应用测试
-└── xlsx/                     # Excel 处理
+skills/
+├── _tavily_common.py            # Tavily 相关 skills 共享辅助脚本
+├── agent-browser/               # 浏览器自动化
+├── algorithmic-art/              # 算法艺术
+├── autogpt-agents/              # Agent 平台
+├── brainstorming-research-ideas/ # 研究头脑风暴
+├── brand-guidelines/            # 品牌指南
+├── canvas-design/               # Canvas 设计
+├── chroma/                      # 向量数据库
+├── code-review/                 # 代码审查
+├── context7/                    # Context7 文档
+├── creative-thinking-for-research/ # 创意思维
+├── crewai-multi-agent/          # 多 Agent 编排
+├── deep-wiki/                   # DeepWiki
+├── doc-coauthoring/             # 文档协作
+├── docx/                        # Word 文档处理
+├── dspy/                        # Prompt 优化
+├── extract/                     # 页面正文提取
+├── faiss/                       # 相似性搜索
+├── figures4papers-playbook/     # 科研图表示例定位
+├── find-skills/                 # Skills 搜索与安装
+├── frontend-design/             # 前端设计
+├── gh-grep/                     # GitHub Grep
+├── github/                      # GitHub 操作
+├── gkg/                         # 全局知识图谱
+├── guidance/                    # 结构化 Prompt
+├── humanizer/                   # AI 写作润色
+├── instructor/                  # LLM 输出解析
+├── internal-comms/              # 内部沟通
+├── langchain/                   # LLM 应用框架
+├── langsmith-observability/      # LLM 可观测性
+├── llamaindex/                  # RAG 框架
+├── mcp-builder/                 # MCP 构建器
+├── ml-paper-writing/             # 论文写作
+├── outlines/                    # 结构化输出
+├── pdf/                         # PDF 处理
+├── pptx/                        # PPT 处理
+├── research/                    # 多来源研究
+├── search/                      # Web 搜索
+├── scientific-figure-pro/       # 科研图表增强
+├── sentence-transformers/       # 文本嵌入
+├── self-improving/              # 自我改进
+├── skill-creator/               # 技能创建器
+├── skill-vetter/                # Skill 安全审查
+├── slack-gif-creator/           # Slack GIF 创建器
+├── tavily-best-practices/       # Tavily 最佳实践
+├── template-skill/              # Skill 模板
+├── theme-factory/               # 主题工厂
+├── crawl/                       # 网站抓取
+├── web-artifacts-builder/       # Web artifacts 构建器
+├── web-design-guidelines/       # UI 设计指南
+├── webapp-testing/              # Web 应用测试
+└── xlsx/                        # Excel 处理
 ```
 
 ## 版本信息
 
-- **备份日期**: 2026-02-22
-- **Total Skills**: 23
-- **Total Size**: ~11MB
+- **更新日期**: 2026-03-12
+- **Total Skills**: 51
+- **Skills 工具**: https://github.com/vercel-labs/skills
 
 ## License
 
@@ -106,4 +210,4 @@ my-skills/
 
 ## 联系方式
 
-如有问题，请通过 [GitHub Issues](https://github.com/L-yifan/my-skills/issues) 联系。
+如有问题，请通过 [GitHub Issues](https://github.com/L-yifan/skills/issues) 联系。
