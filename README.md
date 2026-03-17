@@ -1,1 +1,184 @@
-IyBNeSBTa2lsbHMKCuS4quS6uuW/g+S7queahCBBZ2VudCBTa2lsbHMg57Si5byV77yM5pSv5oyBIE9wZW5Db2Rl44CBQ2xhdWRlIENvZGXjgIFDdXJzb3Ig562JIDQwKyBBSSDku6PnkIbjgIIKCiMjIOiHquW7uuaKgOiDvQoK5Lul5LiL5oqA6IO955Sx5pys5LuT5bqT57u05oqk77yM5Y+v55u05o6l5a6J6KOF77yaCgp8IOaKgOiDveWQjSB8IOaPj+i/sCB8IOWuieijheWRveS7pCB8CnwtLS0tLS0tLXwtLS0tLS18LS0tLS0tLS0tLXwKfCBodW1hbml6ZXItemggfCDljrvpmaTkuK3mlofmlofmnKzkuK3nmoQgQUkg5YaZ5L2c55eV6L+5IHwgYG5weCBza2lsbHMgYWRkIEwteWlmYW4vc2tpbGxzQGh1bWFuaXplci16aGAgfAp8IGdrZyB8IOS7o+eggeW6k+WFqOWxgOefpeivhuWbvuiwseWIhuaekCB8IGBucHggc2tpbGxzIGFkZCBMLXlpZmFuL3NraWxsc0Bna2dgIHwKfCBzZWxmLWltcHJvdmluZyB8IOiHquaIkeWPjeaAneOAgee6oOmUmeS4juaMgee7reWtpuS5oOW3peS9nOa1gSB8IGBucHggc2tpbGxzIGFkZCBMLXlpZmFuL3NraWxsc0BzZWxmLWltcHJvdmluZ2AgfAp8IGZpZ3VyZXM0cGFwZXJzLXBsYXlib29rIHwg56eR56CU5Zu+6KGo56S65L6L5a6a5L2N5LiO5pS56YCgIHwgYG5weCBza2lsbHMgYWRkIEwteWlmYW4vc2tpbGxzQGZpZ3VyZXM0cGFwZXJzLXBsYXlib29rYCB8Cnwgc2NpZW50aWZpYy1maWd1cmUtcHJvIHwg6K665paH6aOO5qC86auY6LSo6YeP56eR56CU5Zu+6KGo55Sf5oiQIHwgYG5weCBza2lsbHMgYWRkIEwteWlmYW4vc2tpbGxzQHNjaWVudGlmaWMtZmlndXJlLXByb2AgfAoKLS0tCgojIyDmlofmoaPlpITnkIYKCnwg5oqA6IO95ZCNIHwg5o+P6L+wIHwg5p2l5rqQIHwg5a6J6KOF5ZG95LukIHwKfC0tLS0tLS0tfC0tLS0tLXwtLS0tLS18LS0tLS0tLS0tLXwKfCBkb2N4IHwgV29yZCDmlofmoaPvvIguZG9jeO+8ieWkhOeQhiB8IFthbnRocm9waWNzL3NraWxsc10oaHR0cHM6Ly9naXRodWIuY29tL2FudGhyb3BpY3Mvc2tpbGxzKSB8IGBucHggc2tpbGxzIGFkZCBhbnRocm9waWNzL3NraWxsc0Bkb2N4YCB8CnwgcGRmIHwgUERGIOaWh+S7tuWkhOeQhiB8IFthbnRocm9waWNzL3NraWxsc10oaHR0cHM6Ly9naXRodWIuY29tL2FudGhyb3BpY3Mvc2tpbGxzKSB8IGBucHggc2tpbGxzIGFkZCBhbnRocm9waWNzL3NraWxsc0BwZGZgIHwKfCBwcHR4IHwgUG93ZXJQb2ludCDmvJTnpLrmlofnqL/lpITnkIYgfCBbYW50aHJvcGljcy9za2lsbHNdKGh0dHBzOi8vZ2l0aHViLmNvbS9hbnRocm9waWNzL3NraWxscykgfCBgbnB4IHNraWxscyBhZGQgYW50aHJvcGljcy9za2lsbHNAcHB0eGAgfAp8IHhsc3ggfCDnlLXlrZDooajmoLzvvIgueGxzeCwgLnhsc20sIC5jc3bvvInlpITnkIYgfCBbYW50aHJvcGljcy9za2lsbHNdKGh0dHBzOi8vZ2l0aHViLmNvbS9hbnRocm9waWNzL3NraWxscykgfCBgbnB4IHNraWxscyBhZGQgYW50aHJvcGljcy9za2lsbHNAeGxzeGAgfAoKIyMgV2ViIOeglOeptuS4juiHquWKqOWMlgoKfCDmioDog73lkI0gfCDmj4/ov7AgfCDmnaXmupAgfCDlronoo4Xlkb3ku6QgfAp8LS0tLS0tLS18LS0tLS0tfC0tLS0tLXwtLS0tLS0tLS0tfAp8IHNlYXJjaCB8IFdlYiDmkJzntKLvvIhUYXZpbHnvvIkgfCBbdGF2aWx5LWFpL3NraWxsc10oaHR0cHM6Ly9naXRodWIuY29tL3RhdmlseS1haS9za2lsbHMpIHwgYG5weCBza2lsbHMgYWRkIHRhdmlseS1haS9za2lsbHNAdGF2aWx5LXNlYXJjaGAgfAp8IGNyYXdsIHwg572R56uZ5oqT5Y+WIHwgW3RhdmlseS1haS9za2lsbHNdKGh0dHBzOi8vZ2l0aHViLmNvbS90YXZpbHktYWkvc2tpbGxzKSB8IGBucHggc2tpbGxzIGFkZCB0YXZpbHktYWkvc2tpbGxzQHRhdmlseS1jcmF3bGAgfAp8IGV4dHJhY3QgfCDpobXpnaLlhoXlrrnmj5Dlj5YgfCBbdGF2aWx5LWFpL3NraWxsc10oaHR0cHM6Ly9naXRodWIuY29tL3RhdmlseS1haS9za2lsbHMpIHwgYG5weCBza2lsbHMgYWRkIHRhdmlseS1haS9za2lsbHNAdGF2aWx5LWV4dHJhY3RgIHwKfCByZXNlYXJjaCB8IOWkmuadpea6kOe7vOWQiOeglOeptiB8IFt0YXZpbHktYWkvc2tpbGxzXShodHRwczovL2dpdGh1Yi5jb20vdGF2aWx5LWFpL3NraWxscykgfCBgbnB4IHNraWxscyBhZGQgdGF2aWx5LWFpL3NraWxsc0B0YXZpbHktcmVzZWFyY2hgIHwKfCB0YXZpbHktYmVzdC1wcmFjdGljZXMgfCBUYXZpbHkg6ZuG5oiQ5pyA5L2z5a6e6Le1IHwgW3RhdmlseS1haS9za2lsbHNdKGh0dHBzOi8vZ2l0aHViLmNvbS90YXZpbHktYWkvc2tpbGxzKSB8IGBucHggc2tpbGxzIGFkZCB0YXZpbHktYWkvc2tpbGxzQHRhdmlseS1iZXN0LXByYWN0aWNlc2AgfAp8IGFnZW50LWJyb3dzZXIgfCDmtY/op4jlmajoh6rliqjljJYgQ0xJIHwgW3ZlcmNlbC1sYWJzL2FnZW50LWJyb3dzZXJdKGh0dHBzOi8vZ2l0aHViLmNvbS92ZXJjZWwtbGFicy9hZ2VudC1icm93c2VyKSB8IGBucHggc2tpbGxzIGFkZCB2ZXJjZWwtbGFicy9hZ2VudC1icm93c2VyYCB8CgojIyBHaXRIdWIg5bel5YW3Cgp8IOaKgOiDveWQjSB8IOaPj+i/sCB8IOadpea6kCB8IOWuieijheWRveS7pCB8CnwtLS0tLS0tLXwtLS0tLS18LS0tLS0tfC0tLS0tLS0tLS18CnwgZ2l0aHViIHwgR2l0SHViIOS7k+W6k+S6pOS6ku+8iFBS44CBSXNzdWVz44CB5Luj56CB5pCc57Si77yJIHwgW2dpdGh1Yi9naXRodWItbWNwLXNlcnZlcl0oaHR0cHM6Ly9naXRodWIuY29tL2dpdGh1Yi9naXRodWItbWNwLXNlcnZlcikgfCBgbnB4IHNraWxscyBhZGQgZ2l0aHViL2dpdGh1Yi1tY3Atc2VydmVyYCB8CnwgZ2gtZ3JlcCB8IEdpdEh1YiDku6PnoIHmkJzntKIgfCBbazFMb1cvZ2gtZ3JlcF0oaHR0cHM6Ly9naXRodWIuY29tL2sxTG9XL2doLWdyZXApIHwgYG5weCBza2lsbHMgYWRkIGsxTG9XL2doLWdyZXBgIHwKfCBjb2RlLXJldmlldyB8IOS7o+eggeWuoeafpeWunui3tSB8IFthbnRocm9waWNzL3NraWxsc10oaHR0cHM6Ly9naXRodWIuY29tL2FudGhyb3BpY3Mvc2tpbGxzKSB8IGBucHggc2tpbGxzIGFkZCBhbnRocm9waWNzL3NraWxsc0Bjb2RlLXJldmlld2AgfAoKIyMgQUkg5YaZ5L2c5ram6ImyCgp8IOaKgOiDveWQjSB8IOaPj+i/sCB8IOadpea6kCB8IOWuieijheWRveS7pCB8CnwtLS0tLS0tLXwtLS0tLS18LS0tLS0tfC0tLS0tLS0tLS18CnwgaHVtYW5pemVyIHwg5Y676Zmk6Iux5paH5paH5pys5Lit55qEIEFJIOWGmeS9nOeXlei/uSB8IFtibGFkZXIvaHVtYW5pemVyXShodHRwczovL2dpdGh1Yi5jb20vYmxhZGVyL2h1bWFuaXplcikgfCBgbnB4IHNraWxscyBhZGQgYmxhZGVyL2h1bWFuaXplcmAgfAoKIyMgQUkvTUwg56CU56m25LiO5byA5Y+RCgp8IOaKgOiDveWQjSB8IOaPj+i/sCB8IOadpea6kCB8IOWuieijheWRveS7pCB8CnwtLS0tLS0tLXwtLS0tLS18LS0tLS0tfC0tLS0tLS0tLS18CnwgbGFuZ2NoYWluIHwgTExNIOW6lOeUqOW8gOWPkeahhuaetiB8IFtPcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzXShodHRwczovL2dpdGh1Yi5jb20vT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMcykgfCBgbnB4IHNraWxscyBhZGQgT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMc0BsYW5nY2hhaW5gIHwKfCBsbGFtYWluZGV4IHwgUkFHIOahhuaetiB8IFtPcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzXShodHRwczovL2dpdGh1Yi5jb20vT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMcykgfCBgbnB4IHNraWxscyBhZGQgT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMc0BsbGFtYWluZGV4YCB8CnwgY2hyb21hIHwg5byA5rqQ5ZCR6YeP5pWw5o2u5bqTIHwgW09yY2hlc3RyYS1SZXNlYXJjaC9BSS1SZXNlYXJjaC1TS0lMTHNdKGh0dHBzOi8vZ2l0aHViLmNvbS9PcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzKSB8IGBucHggc2tpbGxzIGFkZCBPcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzQGNocm9tYWAgfAp8IGZhaXNzIHwgRmFjZWJvb2sg55u45Ly85oCn5pCc57SiIHwgW09yY2hlc3RyYS1SZXNlYXJjaC9BSS1SZXNlYXJjaC1TS0lMTHNdKGh0dHBzOi8vZ2l0aHViLmNvbS9PcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzKSB8IGBucHggc2tpbGxzIGFkZCBPcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzQGZhaXNzYCB8Cnwgc2VudGVuY2UtdHJhbnNmb3JtZXJzIHwg5paH5pys5bWM5YWl5qih5Z6LIHwgW09yY2hlc3RyYS1SZXNlYXJjaC9BSS1SZXNlYXJjaC1TS0lMTHNdKGh0dHBzOi8vZ2l0aHViLmNvbS9PcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzKSB8IGBucHggc2tpbGxzIGFkZCBPcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzQHNlbnRlbmNlLXRyYW5zZm9ybWVyc2AgfAp8IGRzcHkgfCDlo7DmmI7lvI8gUHJvbXB0IOS8mOWMliB8IFtPcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzXShodHRwczovL2dpdGh1Yi5jb20vT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMcykgfCBgbnB4IHNraWxscyBhZGQgT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMc0Bkc3B5YCB8CnwgZ3VpZGFuY2UgfCDnu5PmnoTljJYgUHJvbXB0IOaOp+WItiB8IFtPcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzXShodHRwczovL2dpdGh1Yi5jb20vT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMcykgfCBgbnB4IHNraWxscyBhZGQgT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMc0BndWlkYW5jZWAgfAp8IGluc3RydWN0b3IgfCBMTE0g6L6T5Ye66Kej5p6QIHwgW09yY2hlc3RyYS1SZXNlYXJjaC9BSS1SZXNlYXJjaC1TS0lMTHNdKGh0dHBzOi8vZ2l0aHViLmNvbS9PcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzKSB8IGBucHggc2tpbGxzIGFkZCBPcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzQGluc3RydWN0b3JgIHwKfCBvdXRsaW5lcyB8IOe7k+aehOWMlui+k+WHuuS/neivgSB8IFtPcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzXShodHRwczovL2dpdGh1Yi5jb20vT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMcykgfCBgbnB4IHNraWxscyBhZGQgT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMc0BvdXRsaW5lc2AgfAp8IGxhbmdzbWl0aC1vYnNlcnZhYmlsaXR5IHwgTExNIOW6lOeUqOi/vei4quS4juiwg+ivlSB8IFtPcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzXShodHRwczovL2dpdGh1Yi5jb20vT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMcykgfCBgbnB4IHNraWxscyBhZGQgT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMc0BvYnNlcnZhYmlsaXR5YCB8CgojIyBBZ2VudCDmoYbmnrYKCnwg5oqA6IO95ZCNIHwg5o+P6L+wIHwg5p2l5rqQIHwg5a6J6KOF5ZG95LukIHwKfC0tLS0tLS0tfC0tLS0tLXwtLS0tLS18LS0tLS0tLS0tLXwKfCBhdXRvZ3B0LWFnZW50cyB8IEF1dG9ub21vdXMgQUkgQWdlbnQg5bmz5Y+wIHwgW09yY2hlc3RyYS1SZXNlYXJjaC9BSS1SZXNlYXJjaC1TS0lMTHNdKGh0dHBzOi8vZ2l0aHViLmNvbS9PcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzKSB8IGBucHggc2tpbGxzIGFkZCBPcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzQGF1dG9ncHQtYWdlbnRzYCB8CnwgY3Jld2FpLW11bHRpLWFnZW50IHwg5aSaIEFnZW50IOe8luaOkuahhuaetiB8IFtPcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzXShodHRwczovL2dpdGh1Yi5jb20vT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMcykgfCBgbnB4IHNraWxscyBhZGQgT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMc0BjcmV3YWktbXVsdGktYWdlbnRgIHwKfCBtY3AtYnVpbGRlciB8IE1DUCDmnI3liqHlmajmnoTlu7ogfCBbYW50aHJvcGljcy9za2lsbHNdKGh0dHBzOi8vZ2l0aHViLmNvbS9hbnRocm9waWNzL3NraWxscykgfCBgbnB4IHNraWxscyBhZGQgYW50aHJvcGljcy9za2lsbHNAbWNwLWJ1aWxkZXJgIHwKCiMjIOiuuuaWh+WGmeS9nOS4jueglOeptgoKfCDmioDog73lkI0gfCDmj4/ov7AgfCDmnaXmupAgfCDlronoo4Xlkb3ku6QgfAp8LS0tLS0tLS18LS0tLS0tfC0tLS0tLXwtLS0tLS0tLS0tfAp8IG1sLXBhcGVyLXdyaXRpbmcgfCBNTC9BSSDorrrmloflhpnkvZzmjIfljZcgfCBbT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMc10oaHR0cHM6Ly9naXRodWIuY29tL09yY2hlc3RyYS1SZXNlYXJjaC9BSS1SZXNlYXJjaC1TS0lMTHMpIHwgYG5weCBza2lsbHMgYWRkIE9yY2hlc3RyYS1SZXNlYXJjaC9BSS1SZXNlYXJjaC1TS0lMTHNAbWwtcGFwZXItd3JpdGluZ2AgfAp8IGJyYWluc3Rvcm1pbmctcmVzZWFyY2gtaWRlYXMgfCDnoJTnqbblpLTohJHpo47mmrQgfCBbT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMc10oaHR0cHM6Ly9naXRodWIuY29tL09yY2hlc3RyYS1SZXNlYXJjaC9BSS1SZXNlYXJjaC1TS0lMTHMpIHwgYG5weCBza2lsbHMgYWRkIE9yY2hlc3RyYS1SZXNlYXJjaC9BSS1SZXNlYXJjaC1TS0lMTHNAYnJhaW5zdG9ybWluZy1yZXNlYXJjaC1pZGVhc2AgfAp8IGNyZWF0aXZlLXRoaW5raW5nLWZvci1yZXNlYXJjaCB8IOeglOeptuWIm+aEj+aAnee7tCB8IFtPcmNoZXN0cmEtUmVzZWFyY2gvQUktUmVzZWFyY2gtU0tJTExzXShodHRwczovL2dpdGh1Yi5jb20vT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMcykgfCBgbnB4IHNraWxscyBhZGQgT3JjaGVzdHJhLVJlc2VhcmNoL0FJLVJlc2VhcmNoLVNLSUxMc0BjcmVhdGl2ZS10aGlua2luZy1mb3ItcmVzZWFyY2hgIHwKCiMjIOWJjeerr+iuvuiuoeS4jiBXZWIg5byA5Y+RCgp8IOaKgOiDveWQjSB8IOaPj+i/sCB8IOadpea6kCB8IOWuieijheWRveS7pCB8CnwtLS0tLS0tLXwtLS0tLS18LS0tLS0tfC0tLS0tLS0tLS18CnwgZnJvbnRlbmQtZGVzaWduIHwg55Sf5Lqn57qn5YmN56uv55WM6Z2i6K6+6K6hIHwgW2FudGhyb3BpY3Mvc2tpbGxzXShodHRwczovL2dpdGh1Yi5jb20vYW50aHJvcGljcy9za2lsbHMpIHwgYG5weCBza2lsbHMgYWRkIGFudGhyb3BpY3Mvc2tpbGxzQGZyb250ZW5kLWRlc2lnbmAgfAp8IGNhbnZhcy1kZXNpZ24gfCBDYW52YXMg6KeG6KeJ6Im65pyv5Yib5L2cIHwgW2FudGhyb3BpY3Mvc2tpbGxzXShodHRwczovL2dpdGh1Yi5jb20vYW50aHJvcGljcy9za2lsbHMpIHwgYG5weCBza2lsbHMgYWRkIGFudGhyb3BpY3Mvc2tpbGxzQGNhbnZhcy1kZXNpZ25gIHwKfCBhbGdvcml0aG1pYy1hcnQgfCDnrpfms5XoibrmnK/vvIhwNS5qc++8iSB8IFthbnRocm9waWNzL3NraWxsc10oaHR0cHM6Ly9naXRodWIuY29tL2FudGhyb3BpY3Mvc2tpbGxzKSB8IGBucHggc2tpbGxzIGFkZCBhbnRocm9waWNzL3NraWxsc0BhbGdvcml0aG1pYy1hcnRgIHwKfCBicmFuZC1ndWlkZWxpbmVzIHwg5ZOB54mM6aKc6Imy5ZKM5o6S54mI5oyH5Y2XIHwgW2FudGhyb3BpY3Mvc2tpbGxzXShodHRwczovL2dpdGh1Yi5jb20vYW50aHJvcGljcy9za2lsbHMpIHwgYG5weCBza2lsbHMgYWRkIGFudGhyb3BpY3Mvc2tpbGxzQGJyYW5kLWd1aWRlbGluZXNgIHwKfCB0aGVtZS1mYWN0b3J5IHwgQXJ0aWZhY3Qg5Li76aKY5bqU55SoIHwgW2FudGhyb3BpY3Mvc2tpbGxzXShodHRwczovL2dpdGh1Yi5jb20vYW50aHJvcGljcy9za2lsbHMpIHwgYG5weCBza2lsbHMgYWRkIGFudGhyb3BpY3Mvc2tpbGxzQHRoZW1lLWZhY3RvcnlgIHwKfCB3ZWItYXJ0aWZhY3RzLWJ1aWxkZXIgfCDlpI3mnYIgSFRNTCBhcnRpZmFjdHMg5p6E5bu6IHwgW2FudGhyb3BpY3Mvc2tpbGxzXShodHRwczovL2dpdGh1Yi5jb20vYW50aHJvcGljcy9za2lsbHMpIHwgYG5weCBza2lsbHMgYWRkIGFudGhyb3BpY3Mvc2tpbGxzQHdlYi1hcnRpZmFjdHMtYnVpbGRlcmAgfAp8IHdlYmFwcC10ZXN0aW5nIHwgUGxheXdyaWdodCBXZWIg5bqU55So5rWL6K+VIHwgW2FudGhyb3BpY3Mvc2tpbGxzXShodHRwczovL2dpdGh1Yi5jb20vYW50aHJvcGljcy9za2lsbHMpIHwgYG5weCBza2lsbHMgYWRkIGFudGhyb3BpY3Mvc2tpbGxzQHdlYmFwcC10ZXN0aW5nYCB8CgojIyDmlofmoaPljY/kvZzkuI7msp/pgJoKCnwg5oqA6IO95ZCNIHwg5o+P6L+wIHwg5p2l5rqQIHwg5a6J6KOF5ZG95LukIHwKfC0tLS0tLS0tfC0tLS0tLXwtLS0tLS18LS0tLS0tLS0tLXwKfCBkb2MtY29hdXRob3JpbmcgfCDmlofmoaPljY/kvZznvJblhpnlt6XkvZzmtYEgfCBbYW50aHJvcGljcy9za2lsbHNdKGh0dHBzOi8vZ2l0aHViLmNvbS9hbnRocm9waWNzL3NraWxscykgfCBgbnB4IHNraWxscyBhZGQgYW50aHJvcGljcy9za2lsbHNAZG9jLWNvYXV0aG9yaW5nYCB8CnwgaW50ZXJuYWwtY29tbXMgfCDlhoXpg6jpgJrkv6HmoLzlvI/nvJblhpkgfCBbYW50aHJvcGljcy9za2lsbHNdKGh0dHBzOi8vZ2l0aHViLmNvbS9hbnRocm9waWNzL3NraWxscykgfCBgbnB4IHNraWxscyBhZGQgYW50aHJvcGljcy9za2lsbHNAaW50ZXJuYWwtY29tbXNgIHwKfCBzbGFjay1naWYtY3JlYXRvciB8IFNsYWNrIOWKqOeUuyBHSUYg5Yib5bu6IHwgW2FudGhyb3BpY3Mvc2tpbGxzXShodHRwczovL2dpdGh1Yi5jb20vYW50aHJvcGljcy9za2lsbHMpIHwgYG5weCBza2lsbHMgYWRkIGFudGhyb3BpY3Mvc2tpbGxzQHNsYWNrLWdpZi1jcmVhdG9yYCB8CgojIyBPYnNpZGlhbiDkuI7nn6Xor4bnrqHnkIYKCnwg5oqA6IO95ZCNIHwg5o+P6L+wIHwg5p2l5rqQIHwg5a6J6KOF5ZG95LukIHwKfC0tLS0tLS0tfC0tLS0tLXwtLS0tLS18LS0tLS0tLS0tLXwKfCBvYnNpZGlhbi1tYXJrZG93biB8IE9ic2lkaWFuIE1hcmtkb3duIOivreazlSB8IFtrZXBhbm8vb2JzaWRpYW4tc2tpbGxzXShodHRwczovL2dpdGh1Yi5jb20va2VwYW5vL29ic2lkaWFuLXNraWxscykgfCBgbnB4IHNraWxscyBhZGQga2VwYW5vL29ic2lkaWFuLXNraWxsc0BvYnNpZGlhbi1tYXJrZG93bmAgfAp8IG9ic2lkaWFuLWJhc2VzIHwgT2JzaWRpYW4gQmFzZXPvvIguYmFzZSDmlofku7bvvIkgfCBba2VwYW5vL29ic2lkaWFuLXNraWxsc10oaHR0cHM6Ly9naXRodWIuY29tL2tlcGFuby9vYnNpZGlhbi1za2lsbHMpIHwgYG5weCBza2lsbHMgYWRkIGtlcGFuby9vYnNpZGlhbi1za2lsbHNAb2JzaWRpYW4tYmFzZXNgIHwKfCBqc29uLWNhbnZhcyB8IEpTT04gQ2FudmFzIOaWh+S7tu+8iC5jYW52YXPvvIkgfCBba2VwYW5vL29ic2lkaWFuLXNraWxsc10oaHR0cHM6Ly9naXRodWIuY29tL2tlcGFuby9vYnNpZGlhbi1za2lsbHMpIHwgYG5weCBza2lsbHMgYWRkIGtlcGFuby9vYnNpZGlhbi1za2lsbHNAanNvbi1jYW52YXNgIHwKCiMjIOW8gOWPkeW3peWFtwoKfCDmioDog73lkI0gfCDmj4/ov7AgfCDmnaXmupAgfCDlronoo4Xlkb3ku6QgfAp8LS0tLS0tLS18LS0tLS0tfC0tLS0tLXwtLS0tLS0tLS0tfAp8IGNvbnRleHQ3IHwgTExNIOS7o+eggeaWh+aho+W5s+WPsCB8IFt1cHN0YXNoL2NvbnRleHQ3XShodHRwczovL2dpdGh1Yi5jb20vdXBzdGFzaC9jb250ZXh0NykgfCBgbnB4IHNraWxscyBhZGQgdXBzdGFzaC9jb250ZXh0N2AgfAp8IGRlZXAtd2lraSB8IEdpdEh1YiDku5PlupMgQUkg5paH5qGjIHwgW3NraW5kaHUvY2xhdWRlLWRlZXAtd2lraV0oaHR0cHM6Ly9naXRodWIuY29tL3NraW5kaHUvY2xhdWRlLWRlZXAtd2lraSkgfCBgbnB4IHNraWxscyBhZGQgc2tpbmRodS9jbGF1ZGUtZGVlcC13aWtpYCB8CnwgZmluZC1za2lsbHMgfCBTa2lsbHMg5pCc57Si5LiO5Y+R546wIHwgW3ZlcmNlbC1sYWJzL3NraWxsc10oaHR0cHM6Ly9naXRodWIuY29tL3ZlcmNlbC1sYWJzL3NraWxscykgfCBgbnB4IHNraWxscyBhZGQgdmVyY2VsLWxhYnMvc2tpbGxzQGZpbmQtc2tpbGxzYCB8CgojIyDmioDog73nrqHnkIYKCnwg5oqA6IO95ZCNIHwg5o+P6L+wIHwg5p2l5rqQIHwg5a6J6KOF5ZG95LukIHwKfC0tLS0tLS0tfC0tLS0tLXwtLS0tLS18LS0tLS0tLS0tLXwKfCBza2lsbC1jcmVhdG9yIHwg5paw5oqA6IO95Yib5bu65oyH5Y2XIHwgW2FudGhyb3BpY3Mvc2tpbGxzXShodHRwczovL2dpdGh1Yi5jb20vYW50aHJvcGljcy9za2lsbHMpIHwgYG5weCBza2lsbHMgYWRkIGFudGhyb3BpY3Mvc2tpbGxzQHNraWxsLWNyZWF0b3JgIHwKfCBza2lsbC12ZXR0ZXIgfCDmioDog73lronlhajlrqHmoLggfCBbdXNlYWktcHJvL29wZW5jbGF3LXNraWxscy1zZWN1cml0eV0oaHR0cHM6Ly9naXRodWIuY29tL3VzZWFpLXByby9vcGVuY2xhdy1za2lsbHMtc2VjdXJpdHkpIHwgYG5weCBza2lsbHMgYWRkIHVzZWFpLXByby9vcGVuY2xhdy1za2lsbHMtc2VjdXJpdHlAc2tpbGwtdmV0dGVyYCB8CgotLS0KCiMjIFNraWxscyBDTEkg5L2/55So5pa55rOVCgojIyMg5a6J6KOF5oqA6IO9CgpgYGBiYXNoCiMg5a6J6KOF5Yiw55So5oi357qn5Yir77yI5o6o6I2Q77yJCm5weCBza2lsbHMgYWRkIDxvd25lci9yZXBvQHNraWxsPiAtZwoKIyDlronoo4XliLDpobnnm67nuqfliKsKbnB4IHNraWxscyBhZGQgPG93bmVyL3JlcG9Ac2tpbGw+CmBgYAoKIyMjIOeuoeeQhuW3suWuieijheeahOaKgOiDvQoKYGBgYmFzaAojIOWIl+WHuuaJgOacieW3suWuieijheeahOaKgOiDvQpucHggc2tpbGxzIGxpc3QgLWcKCiMg5qOA5p+l5pu05pawCm5weCBza2lsbHMgY2hlY2sgLWcKCiMg5pu05paw5omA5pyJ5oqA6IO9Cm5weCBza2lsbHMgdXBkYXRlIC1nCgojIOenu+mZpOaKgOiDvQpucHggc2tpbGxzIHJlbW92ZSA8c2tpbGwtbmFtZT4gLWcKCiMg5pCc57Si5paw5oqA6IO9Cm5weCBza2lsbHMgZmluZCBbcXVlcnldCmBgYAoKIyMg5pSv5oyB55qEIEFnZW50cwoK5pys57Si5byV5Lit55qE5oqA6IO95Y+v5Zyo5Lul5LiLIEFJIOS7o+eQhuS4reS9v+eUqO+8mgoKLSBPcGVuQ29kZQotIENsYXVkZSBDb2RlCi0gQ3Vyc29yCi0gR2l0SHViIENvcGlsb3QKLSBDb2RleAotIENsaW5lCi0gQ29udGludWUKLSBPcGVuSGFuZHMKLSAuLi4g5Lul5Y+KIDMwKyDlhbbku5bku6PnkIYKCuWujOaVtOWIl+ihqOivt+WPguiAg++8mmh0dHBzOi8vZ2l0aHViLmNvbS92ZXJjZWwtbGFicy9za2lsbHMjc3VwcG9ydGVkLWFnZW50cwoKIyMg54mI5pys5L+h5oGvCgotICoq5pu05paw5pel5pyfKio6IDIwMjYtMDMtMTcKLSAqKuiHquW7uuaKgOiDvSoqOiA1Ci0gKirntKLlvJXmioDog70qKjogNTYKCiMjIExpY2Vuc2UKCuivt+WPguiAg+WQhOaKgOiDveadpea6kOS7k+W6k+eahOiuuOWPr+ivgeS/oeaBr+OAguiHquW7uuaKgOiDvemHh+eUqCBNSVQg6K645Y+v6K+B44CC
+# My Skills
+
+个人心仪的 Agent Skills 索引，支持 OpenCode、Claude Code、Cursor 等 40+ AI 代理。
+
+## 自建技能
+
+以下技能由本仓库维护，可直接安装：
+
+| 技能名 | 描述 | 安装命令 |
+|--------|------|----------|
+| humanizer-zh | 去除中文文本中的 AI 写作痕迹 | `npx skills add L-yifan/skills@humanizer-zh` |
+| gkg | 代码库全局知识图谱分析 | `npx skills add L-yifan/skills@gkg` |
+| self-improving | 自我反思、纠错与持续学习工作流 | `npx skills add L-yifan/skills@self-improving` |
+| figures4papers-playbook | 科研图表示例定位与改造 | `npx skills add L-yifan/skills@figures4papers-playbook` |
+| scientific-figure-pro | 论文风格高质量科研图表生成 | `npx skills add L-yifan/skills@scientific-figure-pro` |
+
+---
+
+## 文档处理
+
+| 技能名 | 描述 | 来源 | 安装命令 |
+|--------|------|------|----------|
+| docx | Word 文档（.docx）处理 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@docx` |
+| pdf | PDF 文件处理 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@pdf` |
+| pptx | PowerPoint 演示文稿处理 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@pptx` |
+| xlsx | 电子表格（.xlsx, .xlsm, .csv）处理 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@xlsx` |
+
+## Web 研究与自动化
+
+| 技能名 | 描述 | 来源 | 安装命令 |
+|--------|------|------|----------|
+| search | Web 搜索（Tavily） | [tavily-ai/skills](https://github.com/tavily-ai/skills) | `npx skills add tavily-ai/skills@tavily-search` |
+| crawl | 网站抓取 | [tavily-ai/skills](https://github.com/tavily-ai/skills) | `npx skills add tavily-ai/skills@tavily-crawl` |
+| extract | 页面内容提取 | [tavily-ai/skills](https://github.com/tavily-ai/skills) | `npx skills add tavily-ai/skills@tavily-extract` |
+| research | 多来源综合研究 | [tavily-ai/skills](https://github.com/tavily-ai/skills) | `npx skills add tavily-ai/skills@tavily-research` |
+| tavily-best-practices | Tavily 集成最佳实践 | [tavily-ai/skills](https://github.com/tavily-ai/skills) | `npx skills add tavily-ai/skills@tavily-best-practices` |
+| agent-browser | 浏览器自动化 CLI | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | `npx skills add vercel-labs/agent-browser` |
+
+## GitHub 工具
+
+| 技能名 | 描述 | 来源 | 安装命令 |
+|--------|------|------|----------|
+| github | GitHub 仓库交互（PR、Issues、代码搜索） | [github/github-mcp-server](https://github.com/github/github-mcp-server) | `npx skills add github/github-mcp-server` |
+| gh-grep | GitHub 代码搜索 | [k1LoW/gh-grep](https://github.com/k1LoW/gh-grep) | `npx skills add k1LoW/gh-grep` |
+| code-review | 代码审查实践 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@code-review` |
+
+## AI 写作润色
+
+| 技能名 | 描述 | 来源 | 安装命令 |
+|--------|------|------|----------|
+| humanizer | 去除英文文本中的 AI 写作痕迹 | [blader/humanizer](https://github.com/blader/humanizer) | `npx skills add blader/humanizer` |
+
+## AI/ML 研究与开发
+
+| 技能名 | 描述 | 来源 | 安装命令 |
+|--------|------|------|----------|
+| langchain | LLM 应用开发框架 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@langchain` |
+| llamaindex | RAG 框架 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@llamaindex` |
+| chroma | 开源向量数据库 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@chroma` |
+| faiss | Facebook 相似性搜索 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@faiss` |
+| sentence-transformers | 文本嵌入模型 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@sentence-transformers` |
+| dspy | 声明式 Prompt 优化 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@dspy` |
+| guidance | 结构化 Prompt 控制 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@guidance` |
+| instructor | LLM 输出解析 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@instructor` |
+| outlines | 结构化输出保证 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@outlines` |
+| langsmith-observability | LLM 应用追踪与调试 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@observability` |
+
+## Agent 框架
+
+| 技能名 | 描述 | 来源 | 安装命令 |
+|--------|------|------|----------|
+| autogpt-agents | Autonomous AI Agent 平台 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@autogpt-agents` |
+| crewai-multi-agent | 多 Agent 编排框架 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@crewai-multi-agent` |
+| mcp-builder | MCP 服务器构建 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@mcp-builder` |
+
+## 论文写作与研究
+
+| 技能名 | 描述 | 来源 | 安装命令 |
+|--------|------|------|----------|
+| ml-paper-writing | ML/AI 论文写作指南 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@ml-paper-writing` |
+| brainstorming-research-ideas | 研究头脑风暴 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@brainstorming-research-ideas` |
+| creative-thinking-for-research | 研究创意思维 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@creative-thinking-for-research` |
+
+## 前端设计与 Web 开发
+
+| 技能名 | 描述 | 来源 | 安装命令 |
+|--------|------|------|----------|
+| frontend-design | 生产级前端界面设计 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@frontend-design` |
+| canvas-design | Canvas 视觉艺术创作 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@canvas-design` |
+| algorithmic-art | 算法艺术（p5.js） | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@algorithmic-art` |
+| brand-guidelines | 品牌颜色和排版指南 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@brand-guidelines` |
+| theme-factory | Artifact 主题应用 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@theme-factory` |
+| web-artifacts-builder | 复杂 HTML artifacts 构建 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@web-artifacts-builder` |
+| webapp-testing | Playwright Web 应用测试 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@webapp-testing` |
+
+## 文档协作与沟通
+
+| 技能名 | 描述 | 来源 | 安装命令 |
+|--------|------|------|----------|
+| doc-coauthoring | 文档协作编写工作流 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@doc-coauthoring` |
+| internal-comms | 内部通信格式编写 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@internal-comms` |
+| slack-gif-creator | Slack 动画 GIF 创建 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@slack-gif-creator` |
+
+## Obsidian 与知识管理
+
+| 技能名 | 描述 | 来源 | 安装命令 |
+|--------|------|------|----------|
+| obsidian-markdown | Obsidian Markdown 语法 | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | `npx skills add kepano/obsidian-skills@obsidian-markdown` |
+| obsidian-bases | Obsidian Bases（.base 文件） | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | `npx skills add kepano/obsidian-skills@obsidian-bases` |
+| json-canvas | JSON Canvas 文件（.canvas） | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | `npx skills add kepano/obsidian-skills@json-canvas` |
+
+## 开发工具
+
+| 技能名 | 描述 | 来源 | 安装命令 |
+|--------|------|------|----------|
+| context7 | LLM 代码文档平台 | [upstash/context7](https://github.com/upstash/context7) | `npx skills add upstash/context7` |
+| deep-wiki | GitHub 仓库 AI 文档 | [skindhu/claude-deep-wiki](https://github.com/skindhu/claude-deep-wiki) | `npx skills add skindhu/claude-deep-wiki` |
+| find-skills | Skills 搜索与发现 | [vercel-labs/skills](https://github.com/vercel-labs/skills) | `npx skills add vercel-labs/skills@find-skills` |
+
+## 技能管理
+
+| 技能名 | 描述 | 来源 | 安装命令 |
+|--------|------|------|----------|
+| skill-creator | 新技能创建指南 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@skill-creator` |
+| skill-vetter | 技能安全审核 | [useai-pro/openclaw-skills-security](https://github.com/useai-pro/openclaw-skills-security) | `npx skills add useai-pro/openclaw-skills-security@skill-vetter` |
+
+---
+
+## Skills CLI 使用方法
+
+### 安装技能
+
+```bash
+# 安装到用户级别（推荐）
+npx skills add <owner/repo@skill> -g
+
+# 安装到项目级别
+npx skills add <owner/repo@skill>
+```
+
+### 管理已安装的技能
+
+```bash
+# 列出所有已安装的技能
+npx skills list -g
+
+# 检查更新
+npx skills check -g
+
+# 更新所有技能
+npx skills update -g
+
+# 移除技能
+npx skills remove <skill-name> -g
+
+# 搜索新技能
+npx skills find [query]
+```
+
+## 支持的 Agents
+
+本索引中的技能可在以下 AI 代理中使用：
+
+- OpenCode
+- Claude Code
+- Cursor
+- GitHub Copilot
+- Codex
+- Cline
+- Continue
+- OpenHands
+- ... 以及 30+ 其他代理
+
+完整列表请参考：https://github.com/vercel-labs/skills#supported-agents
+
+## 版本信息
+
+- **更新日期**: 2026-03-17
+- **自建技能**: 5
+- **索引技能**: 56
+
+## License
+
+请参考各技能来源仓库的许可证信息。自建技能采用 MIT 许可证。
