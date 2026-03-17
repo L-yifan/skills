@@ -37,20 +37,20 @@
 | extract | 页面内容提取 | [tavily-ai/skills](https://github.com/tavily-ai/skills) | `npx skills add https://github.com/tavily-ai/skills --skill tavily-extract` |
 | research | 多来源综合研究 | [tavily-ai/skills](https://github.com/tavily-ai/skills) | `npx skills add https://github.com/tavily-ai/skills --skill tavily-research` |
 | tavily-best-practices | Tavily 集成最佳实践 | [tavily-ai/skills](https://github.com/tavily-ai/skills) | `npx skills add https://github.com/tavily-ai/skills --skill tavily-best-practices` |
-| agent-browser | 浏览器自动化 CLI | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | `npx skills add https://github.com/vercel-labs/agent-browser --skill agent-browser` |
+| agent-browser | 浏览器自动化 CLI | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | `npx skills add https://github.com/vercel-labs/agent-browser` |
 
 ## GitHub 工具
 
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
-| github | GitHub 仓库交互（PR、Issues、代码搜索） | [github/github-mcp-server](https://github.com/github/github-mcp-server) | `npx skills add https://github.com/github/github-mcp-server --skill github-mcp-server` |
+| github | GitHub 仓库交互（PR、Issues、代码搜索） | [github/github-mcp-server](https://github.com/github/github-mcp-server) | `npx skills add https://github.com/github/github-mcp-server` |
 
 
 ## AI 写作润色
 
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
-| humanizer | 去除英文文本中的 AI 写作痕迹 | [blader/humanizer](https://github.com/blader/humanizer) | `npx skills add https://github.com/blader/humanizer --skill humanizer` |
+| humanizer | 去除英文文本中的 AI 写作痕迹 | [blader/humanizer](https://github.com/blader/humanizer) | `npx skills add https://github.com/blader/humanizer` |
 
 ## AI/ML 研究与开发
 
