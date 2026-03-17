@@ -8,14 +8,14 @@
 
 | 技能名 | 描述 | 安装命令 |
 |--------|------|----------|
-| humanizer-zh | 去除中文文本中的 AI 写作痕迹 | `npx skills add L-yifan/skills@humanizer-zh` |
-| gkg | 代码库全局知识图谱分析 | `npx skills add L-yifan/skills@gkg` |
-| self-improving | 自我反思、纠错与持续学习工作流 | `npx skills add L-yifan/skills@self-improving` |
-| figures4papers-playbook | 科研图表示例定位与改造 | `npx skills add L-yifan/skills@figures4papers-playbook` |
-| scientific-figure-pro | 论文风格高质量科研图表生成 | `npx skills add L-yifan/skills@scientific-figure-pro` |
-| gh-grep | GitHub 代码搜索 | `npx skills add L-yifan/skills@gh-grep` |
-| deep-wiki | GitHub 仓库 AI 文档 |  `npx skills add L-yifan/skills@deep-wiki` |
-| skill-vetter | 技能安全审核 | `npx skills add L-yifan/skills@skill-vetter` |
+| humanizer-zh | 去除中文文本中的 AI 写作痕迹 | `npx skills add https://github.com/L-yifan/skills --skill humanizer-zh` |
+| gkg | 代码库全局知识图谱分析 | `npx skills add https://github.com/L-yifan/skills --skill gkg` |
+| self-improving | 自我反思、纠错与持续学习工作流 | `npx skills add https://github.com/L-yifan/skills --skill self-improving` |
+| figures4papers-playbook | 科研图表示例定位与改造 | `npx skills add https://github.com/L-yifan/skills --skill figures4papers-playbook` |
+| scientific-figure-pro | 论文风格高质量科研图表生成 | `npx skills add https://github.com/L-yifan/skills --skill scientific-figure-pro` |
+| gh-grep | GitHub 代码搜索 | `npx skills add https://github.com/L-yifan/skills --skill gh-grep` |
+| deep-wiki | GitHub 仓库 AI 文档 |  `npx skills add https://github.com/L-yifan/skills --skill deep-wiki` |
+| skill-vetter | 技能安全审核 | `npx skills add https://github.com/L-yifan/skills --skill skill-vetter` |
 
 ---
 
