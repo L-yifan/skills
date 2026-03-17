@@ -13,6 +13,9 @@
 | self-improving | 自我反思、纠错与持续学习工作流 | `npx skills add L-yifan/skills@self-improving` |
 | figures4papers-playbook | 科研图表示例定位与改造 | `npx skills add L-yifan/skills@figures4papers-playbook` |
 | scientific-figure-pro | 论文风格高质量科研图表生成 | `npx skills add L-yifan/skills@scientific-figure-pro` |
+| gh-grep | GitHub 代码搜索 | `npx skills add L-yifan/skills@gh-grep` |
+| deep-wiki | GitHub 仓库 AI 文档 |  `npx skills add L-yifan/skills@deep-wiki` |
+| skill-vetter | 技能安全审核 | `npx skills add L-yifan/skills@skill-vetter` |
 
 ---
 
@@ -41,8 +44,7 @@
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
 | github | GitHub 仓库交互（PR、Issues、代码搜索） | [github/github-mcp-server](https://github.com/github/github-mcp-server) | `npx skills add github/github-mcp-server` |
-| gh-grep | GitHub 代码搜索 | [k1LoW/gh-grep](https://github.com/k1LoW/gh-grep) | `npx skills add k1LoW/gh-grep` |
-| code-review | 代码审查实践 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@code-review` |
+
 
 ## AI 写作润色
 
@@ -57,7 +59,6 @@
 | langchain | LLM 应用开发框架 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@langchain` |
 | llamaindex | RAG 框架 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@llamaindex` |
 | chroma | 开源向量数据库 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@chroma` |
-| faiss | Facebook 相似性搜索 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@faiss` |
 | sentence-transformers | 文本嵌入模型 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@sentence-transformers` |
 | dspy | 声明式 Prompt 优化 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@dspy` |
 | guidance | 结构化 Prompt 控制 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add Orchestra-Research/AI-Research-SKILLs@guidance` |
@@ -91,7 +92,6 @@
 | brand-guidelines | 品牌颜色和排版指南 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@brand-guidelines` |
 | theme-factory | Artifact 主题应用 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@theme-factory` |
 | web-artifacts-builder | 复杂 HTML artifacts 构建 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@web-artifacts-builder` |
-| webapp-testing | Playwright Web 应用测试 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@webapp-testing` |
 
 ## 文档协作与沟通
 
@@ -113,8 +113,6 @@
 
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
-| context7 | LLM 代码文档平台 | [upstash/context7](https://github.com/upstash/context7) | `npx skills add upstash/context7` |
-| deep-wiki | GitHub 仓库 AI 文档 | [skindhu/claude-deep-wiki](https://github.com/skindhu/claude-deep-wiki) | `npx skills add skindhu/claude-deep-wiki` |
 | find-skills | Skills 搜索与发现 | [vercel-labs/skills](https://github.com/vercel-labs/skills) | `npx skills add vercel-labs/skills@find-skills` |
 
 ## 技能管理
@@ -122,7 +120,6 @@
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
 | skill-creator | 新技能创建指南 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add anthropics/skills@skill-creator` |
-| skill-vetter | 技能安全审核 | [useai-pro/openclaw-skills-security](https://github.com/useai-pro/openclaw-skills-security) | `npx skills add useai-pro/openclaw-skills-security@skill-vetter` |
 
 ---
 
@@ -176,8 +173,6 @@ npx skills find [query]
 ## 版本信息
 
 - **更新日期**: 2026-03-17
-- **自建技能**: 5
-- **索引技能**: 56
 
 ## License
 
