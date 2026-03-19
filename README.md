@@ -93,6 +93,22 @@
 | theme-factory | Artifact 主题应用 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill theme-factory` |
 | web-artifacts-builder | 复杂 HTML artifacts 构建 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill web-artifacts-builder` |
 
+## Google Stitch 设计系统
+
+Google Stitch 是 Google Labs 的 AI 设计平台，支持 Text-to-UI 设计、shadcn-ui 组件生成、Remotion 视频动画等。配合 [Stitch MCP server](https://github.com/davideast/stitch-mcp) 使用效果最佳。
+
+| 技能名 | 描述 | 来源 | 安装命令 |
+|--------|------|------|----------|
+| stitch-design | 统一入口，设计工作入口 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill stitch-design` |
+| enhance-prompt | 提示词增强（UI/UX 专业术语） | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill enhance-prompt` |
+| design-md | 设计文档生成（.stitch/DESIGN.md） | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill design-md` |
+| stitch-loop | 循环处理工作流 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill stitch-loop` |
+| react-components | React 组件生成（Vite + Tailwind） | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill react-components` |
+| shadcn-ui | shadcn/ui 组件库集成 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill shadcn-ui` |
+| remotion | 视频动画生成 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill remotion` |
+
+> **提示**：安装这些 skills 前，需先配置 Stitch MCP server。详情见 [stitch-mcp](https://github.com/davideast/stitch-mcp)。
+
 ## 文档协作与沟通
 
 | 技能名 | 描述 | 来源 | 安装命令 |
@@ -172,7 +188,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-03-17
+- **更新日期**: 2026-03-19
 
 ## License
 
