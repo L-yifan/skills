@@ -39,12 +39,6 @@
 | tavily-best-practices | Tavily 集成最佳实践 | [tavily-ai/skills](https://github.com/tavily-ai/skills) | `npx skills add https://github.com/tavily-ai/skills --skill tavily-best-practices` |
 | agent-browser | 浏览器自动化 CLI | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | `npx skills add https://github.com/vercel-labs/agent-browser` |
 
-## GitHub 工具
-
-| 技能名 | 描述 | 来源 | 安装命令 |
-|--------|------|------|----------|
-| github | GitHub 仓库交互（PR、Issues、代码搜索） | [github/github-mcp-server](https://github.com/github/github-mcp-server) | `npx skills add https://github.com/github/github-mcp-server` |
-
 
 ## AI 写作润色
 
