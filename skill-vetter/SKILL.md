@@ -74,8 +74,68 @@ Evaluate:
 
 ## Output Format
 
+> **默认使用中文输出报告** (Default: Chinese)
+
 After vetting, produce this report:
 
+### English Version
+
+```
+SKILL VETTING REPORT
+═══════════════════════════════════════════════════
+Skill: [name]
+Source: [ClawdHub / GitHub / other]
+Author: [username]
+Version: [version]
+───────────────────────────────────────────────────
+METRICS:
+• Downloads/Stars: [count]
+• Last Updated: [date]
+• Files Reviewed: [count]
+───────────────────────────────────────────────────
+RED FLAGS: [None / List them]
+
+PERMISSIONS NEEDED:
+• Files: [list or "None"]
+• Network: [list or "None"]  
+• Commands: [list or "None"]
+───────────────────────────────────────────────────
+RISK LEVEL: [🟢 LOW / 🟡 MEDIUM / 🔴 HIGH / ⛔ EXTREME]
+
+VERDICT: [✅ SAFE TO INSTALL / ⚠️ INSTALL WITH CAUTION / ❌ DO NOT INSTALL]
+
+NOTES: [Any observations]
+═══════════════════════════════════════════════════
+```
+
+### 中文版 (默认)
+
+```
+技能审核报告
+═══════════════════════════════════════════════════
+技能名称: [name]
+来源: [ClawdHub / GitHub / other]
+作者: [username]
+版本: [version]
+───────────────────────────────────────────────────
+指标:
+• 下载/Stars: [count]
+• 最后更新: [date]
+• 已审核文件: [count]
+───────────────────────────────────────────────────
+红色警戒: [无 / 列出]
+
+权限需求:
+• 文件: [列表 或 "无"]
+• 网络: [列表 或 "无"]  
+• 命令: [列表 或 "无"]
+───────────────────────────────────────────────────
+风险等级: [🟢 低 / 🟡 中 / 🔴 高 / ⛔ 极高]
+
+结论: [✅ 安全可安装 / ⚠️ 安装需谨慎 / ❌ 请勿安装]
+
+备注: [任何观察]
+═══════════════════════════════════════════════════
 ```
 SKILL VETTING REPORT
 ═══════════════════════════════════════
