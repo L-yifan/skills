@@ -109,7 +109,6 @@ Google Stitch 是 Google Labs 的 AI 设计平台，支持 Text-to-UI 设计、s
 
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
-| gws-gmail | Gmail 管理（发送、读取、分类等） | [googleworkspace/cli](https://github.com/googleworkspace/cli) | `npx skills add https://github.com/googleworkspace/cli --skill gws-gmail` |
 | doc-coauthoring | 文档协作编写工作流 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill doc-coauthoring` |
 | internal-comms | 内部通信格式编写 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill internal-comms` |
 | slack-gif-creator | Slack 动画 GIF 创建 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill slack-gif-creator` |
