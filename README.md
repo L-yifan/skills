@@ -16,9 +16,8 @@
 | gh-grep | GitHub 代码搜索 | `npx skills add https://github.com/L-yifan/skills --skill gh-grep` |
 | deep-wiki | GitHub 仓库 AI 文档 |  `npx skills add https://github.com/L-yifan/skills --skill deep-wiki` |
 | skill-vetter | 技能安全审核 | `npx skills add https://github.com/L-yifan/skills --skill skill-vetter` |
-| gws-gmail | Gmail 管理（发送、读取、分类等） | `npx skills add https://github.com/L-yifan/skills --skill gws-gmail` |
 
-> **注意**：自建技能中，技能源码存放在本仓库（如 gkg、deep-wiki 等）；外部技能（如 gws-gmail）仅在 README 中引用，源码存放在其官方仓库。
+> **注意**：自建技能中，技能源码存放在本仓库（如 gkg、deep-wiki、github 等）；外部技能（如下方表格中的技能）仅在 README 中引用，源码存放在其官方仓库。
 
 ---
 
@@ -110,6 +109,7 @@ Google Stitch 是 Google Labs 的 AI 设计平台，支持 Text-to-UI 设计、s
 
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
+| gws-gmail | Gmail 管理（发送、读取、分类等） | [googleworkspace/cli](https://github.com/googleworkspace/cli) | `npx skills add https://github.com/googleworkspace/cli --skill gws-gmail` |
 | doc-coauthoring | 文档协作编写工作流 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill doc-coauthoring` |
 | internal-comms | 内部通信格式编写 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill internal-comms` |
 | slack-gif-creator | Slack 动画 GIF 创建 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill slack-gif-creator` |
