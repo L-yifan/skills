@@ -29,7 +29,10 @@
 | pdf | PDF 文件处理 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill pdf` |
 | pptx | PowerPoint 演示文稿处理 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill pptx` |
 | xlsx | 电子表格（.xlsx, .xlsm, .csv）处理 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill xlsx` |
+| odl-pdf | 专业级 PDF 提取（支持 RAG/混合模式/表格/公式/OCR） | [opendataloader-pdf](https://github.com/opendataloader-project/opendataloader-pdf) | `npx skills add opendataloader-project/opendataloader-pdf#feature/agent-skill-odl-pdf --skill odl-pdf` |
 
+**提示：**
+由于该技能目前在 `feature/agent-skill-odl-pdf` 分支下，安装命令中必须包含 `#feature/agent-skill-odl-pdf` 以确保正确指向。
 ## Web 研究与自动化
 
 | 技能名 | 描述 | 来源 | 安装命令 |
