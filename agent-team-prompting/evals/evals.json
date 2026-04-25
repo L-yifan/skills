@@ -1,0 +1,63 @@
+{
+  "skill_name": "agent-team-prompting",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我想用 Claude Code agent team 重构认证模块，但我不知道该怎么写启动 prompt。帮我写一个 prompt。要求安全审查、架构设计、测试覆盖都有人负责，改代码前要先批准计划。",
+      "expected_output": "A launch prompt that creates an agent team, assigns security/architecture/test roles, requires shared task-list coordination, requires teammate messaging for disagreements, blocks edits until plan approval, asks the lead to wait for all teammates, and defines final plan output plus cleanup.",
+      "files": [],
+      "assertions": [
+        "Explicitly asks Claude Code to create an agent team or spawn teammates",
+        "Includes distinct security, architecture, and test coverage teammate roles",
+        "Requires plan approval before file changes",
+        "Mentions shared task list or task claiming",
+        "Mentions teammate messages, mailbox-style communication, challenges, or direct collaboration",
+        "Tells the lead to wait for all teammates before synthesis",
+        "Includes final output structure and cleanup/shutdown instruction"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "线上服务会在第一条消息后退出。我想开 5 个 agent teammates 分头调查不同假设，并让他们互相反驳，最后更新 findings doc。帮我写 agent team 启动 prompt。",
+      "expected_output": "A launch prompt that creates five teammates with competing hypotheses, requires evidence and counter-evidence, makes teammates challenge each other through messages, forbids production edits, waits for all results, and updates a findings document with facts, hypotheses, ruled-out causes, next checks, risk, and rollback notes.",
+      "files": [],
+      "assertions": [
+        "Creates an agent team with five teammates or five clear investigation roles",
+        "Assigns distinct hypotheses or investigation domains",
+        "Requires evidence, counter-evidence, confidence, or ways each hypothesis could be wrong",
+        "Requires teammates to challenge or refute each other via direct communication",
+        "Forbids production code changes or requires review-only investigation",
+        "Defines a findings document structure",
+        "Includes wait-for-all-teammates and cleanup/shutdown instruction"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "帮我写一个 prompt，让 Claude Code 创建 agent team 审查 PR #142。我要 security、performance、test coverage 三个 reviewer，并且要避免他们改同一批文件产生冲突。",
+      "expected_output": "A launch prompt that creates a review-only agent team for PR #142, fetches diff and changed files, assigns security/performance/test coverage reviewers, uses file partitioning and read-only overlap rules, requires cross-domain communication, waits for all reviewers, deduplicates findings, and cleans up the team.",
+      "files": [],
+      "assertions": [
+        "Explicitly asks Claude Code to create an agent team for PR #142",
+        "Includes security, performance, and test coverage reviewer roles",
+        "Requires fetching or inspecting the PR diff and changed files",
+        "Includes file partitioning, file ownership, read-only overlap, or another conflict-avoidance rule",
+        "Requires reviewers to communicate on cross-cutting findings",
+        "Requires the lead to wait, deduplicate, and synthesize findings",
+        "Includes a severity/file-line finding format and cleanup/shutdown instruction"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "我只是想同时做三个互不相关的小任务：搜索库 A 的 API 用法、找几个竞品链接、总结 README。它们不需要互相讨论，也不会改文件。要不要开 agent team？如果不该用，也帮我写更合适的 prompt。",
+      "expected_output": "A recommendation not to use an agent team, because the work is independent fan-out without direct teammate communication, plus a better subagent or parallel-agent prompt with three read-only worker tasks and a final aggregation format.",
+      "files": [],
+      "assertions": [
+        "Recommends subagents or parallel agents instead of an agent team",
+        "Explains that direct teammate communication, debate, or shared coordination is not needed",
+        "Avoids agent-team-only coordination terms except when explaining why they are unnecessary",
+        "Defines three independent read-only worker tasks",
+        "Includes a final aggregation or synthesis format"
+      ]
+    }
+  ]
+}
