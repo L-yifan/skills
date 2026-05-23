@@ -8,6 +8,7 @@
 
 | 技能名 | 描述 | 安装命令 |
 |--------|------|----------|
+| html-artifacts-plus | 生成自包含 HTML artifacts，并支持文档绑定编辑器导出可审查 patch | `npx skills add https://github.com/L-yifan/skills --skill html-artifacts-plus` |
 | humanizer-zh | 去除中文文本中的 AI 写作痕迹 | `npx skills add https://github.com/L-yifan/skills --skill humanizer-zh` |
 | gkg | 代码库全局知识图谱分析 | `npx skills add https://github.com/L-yifan/skills --skill gkg` |
 | github | GitHub CLI 增强 | `npx skills add https://github.com/L-yifan/skills --skill github` |
