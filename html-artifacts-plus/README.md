@@ -13,6 +13,11 @@ The added behavior is Level 2 document-bound editing:
 
 The HTML file does not save automatically, write local files, start a backend, or maintain a document index. Source files remain the source of truth.
 
+The `examples/` folder contains two small reference artifacts for the Level 2 flow:
+
+- `document-bound-plan-editor.html`
+- `json-config-patch-editor.html`
+
 ## Install
 
 ```bash

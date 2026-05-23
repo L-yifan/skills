@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JSON Config Patch Editor Example</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f5f6f7;
+      --panel: #fff;
+      --text: #202326;
+      --muted: #66707a;
+      --line: #d7dce0;
+      --accent: #3768a6;
+      --changed: #7a4d00;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1d2024;
+        --panel: #282c32;
+        --text: #f0f2f4;
+        --muted: #b3bbc4;
+        --line: #444a52;
+        --accent: #8bb8f0;
+        --changed: #e2b862;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 15px/1.5 system-ui, -apple-system, Segoe UI, sans-serif;
+    }
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px 96px;
+    }
+    header { margin-bottom: 22px; }
+    h1 { margin: 0; font-size: 1.7rem; line-height: 1.15; }
+    p { color: var(--muted); margin: 8px 0 0; }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 18px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    fieldset {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin: 0 0 14px;
+      padding: 14px;
+    }
+    legend { padding: 0 6px; font-weight: 700; }
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    label:last-child { border-bottom: 0; }
+    input[type="text"], select {
+      width: min(220px, 48vw);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--panel);
+      color: var(--text);
+      padding: 7px 9px;
+      font: inherit;
+    }
+    .changed { color: var(--changed); font-weight: 700; }
+    pre {
+      white-space: pre-wrap;
+      overflow: auto;
+      margin: 10px 0 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: rgba(0,0,0,.04);
+      font-size: .86rem;
+    }
+    footer {
+      position: fixed;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+      width: min(940px, calc(100vw - 32px));
+      padding: 12px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.16);
+    }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    button {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 6px;
+      padding: 8px 11px;
+      cursor: pointer;
+      font: inherit;
+    }
+    button.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    @media (max-width: 780px) {
+      .layout { grid-template-columns: 1fr; }
+      footer { position: static; transform: none; width: auto; margin-top: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <main
+    data-artifact-type="document-bound-editor"
+    data-patch-version="1"
+    data-source-files="config/flags.json">
+    <header>
+      <h1>Feature Flag Patch Editor</h1>
+      <p>This example edits a JSON snapshot and exports only changed JSON pointers for an agent to apply.</p>
+    </header>
+
+    <div class="layout">
+      <section class="panel" aria-label="Feature flag controls">
+        <fieldset>
+          <legend>Checkout</legend>
+          <label>
+            <span>Express checkout</span>
+            <input type="checkbox" data-source-file="config/flags.json" data-bind-type="jsonPointer" data-bind-target="/checkout/express/enabled" data-change-id="checkout-express-enabled">
+          </label>
+          <label>
+            <span>Payment provider</span>
+            <select data-source-file="config/flags.json" data-bind-type="jsonPointer" data-bind-target="/checkout/provider" data-change-id="checkout-provider">
+              <option value="stripe">stripe</option>
+              <option value="adyen">adyen</option>
+              <option value="mock">mock</option>
+            </select>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Search</legend>
+          <label>
+            <span>New ranking</span>
+            <input type="checkbox" data-source-file="config/flags.json" data-bind-type="jsonPointer" data-bind-target="/search/newRanking" data-change-id="search-new-ranking">
+          </label>
+          <label>
+            <span>Experiment key</span>
+            <input type="text" data-source-file="config/flags.json" data-bind-type="jsonPointer" data-bind-target="/search/experimentKey" data-change-id="search-experiment-key">
+          </label>
+        </fieldset>
+      </section>
+
+      <aside class="panel">
+        <strong>Binding</strong>
+        <p><code>config/flags.json</code></p>
+        <p id="change-count">No changed values</p>
+        <pre id="state-preview"></pre>
+      </aside>
+    </div>
+
+    <footer>
+      <span id="footer-status">Ready</span>
+      <div class="actions">
+        <button id="reset">Reset</button>
+        <button id="copy-diff">Copy Markdown Diff</button>
+        <button id="copy-instruction">Copy Agent Instruction</button>
+        <button class="primary" id="copy-patch">Copy Patch JSON</button>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const sourceFile = "config/flags.json";
+    const originalConfig = {
+      checkout: { express: { enabled: false }, provider: "stripe" },
+      search: { newRanking: true, experimentKey: "ranker-v2" }
+    };
+
+    const controls = Array.from(document.querySelectorAll("[data-bind-type='jsonPointer']"));
+    const preview = document.getElementById("state-preview");
+    const changeCount = document.getElementById("change-count");
+    const footerStatus = document.getElementById("footer-status");
+
+    function getByPointer(obj, pointer) {
+      return pointer.slice(1).split("/").reduce((acc, key) => acc[key], obj);
+    }
+
+    function readControl(control) {
+      if (control.type === "checkbox") return control.checked;
+      return control.value;
+    }
+
+    function writeControl(control, value) {
+      if (control.type === "checkbox") control.checked = Boolean(value);
+      else control.value = value;
+    }
+
+    function changedControls() {
+      return controls.filter(control => {
+        const pointer = control.dataset.bindTarget;
+        return JSON.stringify(readControl(control)) !== JSON.stringify(getByPointer(originalConfig, pointer));
+      });
+    }
+
+    function buildPatch() {
+      const changes = changedControls().map(control => {
+        const pointer = control.dataset.bindTarget;
+        return {
+          id: control.dataset.changeId,
+          sourceFile,
+          operation: "replaceJsonPointer",
+          selector: { pointer },
+          originalValue: getByPointer(originalConfig, pointer),
+          content: readControl(control)
+        };
+      });
+      return {
+        artifactType: "document-bound-editor",
+        version: 1,
+        generatedAt: new Date().toISOString(),
+        sourceFiles: [{ path: sourceFile, kind: "json" }],
+        changes
+      };
+    }
+
+    function buildDiff() {
+      const changes = buildPatch().changes;
+      if (!changes.length) return `# Patch Preview\n\nNo changes for ${sourceFile}.\n`;
+      return `# Patch Preview
+
+## ${sourceFile}
+
+${changes.map(change => `### Replace JSON pointer: ${change.selector.pointer}
+
+Before:
+${JSON.stringify(change.originalValue, null, 2)}
+
+After:
+${JSON.stringify(change.content, null, 2)}
+`).join("\n")}`;
+    }
+
+    function buildInstruction() {
+      return `Apply the following document-bound editor patch. Validate originalValue when provided. If a conflict is detected, stop and ask before editing. Do not make unrelated changes.
+
+${JSON.stringify(buildPatch(), null, 2)}`;
+    }
+
+    async function copyText(text, label) {
+      await navigator.clipboard.writeText(text);
+      footerStatus.textContent = `${label} copied`;
+      setTimeout(() => footerStatus.textContent = "Ready", 1600);
+    }
+
+    function updateState() {
+      const patch = buildPatch();
+      changeCount.textContent = patch.changes.length ? `${patch.changes.length} changed value(s)` : "No changed values";
+      changeCount.className = patch.changes.length ? "changed" : "";
+      preview.textContent = JSON.stringify(patch.changes, null, 2);
+    }
+
+    function reset() {
+      controls.forEach(control => writeControl(control, getByPointer(originalConfig, control.dataset.bindTarget)));
+      updateState();
+    }
+
+    controls.forEach(control => control.addEventListener("input", updateState));
+    document.getElementById("reset").addEventListener("click", reset);
+    document.getElementById("copy-patch").addEventListener("click", () => copyText(JSON.stringify(buildPatch(), null, 2), "Patch JSON"));
+    document.getElementById("copy-diff").addEventListener("click", () => copyText(buildDiff(), "Markdown diff"));
+    document.getElementById("copy-instruction").addEventListener("click", () => copyText(buildInstruction(), "Agent instruction"));
+    reset();
+  </script>
+</body>
+</html>

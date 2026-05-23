@@ -78,6 +78,8 @@ Use `references/document-bound-editors.md` only when the user explicitly wants t
 
 Do not use document-bound mode just because an editor exports JSON. A ticket triage board or prompt tuner with no explicit source-file binding is a normal custom editor.
 
+When building a document-bound editor, read `references/document-bound-editors.md` first. If a concrete pattern would help, inspect the small examples in `examples/`; they are reference shapes, not templates to copy blindly.
+
 ## Output mechanics
 
 ### In Claude Code

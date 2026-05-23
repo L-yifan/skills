@@ -124,7 +124,9 @@ Supported operations for v1:
 - `replaceJsonPointer`
 - `replaceYamlPath`
 
-Use `originalText` when practical. It gives the applying agent a conflict check: if the source file has changed since the HTML was generated, the agent should stop and ask before overwriting.
+For markdown, `content` is the replacement section body. For JSON and YAML, `content` is the replacement value at the selected pointer or path, and may be a string, number, boolean, array, or object.
+
+Use `originalText` when practical for markdown, and `originalValue` when practical for JSON/YAML. These give the applying agent a conflict check: if the source file has changed since the HTML was generated, the agent should stop and ask before overwriting.
 
 ## Markdown diff export
 
@@ -195,6 +197,15 @@ Avoid:
 - Automatic save claims.
 - Backends, remote APIs, auth, or sync services.
 - Turning the artifact into a long-term document management product.
+
+## Examples
+
+The `examples/` folder contains small complete examples for agent reference:
+
+- `examples/document-bound-plan-editor.html`: edits one markdown heading section and exports patch JSON, markdown diff, and agent instruction from the same state.
+- `examples/json-config-patch-editor.html`: edits a JSON feature flag snapshot and exports `replaceJsonPointer` changes.
+
+Use them to copy the binding and export patterns, not the visual style. A real artifact should still be tailored to the user's source document and task.
 
 ## Minimal HTML skeleton
 
