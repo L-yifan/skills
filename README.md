@@ -58,6 +58,7 @@
 | langchain | LLM 应用开发框架 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill langchain` |
 | llamaindex | RAG 框架 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill llamaindex` |
 | chroma | 开源向量数据库 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill chroma` |
+| asta-skill | Semantic Scholar / Asta MCP 学术检索、论文发现与引文追踪 | [Agents365-ai/asta-skill](https://github.com/Agents365-ai/asta-skill) | `npx skills add https://github.com/Agents365-ai/asta-skill --skill asta-skill` |
 | sentence-transformers | 文本嵌入模型 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill sentence-transformers` |
 | dspy | 声明式 Prompt 优化 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill dspy` |
 | guidance | 结构化 Prompt 控制 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill guidance` |
