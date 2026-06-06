@@ -128,6 +128,105 @@ For markdown, `content` is the replacement section body. For JSON and YAML, `con
 
 Use `originalText` when practical for markdown, and `originalValue` when practical for JSON/YAML. These give the applying agent a conflict check: if the source file has changed since the HTML was generated, the agent should stop and ask before overwriting.
 
+## Inline-document editors (full-document mode)
+
+Some HTML artifacts embed the *entire content* of a source file into the page itself (e.g. a `<script type="application/json">` block or a JS string) rather than binding to individual sections. This is called **full-document mode**.
+
+In full-document mode, the `Copy Patch` export button **must produce a unified diff, not a full-content overwrite.** Exporting the entire file content as an agent instruction is a correctness anti-pattern: it forces the agent to replace megabytes of text for trivial edits, wastes context tokens, and makes conflict detection impossible.
+
+### Required implementation for full-document mode patch export
+
+1. **Store the original content** at load time in a constant (e.g. `originalDocs`). Never mutate this.
+2. **Store the working copy** in a separate mutable object (e.g. `documents`). The editor writes to this.
+3. **Compute a unified diff** between `originalDocs[key]` and `documents[key]` when the user clicks the export button. Use a line-level LCS algorithm. Render only the changed hunks with `±5` lines of context (`-U5` equivalent).
+4. **Guard the empty-diff case.** If the two texts are identical, show a toast ("No changes – nothing to export") and return without writing to the clipboard.
+5. **Wrap the diff in a machine-readable header** so the applying agent knows the target filename and intent:
+
+```text
+### AI AGENT SYNC INSTRUCTION ###
+Apply the following unified diff patch to '<filename>' in the workspace.
+
+```diff
+--- a/<filename>
++++ b/<filename>
+@@ -12,7 +12,7 @@
+  context line
+-old line
++new line
+  context line
+```
+```
+
+### What NOT to do in full-document mode
+
+- ❌ `Action: Overwrite the target file content with the text below.` followed by the full document — this is the anti-pattern to avoid.
+- ❌ Producing a diff only from the visible diff UI panel (it may be collapsed or stale).
+- ❌ Computing the diff from `documents[key]` vs itself (always produces empty output).
+
+### Reference implementation
+
+The `buildUnifiedDiff(oldText, newText, filename, contextLines)` helper below satisfies all of the above requirements. Copy it into your artifact when implementing full-document mode:
+
+```js
+function buildUnifiedDiff(oldText, newText, filename, context) {
+    const oldLines = oldText.split('\n');
+    const newLines = newText.split('\n');
+    const n = oldLines.length, m = newLines.length;
+    // LCS DP
+    const dp = Array(n + 1).fill(null).map(() => Array(m + 1).fill(0));
+    for (let i = 1; i <= n; i++)
+        for (let j = 1; j <= m; j++)
+            dp[i][j] = oldLines[i-1] === newLines[j-1]
+                ? dp[i-1][j-1] + 1
+                : Math.max(dp[i-1][j], dp[i][j-1]);
+    // Backtrack
+    let i = n, j = m;
+    const edits = [];
+    while (i > 0 || j > 0) {
+        if (i > 0 && j > 0 && oldLines[i-1] === newLines[j-1])
+            edits.push({ type: 'eq', oldIdx: i-1, newIdx: j-1, text: oldLines[i-1] }), i--, j--;
+        else if (j > 0 && (i === 0 || dp[i][j-1] >= dp[i-1][j]))
+            edits.push({ type: 'add', newIdx: j-1, text: newLines[j-1] }), j--;
+        else
+            edits.push({ type: 'del', oldIdx: i-1, text: oldLines[i-1] }), i--;
+    }
+    edits.reverse();
+    if (!edits.some(e => e.type !== 'eq')) return null; // no changes
+    // Build hunks
+    const CONTEXT = context;
+    const hunks = [];
+    let cur = null, lastChg = -1;
+    edits.forEach((e, k) => {
+        if (e.type !== 'eq') {
+            const s = Math.max(0, k - CONTEXT), en = Math.min(edits.length - 1, k + CONTEXT);
+            if (cur && s <= lastChg + CONTEXT + 1) { cur.end = en; }
+            else { if (cur) hunks.push(cur); cur = { start: s, end: en }; }
+            lastChg = k; cur.end = en;
+        }
+    });
+    if (cur) hunks.push(cur);
+    // Render
+    let result = `--- a/${filename}\n+++ b/${filename}\n`;
+    hunks.forEach(h => {
+        const sl = edits.slice(h.start, h.end + 1);
+        let os = null, ns = null, oc = 0, nc = 0;
+        sl.forEach(e => {
+            if (e.type === 'eq' || e.type === 'del') { if (os === null) os = (e.oldIdx ?? 0) + 1; oc++; }
+            if (e.type === 'eq' || e.type === 'add') { if (ns === null) ns = (e.newIdx ?? 0) + 1; nc++; }
+        });
+        result += `@@ -${os||1},${oc} +${ns||1},${nc} @@\n`;
+        sl.forEach(e => {
+            if (e.type === 'eq')  result += ` ${e.text}\n`;
+            if (e.type === 'del') result += `-${e.text}\n`;
+            if (e.type === 'add') result += `+${e.text}\n`;
+        });
+    });
+    return result;
+}
+```
+
+Call it with `buildUnifiedDiff(originalDocs[key], documents[key], filename, 5)`. If the return value is `null`, show the "No changes" toast and bail.
+
 ## Markdown diff export
 
 `Copy Markdown Diff` should be readable by a human. It does not need to be a perfect `git diff`, but it must show:
@@ -156,13 +255,15 @@ After:
 
 ## Agent instruction export
 
-`Copy Agent Instruction` should tell the next agent exactly what to do:
+`Copy Agent Instruction` should tell the next agent exactly what to do. For **section-level edits** (Patch JSON), use:
 
 ```text
 Apply the following document-bound editor patch. Validate that each source file still contains the original text when provided. If a conflict is detected, stop and ask before editing. Do not make unrelated changes.
 
 [paste patch JSON here]
 ```
+
+For **full-document mode** (unified diff), use the format described in "Inline-document editors" above.
 
 This export is for users who want the shortest path back into Codex or Claude Code.
 
