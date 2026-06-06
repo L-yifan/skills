@@ -3,6 +3,10 @@ name: html-artifacts-plus
 description: Produce self-contained HTML artifacts instead of markdown when the request benefits from spatial layout, color, diagrams, interactivity, sharing, or a round-trip editor. Use this skill for substantial docs, writeups, plans, specs, reports, explainers, summaries, comparisons, reviews, PR descriptions, mockups, diagrams, flowcharts, decks, status updates, post-mortems, incident reports, playgrounds, one-off editors, and document-bound editors. Also use it when the user wants to edit an existing markdown, JSON, YAML, prompt, config, or planning document through an HTML tool and export a patch/diff/instruction for an agent to apply. Stay in markdown only for short conversational replies, code-only outputs, terminal-style command answers, and content that is genuinely just a few sentences.
 ---
 
+> [!IMPORTANT]
+> **PRE-REQUISITE DIRECTIVE FOR THE AGENT**: Before generating any HTML codebase or design, you **MUST** read and check `references/matching-your-style.md` first to fetch the default CSS baseline (margins, serif type, 70ch line limit) and avoid the AI-default visual traps.
+> Additionally, if the workspace contains related reference documents, read them to align visual parameters.
+
 # HTML Artifacts Plus
 
 Markdown is the default agent output, but for many substantial deliverables it flattens the shape of the work. HTML can show comparisons side by side, render real diagrams, make hierarchy visible, add interaction, and give the user a shareable file they are more likely to read.
@@ -49,6 +53,8 @@ Every artifact this skill produces must satisfy these rules:
 6. **Tasteful by default.** Use restrained visual design, legible type, stable spacing, and the user's existing style when available. Avoid generic gradient-card aesthetics.
 7. **Editors export back to text.** Any artifact where the user manipulates state must include an export path: copy as markdown, JSON, prompt, diff, CSV, or patch.
 8. **Document-bound editors do not write files.** They export patch JSON, markdown diff, and agent instructions. The user sends the export to an agent, and the agent applies it to source files.
+9. **Sync mechanisms for Read-only / Document-bound view.** Even if the HTML is requested as a read-only document-bound view (i.e. not actively showing an editor), it **MUST** still provide a 'Copy Markdown' or 'Copy Patch' export pathway in the toolbar to facilitate easy agent round-trip synchronization back to the workspace.
+10. **Typographic baseline constraint.** Always default to a 60–75ch max-width constraint for body/prose, line-height 1.5–1.6, and clean typographic serif (e.g. Georgia) or sans-serif fonts. Never default to generic Tailwind dashboard-style cards with shadows/rounded-corners, emoji headers, or distracting gradient palettes. Refer to `references/matching-your-style.md` for specific tokens.
 
 ## Category index
 
