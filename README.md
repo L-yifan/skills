@@ -10,17 +10,11 @@
 |--------|------|----------|
 | html-artifacts-plus | 生成自包含 HTML artifacts，并支持文档绑定编辑器导出可审查 patch | `npx skills add https://github.com/L-yifan/skills --skill html-artifacts-plus` |
 | humanizer-zh | 去除中文文本中的 AI 写作痕迹 | `npx skills add https://github.com/L-yifan/skills --skill humanizer-zh` |
-| gkg | 代码库全局知识图谱分析 | `npx skills add https://github.com/L-yifan/skills --skill gkg` |
 | github | GitHub CLI 增强 | `npx skills add https://github.com/L-yifan/skills --skill github` |
-| figures4papers-playbook | 科研图表示例定位与改造 | `npx skills add https://github.com/L-yifan/skills --skill figures4papers-playbook` |
-| scientific-figure-pro | 论文风格高质量科研图表生成 | `npx skills add https://github.com/L-yifan/skills --skill scientific-figure-pro` |
-| gh-grep | GitHub 代码搜索 | `npx skills add https://github.com/L-yifan/skills --skill gh-grep` |
-| deep-wiki | GitHub 仓库 AI 文档 |  `npx skills add https://github.com/L-yifan/skills --skill deep-wiki` |
-| skill-vetter | 技能安全审核 | `npx skills add https://github.com/L-yifan/skills --skill skill-vetter` |
+| deep-wiki | GitHub 仓库 AI 文档 | `npx skills add https://github.com/L-yifan/skills --skill deep-wiki` |
 | agent-team-prompting | Claude Code agent team 启动 Prompt 编写与评估 | `npx skills add https://github.com/L-yifan/skills --skill agent-team-prompting` |
-| harness-creator | AI Agent 基础设施设计与创建（AGENTS.md、linters、harness 配置） | `npx skills add https://github.com/L-yifan/skills --skill harness-creator` |
 
-> **注意**：自建技能中，技能源码存放在本仓库（如 gkg、deep-wiki、github 等）；外部技能（如下方表格中的技能）仅在 README 中引用，源码存放在其官方仓库。
+> **注意**：自建技能中，技能源码存放在本仓库（如 deep-wiki、github 等）；外部技能（如下方表格中的技能）仅在 README 中引用，源码存放在其官方仓库。
 
 ---
 
