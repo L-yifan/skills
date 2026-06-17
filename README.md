@@ -13,6 +13,7 @@
 | github | GitHub CLI 增强 | `npx skills add https://github.com/L-yifan/skills --skill github` |
 | deep-wiki | GitHub 仓库 AI 文档 | `npx skills add https://github.com/L-yifan/skills --skill deep-wiki` |
 | agent-team-prompting | Claude Code agent team 启动 Prompt 编写与评估 | `npx skills add https://github.com/L-yifan/skills --skill agent-team-prompting` |
+| skill-backup | 将好用的外部技能或自建技能备份到个人 skills 索引仓库 | `npx skills add https://github.com/L-yifan/skills --skill skill-backup` |
 
 > **注意**：自建技能中，技能源码存放在本仓库（如 deep-wiki、github 等）；外部技能（如下方表格中的技能）仅在 README 中引用，源码存放在其官方仓库。
 
@@ -67,6 +68,13 @@
 | autogpt-agents | Autonomous AI Agent 平台 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill autogpt-agents` |
 | crewai-multi-agent | 多 Agent 编排框架 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill crewai-multi-agent` |
 | mcp-builder | MCP 服务器构建 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill mcp-builder` |
+
+## Agent 工作流与工程规划
+
+| 技能名 | 描述 | 来源 | 安装命令 |
+|--------|------|------|----------|
+| grill-me | 通过连续追问压力测试计划或设计，直到形成清晰共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grill-me` |
+| grill-with-docs | 结合代码库文档、领域术语和 ADR 校验方案，并在决策明确时同步更新文档 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grill-with-docs` |
 
 ## 论文写作与研究
 
@@ -188,7 +196,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-05-08
+- **更新日期**: 2026-06-17
 
 ## License
 

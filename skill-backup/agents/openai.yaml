@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Backup"
+  short_description: "Back up external and custom skills to the index repo"
+  default_prompt: "Use $skill-backup to add this useful external skill or local custom skill to my L-yifan/skills repo."
