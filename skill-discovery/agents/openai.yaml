@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Discovery"
+  short_description: "Find and rank useful skills from the index repo"
+  default_prompt: "Use $skill-discovery to find the best skill for this task from my L-yifan/skills repo."

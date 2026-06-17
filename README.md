@@ -14,6 +14,7 @@
 | deep-wiki | GitHub 仓库 AI 文档 | `npx skills add https://github.com/L-yifan/skills --skill deep-wiki` |
 | agent-team-prompting | Claude Code agent team 启动 Prompt 编写与评估 | `npx skills add https://github.com/L-yifan/skills --skill agent-team-prompting` |
 | skill-backup | 将好用的外部技能或自建技能备份到个人 skills 索引仓库 | `npx skills add https://github.com/L-yifan/skills --skill skill-backup` |
+| skill-discovery | 根据任务从个人 skills 索引仓库中检索并推荐合适技能 | `npx skills add https://github.com/L-yifan/skills --skill skill-discovery` |
 
 > **注意**：自建技能中，技能源码存放在本仓库（如 deep-wiki、github 等）；外部技能（如下方表格中的技能）仅在 README 中引用，源码存放在其官方仓库。
 
