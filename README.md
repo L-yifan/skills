@@ -65,7 +65,6 @@
 
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
-| autogpt-agents | Autonomous AI Agent 平台 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill autogpt-agents` |
 | crewai-multi-agent | 多 Agent 编排框架 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill crewai-multi-agent` |
 | mcp-builder | MCP 服务器构建 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill mcp-builder` |
 
@@ -83,7 +82,6 @@
 | ml-paper-writing | ML/AI 论文写作指南 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill ml-paper-writing` |
 | brainstorming-research-ideas | 研究头脑风暴 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill brainstorming-research-ideas` |
 | creative-thinking-for-research | 研究创意思维 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill creative-thinking-for-research` |
-| nature-figure | 论文风格高质量科研图表生成（Python/R 双轨，SVG/300DPI 出版级） | [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) | `npx skills add https://github.com/Yuan1z0825/nature-skills --skill nature-figure` |
 | nature-polishing | 学术论文润色与翻译（12 步工作流，Nature 风格散文） | [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) | `npx skills add https://github.com/Yuan1z0825/nature-skills --skill nature-polishing` |
 | nature-data | 数据可用性声明与 FAIR 合规检查（双语） | [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) | `npx skills add https://github.com/Yuan1z0825/nature-skills --skill nature-data` |
 | nature-paper2ppt | 论文转中文 PPT（Journal Club / 组会，输出 .pptx） | [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) | `npx skills add https://github.com/Yuan1z0825/nature-skills --skill nature-paper2ppt` |
@@ -123,7 +121,6 @@ Google Stitch 是 Google Labs 的 AI 设计平台，支持 Text-to-UI 设计、s
 |--------|------|------|----------|
 | doc-coauthoring | 文档协作编写工作流 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill doc-coauthoring` |
 | internal-comms | 内部通信格式编写 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill internal-comms` |
-| slack-gif-creator | Slack 动画 GIF 创建 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill slack-gif-creator` |
 
 ## Obsidian 与知识管理
 
