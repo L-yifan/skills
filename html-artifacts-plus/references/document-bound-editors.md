@@ -12,6 +12,18 @@ This is Level 2 round-trip editing:
 
 The HTML must never write files directly, start a backend, call a hidden API, or promise automatic sync.
 
+## Contents
+
+- [When to use](#when-to-use)
+- [Required behavior](#required-behavior)
+- [Binding attributes](#binding-attributes)
+- [Patch JSON schema](#patch-json-schema)
+- [Inline-document editors](#inline-document-editors-full-document-mode)
+- [Export formats](#markdown-diff-export)
+- [Applying a pasted patch](#applying-a-pasted-patch)
+- [Design guidance](#design-guidance)
+- [Minimal HTML skeleton](#minimal-html-skeleton)
+
 ## When to use
 
 Use a document-bound editor for requests like:
@@ -36,6 +48,7 @@ Every document-bound editor must include:
 - `Copy Patch JSON`.
 - `Copy Markdown Diff`.
 - `Copy Agent Instruction`.
+- Exact original state for every change: `originalText` for markdown or `originalValue` for JSON/YAML.
 
 All export buttons must read from the same internal change state. Do not hand-write three separate output paths that can drift apart.
 
@@ -59,6 +72,7 @@ Mark editable regions or controls:
   data-bind-type="markdownHeading"
   data-bind-target="Implementation Plan"
   data-bind-level="2"
+  data-bind-occurrence="1"
   data-change-id="implementation-plan">
   ...
 </section>
@@ -85,7 +99,7 @@ For YAML:
   data-change-id="manual-approval-gate"></textarea>
 ```
 
-Prefer stable IDs, explicit paths, and visible labels. If a source path or target section is unknown, ask for it or export an agent instruction that clearly states the uncertainty.
+Prefer stable IDs, explicit paths, and visible labels. Markdown heading bindings must include a one-based `occurrence`; add `parentHeading` when the same heading can appear under different parents. If a source path or target section is unknown, ask for it rather than exporting an ambiguous patch.
 
 ## Patch JSON schema
 
@@ -109,9 +123,10 @@ Prefer stable IDs, explicit paths, and visible labels. If a source path or targe
       "operation": "replaceMarkdownSection",
       "selector": {
         "heading": "Implementation Plan",
-        "level": 2
+        "level": 2,
+        "occurrence": 1
       },
-      "originalText": "Optional exact original section text for conflict checks.",
+      "originalText": "Exact original section text required for conflict checks.",
       "content": "Updated section content."
     }
   ]
@@ -124,23 +139,28 @@ Supported operations for v1:
 - `replaceJsonPointer`
 - `replaceYamlPath`
 
-For markdown, `content` is the replacement section body. For JSON and YAML, `content` is the replacement value at the selected pointer or path, and may be a string, number, boolean, array, or object.
+For markdown, `content` is the replacement section body and `originalText` is required. For JSON and YAML, `content` is the replacement value at the selected pointer or path and `originalValue` is required; either value may be a string, number, boolean, array, object, or `null`.
 
-Use `originalText` when practical for markdown, and `originalValue` when practical for JSON/YAML. These give the applying agent a conflict check: if the source file has changed since the HTML was generated, the agent should stop and ask before overwriting.
+Keep `version: 1`. The additional selector fields are additive and existing v1 consumers may ignore them. Applying agents must compare the exact original state before editing. If it differs, stop and report a conflict instead of guessing or overwriting.
 
 ## Inline-document editors (full-document mode)
 
-Some HTML artifacts embed the *entire content* of a source file into the page itself (e.g. a `<script type="application/json">` block or a JS string) rather than binding to individual sections. This is called **full-document mode**.
+Some HTML artifacts embed the *entire content* of a source file into the page itself (e.g. a `<script type="application/json">` block or a JS string) rather than binding to individual sections. This is called **full-document mode**. Prefer section-level binding; use full-document mode only for bounded files.
 
-In full-document mode, the `Copy Patch` export button **must produce a unified diff, not a full-content overwrite.** Exporting the entire file content as an agent instruction is a correctness anti-pattern: it forces the agent to replace megabytes of text for trivial edits, wastes context tokens, and makes conflict detection impossible.
+In full-document mode, the `Copy Patch` export button **must produce a unified diff, not a full-content overwrite.** Inline `scripts/build-unified-diff.js` into the artifact. Do not reimplement the diff with a quadratic LCS matrix.
 
 ### Required implementation for full-document mode patch export
 
-1. **Store the original content** at load time in a constant (e.g. `originalDocs`). Never mutate this.
-2. **Store the working copy** in a separate mutable object (e.g. `documents`). The editor writes to this.
-3. **Compute a unified diff** between `originalDocs[key]` and `documents[key]` when the user clicks the export button. Use a line-level LCS algorithm. Render only the changed hunks with `±5` lines of context (`-U5` equivalent).
-4. **Guard the empty-diff case.** If the two texts are identical, show a toast ("No changes – nothing to export") and return without writing to the clipboard.
-5. **Wrap the diff in a machine-readable header** so the applying agent knows the target filename and intent:
+1. **Store the original content** at load time in a constant (e.g. `originalDocs`). Never mutate it.
+2. **Store the working copy** in a separate mutable object (e.g. `documents`). The editor writes only to this copy.
+3. **Call `buildUnifiedDiff` on export** with the original text, working text, and source path. The helper uses bounded Myers diff and emits hunks with five context lines by default.
+4. **Handle every result status explicitly:**
+   - `ok`: copy `result.diff`.
+   - `unchanged`: show "No changes – nothing to export" and do not touch the clipboard.
+   - `too-large`: explain that the file exceeds 200 KB or 2,000 lines and must use section-level binding.
+   - `too-different`: explain that edit distance exceeded 1,000 and require a narrower editor.
+5. **Never copy on a rejected status.** Leave the previous clipboard contents untouched.
+6. **Wrap the diff in a machine-readable header** so the applying agent knows the target filename and intent:
 
 ```text
 ### AI AGENT SYNC INSTRUCTION ###
@@ -163,69 +183,7 @@ Apply the following unified diff patch to '<filename>' in the workspace.
 - ❌ Producing a diff only from the visible diff UI panel (it may be collapsed or stale).
 - ❌ Computing the diff from `documents[key]` vs itself (always produces empty output).
 
-### Reference implementation
-
-The `buildUnifiedDiff(oldText, newText, filename, contextLines)` helper below satisfies all of the above requirements. Copy it into your artifact when implementing full-document mode:
-
-```js
-function buildUnifiedDiff(oldText, newText, filename, context) {
-    const oldLines = oldText.split('\n');
-    const newLines = newText.split('\n');
-    const n = oldLines.length, m = newLines.length;
-    // LCS DP
-    const dp = Array(n + 1).fill(null).map(() => Array(m + 1).fill(0));
-    for (let i = 1; i <= n; i++)
-        for (let j = 1; j <= m; j++)
-            dp[i][j] = oldLines[i-1] === newLines[j-1]
-                ? dp[i-1][j-1] + 1
-                : Math.max(dp[i-1][j], dp[i][j-1]);
-    // Backtrack
-    let i = n, j = m;
-    const edits = [];
-    while (i > 0 || j > 0) {
-        if (i > 0 && j > 0 && oldLines[i-1] === newLines[j-1])
-            edits.push({ type: 'eq', oldIdx: i-1, newIdx: j-1, text: oldLines[i-1] }), i--, j--;
-        else if (j > 0 && (i === 0 || dp[i][j-1] >= dp[i-1][j]))
-            edits.push({ type: 'add', newIdx: j-1, text: newLines[j-1] }), j--;
-        else
-            edits.push({ type: 'del', oldIdx: i-1, text: oldLines[i-1] }), i--;
-    }
-    edits.reverse();
-    if (!edits.some(e => e.type !== 'eq')) return null; // no changes
-    // Build hunks
-    const CONTEXT = context;
-    const hunks = [];
-    let cur = null, lastChg = -1;
-    edits.forEach((e, k) => {
-        if (e.type !== 'eq') {
-            const s = Math.max(0, k - CONTEXT), en = Math.min(edits.length - 1, k + CONTEXT);
-            if (cur && s <= lastChg + CONTEXT + 1) { cur.end = en; }
-            else { if (cur) hunks.push(cur); cur = { start: s, end: en }; }
-            lastChg = k; cur.end = en;
-        }
-    });
-    if (cur) hunks.push(cur);
-    // Render
-    let result = `--- a/${filename}\n+++ b/${filename}\n`;
-    hunks.forEach(h => {
-        const sl = edits.slice(h.start, h.end + 1);
-        let os = null, ns = null, oc = 0, nc = 0;
-        sl.forEach(e => {
-            if (e.type === 'eq' || e.type === 'del') { if (os === null) os = (e.oldIdx ?? 0) + 1; oc++; }
-            if (e.type === 'eq' || e.type === 'add') { if (ns === null) ns = (e.newIdx ?? 0) + 1; nc++; }
-        });
-        result += `@@ -${os||1},${oc} +${ns||1},${nc} @@\n`;
-        sl.forEach(e => {
-            if (e.type === 'eq')  result += ` ${e.text}\n`;
-            if (e.type === 'del') result += `-${e.text}\n`;
-            if (e.type === 'add') result += `+${e.text}\n`;
-        });
-    });
-    return result;
-}
-```
-
-Call it with `buildUnifiedDiff(originalDocs[key], documents[key], filename, 5)`. If the return value is `null`, show the "No changes" toast and bail.
+The helper defaults are intentionally conservative: 200,000 UTF-8 bytes per document, 2,000 lines per document, edit distance 1,000, and five context lines. Override them only to make limits stricter.
 
 ## Markdown diff export
 
@@ -258,7 +216,7 @@ After:
 `Copy Agent Instruction` should tell the next agent exactly what to do. For **section-level edits** (Patch JSON), use:
 
 ```text
-Apply the following document-bound editor patch. Validate that each source file still contains the original text when provided. If a conflict is detected, stop and ask before editing. Do not make unrelated changes.
+Apply the following document-bound editor patch. Validate every originalText or originalValue against the current source. If a conflict is detected, stop and ask before editing. Do not make unrelated changes.
 
 [paste patch JSON here]
 ```
@@ -273,7 +231,7 @@ When a user later pastes a document-bound patch and asks you to apply it:
 
 1. Read every referenced source file first.
 2. Validate the operation names and selectors.
-3. If `originalText` is present, confirm it still matches the current source.
+3. Require `originalText` or `originalValue` for every change and confirm it exactly matches the current source.
 4. Apply only the requested changes.
 5. Preserve formatting around the edited section when possible.
 6. Summarize changed files and any conflicts.
@@ -299,15 +257,6 @@ Avoid:
 - Backends, remote APIs, auth, or sync services.
 - Turning the artifact into a long-term document management product.
 
-## Examples
-
-The `examples/` folder contains small complete examples for agent reference:
-
-- `examples/document-bound-plan-editor.html`: edits one markdown heading section and exports patch JSON, markdown diff, and agent instruction from the same state.
-- `examples/json-config-patch-editor.html`: edits a JSON feature flag snapshot and exports `replaceJsonPointer` changes.
-
-Use them to copy the binding and export patterns, not the visual style. A real artifact should still be tailored to the user's source document and task.
-
 ## Minimal HTML skeleton
 
 ```html
@@ -330,6 +279,7 @@ Use them to copy the binding and export patterns, not the visual style. A real a
     data-bind-type="markdownHeading"
     data-bind-target="Implementation Plan"
     data-bind-level="2"
+    data-bind-occurrence="1"
     data-change-id="implementation-plan">
   </section>
 

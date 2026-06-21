@@ -81,7 +81,7 @@ For "let me feel whether this multi-screen flow works."
       <option>ease-out</option>
       ...
     </select></label>
-    <label>End color <input type="color" id="color" value="#7c3aed"></label>
+    <label>End color <input type="color" id="color" value="#a9583e"></label>
     <button id="play">▶ Replay</button>
   </aside>
 

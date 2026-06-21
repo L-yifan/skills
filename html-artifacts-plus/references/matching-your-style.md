@@ -1,12 +1,23 @@
 # Matching the User's Style
 
-Bad-looking HTML is worse than good markdown. Most of the harm an HTML-artifact skill can do is producing generic-looking output: gradient cards, emoji headers, four shades of indigo, the default Tailwind aesthetic. Avoid that. Read this reference whenever the artifact will be shared, presented, or kept around for any length of time.
+Bad-looking HTML is worse than good markdown. Most of the harm an HTML-artifact skill can do is producing generic-looking output: gradient cards, emoji headers, four shades of indigo, the default Tailwind aesthetic. Avoid that. Use this reference when the user and workspace do not already provide a visual system; never let its fallback tokens override a higher-priority source.
 
 ## Three rules of thumb
 
 1. **Restraint over decoration.** A calm typographic layout — system serif body, generous spacing, one or two restrained accent colors — beats a busy "dashboard" almost every time. If you're tempted to add a gradient, don't.
 2. **Use real type.** Default the body to a real serif (Charter, Iowan, Source Serif, Tinos, system serif fallback) for documents and explainers. Sans-serif (Inter, system-ui) for tools and editors. 16–18px body, 60–75ch line length, 1.5–1.6 line height. These numbers are not negotiable; they're table stakes.
 3. **Color carries meaning, not mood.** If a color appears in the artifact it should be doing work — severity, status, category, axis. If a color is there for vibe, remove it.
+
+## Resolve style before drawing
+
+Use the first available source in this order:
+
+1. The user's explicit visual request.
+2. The product or workspace design system.
+3. The content's semantic needs.
+4. The neutral warm fallback below.
+
+Treat any sample artifact as evidence about structure, not as a visual theme. Learn its comparison grammar, navigation, diagrams, or export behavior without copying its palette or repeating the same card treatment across unrelated artifacts.
 
 ## The design-system-from-codebase trick
 
@@ -33,7 +44,9 @@ Use this baseline if the user hasn't specified anything and there's no codebase 
   --ink:       #1a1a1f;
   --ink-soft:  #555560;
   --rule:      #e7e5df;
-  --accent:    #8b5cf6;     /* one accent only */
+  --accent:    #a9583e;     /* accessible terracotta for text and controls */
+  --accent-2:  #cc785c;     /* large type, charts, and decoration only */
+  --accent-soft:#f5e4dc;     /* selected rows and small badges only */
   --warn:      #d97706;
   --danger:    #b91c1c;
   --ok:        #15803d;
@@ -51,6 +64,9 @@ Use this baseline if the user hasn't specified anything and there's no codebase 
     --ink:      #f1f1f4;
     --ink-soft: #a8a8b3;
     --rule:     #2a2a32;
+    --accent:   #d98a6e;
+    --accent-2: #e6a088;
+    --accent-soft:#3a2722;
   }
 }
 
@@ -68,6 +84,18 @@ th, td { padding: .5rem .75rem; border-bottom: 1px solid var(--rule);
 ```
 
 That's enough to make a document that looks deliberate. Add complexity only when the artifact actually needs it — sliders, color swatches, charts, etc.
+
+This fallback borrows the upstream project's whitespace, typographic hierarchy, white surfaces, and hairline rules, but intentionally replaces the upstream purple `#7c3aed` with a warm terracotta family. Do not reintroduce purple as a default theme.
+
+### Surface discipline
+
+- Keep the page on `--bg` and reserve `--surface` for regions that genuinely need containment.
+- Prefer whitespace, alignment, indentation, and `--rule` separators over filled cards.
+- Do not place two consecutive bands of tinted cards on a document page.
+- `--accent` is safe for links, focus rings, key paths, recommendations, and primary buttons.
+- `--accent-2` is not small body text; use it for larger marks, chart emphasis, or decoration.
+- `--accent-soft` is a local state treatment, never a full section background.
+- Success, warning, and danger retain their own semantic colors. Terracotta is not a warning color.
 
 ## Tools and editors get a different default
 
@@ -89,6 +117,7 @@ If the user has a `frontend-design` plugin or skill installed, defer to its conv
 A shorthand list of the things to *not* default to:
 
 - Cards everywhere, with rounded corners and shadows, on a gray background.
+- Repeating the same tinted card surface for comparisons, reports, diagrams, and reference entries.
 - A full-bleed gradient hero.
 - Emoji as section headers (📊 Analytics).
 - Four shades of indigo or violet doing nothing in particular.

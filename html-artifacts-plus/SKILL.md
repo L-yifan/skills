@@ -4,7 +4,7 @@ description: Produce self-contained HTML artifacts instead of markdown when the 
 ---
 
 > [!IMPORTANT]
-> **PRE-REQUISITE DIRECTIVE FOR THE AGENT**: Before generating any HTML codebase or design, you **MUST** read and check `references/matching-your-style.md` first to fetch the default CSS baseline (margins, serif type, 70ch line limit) and avoid the AI-default visual traps.
+> **PRE-REQUISITE DIRECTIVE FOR THE AGENT**: Before generating any HTML codebase or design, you **MUST** read and check `references/matching-your-style.md` first to fetch the default CSS baseline (editorial spacing, real type, 70ch line limit, warm restrained accent) and avoid the AI-default visual traps.
 > Additionally, if the workspace contains related reference documents, read them to align visual parameters.
 
 # HTML Artifacts Plus
@@ -28,6 +28,17 @@ Reach for HTML when any of the following is true:
 - **Length.** Anything that would become a long markdown wall, especially beyond roughly 100 lines.
 
 The heuristic: if the user is going to do something with the document -- read it carefully, compare options, tune values, share it, refer back to it, hand it to another agent, or paste edits back in -- consider HTML.
+
+## Visual resolution order
+
+Resolve visual style in this order. Earlier sources always win:
+
+1. The user's explicit visual direction.
+2. The workspace or product design system.
+3. Visual semantics required by the content, such as status, severity, or data series.
+4. The neutral warm editorial baseline in `references/matching-your-style.md`.
+
+Examples are structural references, not visual themes. Never copy an example's complete palette, card treatment, or typography without checking the first three sources above. Borrow the upstream `dogum/html-artifacts` approach to whitespace, hairline rules, and content-led layout; do not borrow its purple `#7c3aed` accent.
 
 ## When to stay in markdown
 
@@ -53,22 +64,24 @@ Every artifact this skill produces must satisfy these rules:
 6. **Tasteful by default.** Use restrained visual design, legible type, stable spacing, and the user's existing style when available. Avoid generic gradient-card aesthetics.
 7. **Editors export back to text.** Any artifact where the user manipulates state must include an export path: copy as markdown, JSON, prompt, diff, CSV, or patch.
 8. **Document-bound editors do not write files.** They export patch JSON, markdown diff, and agent instructions. The user sends the export to an agent, and the agent applies it to source files.
-9. **Sync mechanisms for Read-only / Document-bound view.** Even if the HTML is requested as a read-only document-bound view (i.e. not actively showing an editor), it **MUST** still provide a 'Copy Markdown' or 'Copy Patch' export pathway in the toolbar to facilitate easy agent round-trip synchronization back to the workspace.
-10. **Typographic baseline constraint.** Always default to a 60–75ch max-width constraint for body/prose, line-height 1.5–1.6, and clean typographic serif (e.g. Georgia) or sans-serif fonts. Never default to generic Tailwind dashboard-style cards with shadows/rounded-corners, emoji headers, or distracting gradient palettes. Refer to `references/matching-your-style.md` for specific tokens.
+9. **Export only when it earns its place.** Editors and document-bound artifacts must export back to text. Read-only reports, explainers, diagrams, and references add Copy Markdown or Copy Patch only when the user requests round-trip reuse or the artifact is explicitly bound to source content.
+10. **Typographic and color baseline.** Default prose to 60–75ch, line-height 1.5–1.6, and a clean serif or sans-serif appropriate to the task. The fallback palette is neutral paper and white surfaces with a restrained warm terracotta accent; large tinted card fields, purple themes, generic Tailwind dashboards, emoji headers, shadows, and gradients are not defaults. Refer to `references/matching-your-style.md` for the exact tokens.
 
 ## Category index
 
 Pick the matching reference file before drafting. If a request spans categories, read all relevant references.
 
-| If the request is about... | Read... |
+| If the request is about... | Read reference... |
 |---|---|
 | Brainstorming options, side-by-side comparisons, implementation plans, exploring directions before committing | `references/exploration-and-planning.md` |
 | Annotated diffs, PR writeups, code review, module maps, explaining code | `references/code-review-and-pr.md` |
 | Design systems, component sheets, mockups, prototyping animations or interactions | `references/design-and-prototypes.md` |
 | Inline SVG figures, flowcharts, architecture diagrams, technical illustrations | `references/diagrams-and-illustrations.md` |
+| Native SVG charts, visual metrics, performance graphs, offline-first dashboards | `references/interactive-visualizations.md` |
 | Status reports, incident timelines, post-mortems, concept explainers, feature deep-dives, learning material | `references/reports-and-research.md` |
 | Slide decks and arrow-key presentations | `references/decks.md` |
 | One-off custom editors: triage boards, flag toggles, prompt tuners, dataset curators | `references/custom-editors.md` |
+| Interactive playgrounds, animation sandboxes, template builders, algorithmic state visualizers | `references/sandboxes-and-interactive-tuners.md` |
 | Editing existing markdown, JSON, YAML, prompt, config, or plan files through HTML and exporting a patch | `references/document-bound-editors.md` |
 | Matching the user's existing visual style or design system | `references/matching-your-style.md` |
 
@@ -84,7 +97,7 @@ Use `references/document-bound-editors.md` only when the user explicitly wants t
 
 Do not use document-bound mode just because an editor exports JSON. A ticket triage board or prompt tuner with no explicit source-file binding is a normal custom editor.
 
-When building a document-bound editor, read `references/document-bound-editors.md` first. If a concrete pattern would help, inspect the small examples in `examples/`; they are reference shapes, not templates to copy blindly.
+When building a document-bound editor, read `references/document-bound-editors.md` first.
 
 ## Output mechanics
 
@@ -99,6 +112,8 @@ For document-bound editors, also tell the user:
 - which source files the editor is bound to;
 - that the HTML does not save automatically;
 - which export button to use when they are ready for the agent to apply changes.
+
+For read-only artifacts, do not add an export toolbar by habit. Add one only when the user asked for it, the page is a reusable source-bound view, or copying the rendered content is a material part of the workflow.
 
 ### In Claude.ai
 
