@@ -14,8 +14,9 @@ Use this skill to keep the user's personal skills repository current. The reposi
 
 1. Locate the skills repository.
    - Prefer a user-provided repo URL or local checkout.
+   - Check common local clones before cloning fresh: `$env:USERPROFILE\.agents\skills`, `$env:USERPROFILE\.claude\projects\<project>\` etc.
    - If the user says "our repo" and no checkout is open, use `L-yifan/skills`.
-   - Clone into a working directory if needed, then read `README.md` before editing.
+   - When cloning, use a named working directory (e.g. `$(mktemp -d)` on Unix, `$env:TEMP\skills-backup` on Windows) rather than `/tmp/`, so all tools (Read, Edit, etc.) can resolve the path. Record the path so cleanup can find it later.
 
 2. Classify the request.
    - Treat GitHub URLs, marketplace links, or third-party skill names as **external skills** unless the user explicitly asks to vendor/copy the source.
@@ -23,7 +24,8 @@ Use this skill to keep the user's personal skills repository current. The reposi
 
 3. For external skills, update only `README.md`.
    - Read the upstream `SKILL.md` or README enough to get the exact skill name, purpose, source repo, and install command.
-   - Add the skill to the most relevant existing external table; create a concise new category only when none fits.
+   - **Discovery fallback**: if the root directory has no `SKILL.md`, check `skills/`, `.claude/`, `.claude-plugin/` subdirectories for nested skill structures.
+   - **Multi-skill repos**: if the upstream has a `skills/` directory with multiple subdirectories, list them and ask the user which ones to add rather than silently picking the first one.
    - Use this install command shape when the source supports `--skill`:
      `npx skills add https://github.com/owner/repo --skill skill-name`
    - Do not copy external source files into this repo unless the user explicitly asks.
@@ -42,11 +44,14 @@ Use this skill to keep the user's personal skills repository current. The reposi
 
 6. Validate before finishing.
    - Check `git diff` and `git status --short`.
+   - **Verify Markdown table integrity**: count the pipe characters per row to ensure the new entry didn't break column alignment.
    - For self-built skills, validate required frontmatter: only `name` and `description`, both non-empty.
    - Run the skill validator if available, for example:
      `python path/to/quick_validate.py path/to/skill-folder`
 
-7. Publish only when requested.
+7. **Cleanup**: delete the temporary clone directory after publishing, so no stale checkout is left behind.
+
+8. Publish only when requested.
    - If the user asks to commit, push, or open a PR, follow the repository's Git/GitHub workflow.
    - Otherwise leave a clean summary of the local files changed and whether publishing remains.
 
