@@ -136,6 +136,7 @@ Google Stitch 是 Google Labs 的 AI 设计平台，支持 Text-to-UI 设计、s
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
 | find-skills | Skills 搜索与发现 | [vercel-labs/skills](https://github.com/vercel-labs/skills) | `npx skills add https://github.com/vercel-labs/skills --skill find-skills` |
+| open-code-review | AI 代码审查工具（Git diff 行级审查、无集成成本、内置安全规则） | [alibaba/open-code-review](https://github.com/alibaba/open-code-review) | `npx skills add https://github.com/alibaba/open-code-review --skill open-code-review` |
 
 ## 技能管理
 
@@ -194,7 +195,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-06-17
+- **更新日期**: 2026-06-27
 
 ## License
 
