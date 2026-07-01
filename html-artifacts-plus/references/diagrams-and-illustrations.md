@@ -37,6 +37,17 @@ For "diagram our deploy pipeline" or "show me how a request flows through the sy
 - Drawing every possible edge case. A flowchart with 40 nodes is unreadable; abstract the rare branches into a single "error handling" subgraph.
 - Using only color to distinguish states. Use shape *and* color so it survives colorblind viewing and grayscale printing.
 
+## 易混淆场景
+
+**确定是本 reference 的信号：**
+- 输出主体是矢量图形——流程图、架构图、部署管线、技术插画
+- 用户说"画个图""画个 X 的示意图""帮我画流程图"
+
+**容易混淆的场景 → 换 reference：**
+- 要画数据驱动的图表（柱状图、折线图、散点图）→ [interactive-visualizations.md]，区别：数据图表的标记位置由数据计算；示意图的节点位置由语义关系决定
+- 图是作为更大的计划/报告中的一部分存在 → 用本 reference 画图，但整体布局用对应的报告/计划 reference
+- UML/类图/时序图 → 本 reference 包含在内（inline SVG 绘制），但如果用户要求从代码自动生成 UML → 应说明限制（HTML 制品中的 UML 是手工布局的 SVG，不是从源码解析的）
+
 ## SVG craftsmanship notes
 
 For both figure sheets and flowcharts:

@@ -57,6 +57,17 @@ When the user has decided what to build and needs a plan dense enough to hand to
 - Treating this as a markdown plan with HTML wrapping. Use the format. Render the timeline as a timeline; render the data flow as a diagram.
 - Listing every file that will be touched. The reader doesn't need that — they need the shape of the change.
 
+## 易混淆场景
+
+**确定是本 reference 的信号：**
+- 你要对比 2+ 个方案/技术选型，输出的是"推荐 A"的决策
+- 你需要一个可以递交给实现者的计划（含里程碑、风险表、数据流图）
+
+**容易混淆的场景 → 换 reference：**
+- 你已经决定了方案，只需要解释它怎么工作 → [reports-and-research.md]（概念解释器/功能解释器），不要做成对比页
+- 你要展示的是代码 diff 而不是方案对比 → [code-review-and-pr.md]，不要用三列对比展示 PR review
+- 你要展示的是 UI 设计方向的视觉探索 → [design-and-prototypes.md]，技术方案对比和视觉方向探索是不同的制品
+
 ## Example sketch
 
 A three-approach comparison, structurally:

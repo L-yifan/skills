@@ -112,6 +112,18 @@ Editors are tools. Tools should feel responsive and dense, not magazine-airy.
 
 If the user has a `frontend-design` plugin or skill installed, defer to its conventions. It exists for exactly this purpose. Read it (likely `/mnt/skills/public/frontend-design/SKILL.md` or similar) before defaulting to the baseline above.
 
+## 易混淆场景
+
+**确定是本 reference 的信号：**
+- 你要决定 HTML 制品的视觉风格——颜色、字体、间距、表面
+- 用户没有提供设计系统，或提供了但需要你理解并应用
+- 这是元层面的 guidance（怎么决定风格），不是具体某个制品的布局指导
+
+**容易混淆的用法：**
+- 把本 reference 当作唯一的"好样式"强制应用到所有制品 → 本 reference 是 fallback，排在用户要求和工作区设计系统之后
+- 忽略本 reference 直接生成 → 这是最常见的问题——跳过视觉决议阶段，产出看起来是 AI 默认风格（渐变卡片 + emoji 标题 + 紫色）
+- 在本 reference 的 fallback 基础上过度装饰 → 加阴影、渐变、emoji。fallback 的价值恰恰是克制
+
 ## What "AI default look" feels like — avoid
 
 A shorthand list of the things to *not* default to:

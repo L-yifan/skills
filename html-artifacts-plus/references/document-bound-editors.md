@@ -257,6 +257,19 @@ Avoid:
 - Backends, remote APIs, auth, or sync services.
 - Turning the artifact into a long-term document management product.
 
+## 易混淆场景
+
+**确定是本 reference 的信号（四个信号同时满足）：**
+1. 用户明确提到了源文件路径（如 `docs/plan.md`、`config/flags.json`）
+2. 用户要修改内容（不是只看）
+3. 修改后需要导出 patch/diff（不是直接保存）
+4. HTML 制品只是编辑界面，源文件是真正的数据源
+
+**容易混淆的场景 → 换 reference：**
+- 编辑器不绑定源文件 → [custom-editors.md]，关键问题："改完之后，修改要应用到哪个文件？"——答不上来就是 custom-editor
+- 用户只是要查看/阅读内容，不做修改 → 对应的阅读型 reference（reports / exploration / diagrams 等），不要给只看的内容加编辑功能
+- 编辑器是纯 JSON/YAML 表单但不需要"源文件绑定"语义 → [custom-editors.md]，用 form view 模式即可
+
 ## Minimal HTML skeleton
 
 ```html

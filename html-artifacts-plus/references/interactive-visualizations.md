@@ -63,6 +63,17 @@ To display hover readouts without a heavy graphing library:
 
 ---
 
+## 易混淆场景
+
+**确定是本 reference 的信号：**
+- 输出主体是数据驱动的图表——柱状图、折线图、散点图、面积图
+- 数据值决定标记的坐标/大小/颜色，而不是语义关系决定位置
+
+**容易混淆的场景 → 换 reference：**
+- 要画流程图/架构图（语义关系布局）→ [diagrams-and-illustrations.md]，不要把部署管线画成柱状图
+- 数据是表格形式的但不需要图表 → 直接用 HTML `<table>` 在报告/对比页中呈现，不一定需要 chart
+- 图表只是报告中的一小部分 → 本 reference 用于图表本身，外层布局用 [reports-and-research.md] 或其他对应 reference
+
 ## Example Skeleton: Self-Contained Interactive Bar Chart
 
 This example demonstrates a responsive, offline-first bar chart with interactive tooltips and native CSS animation.

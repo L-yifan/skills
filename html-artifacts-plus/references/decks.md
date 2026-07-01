@@ -41,6 +41,18 @@ If the content is dense reference material that the reader will study on their o
 - Cute transition animations. Skip them. They distract and they break when the user clicks fast.
 - Forgetting the dark version. Most rooms project on dark. Make sure light-on-dark renders cleanly, or at minimum that the deck can be flipped with a key.
 
+## 易混淆场景
+
+**确定是本 reference 的信号：**
+- 用户说"slides""deck""做 PPT""演示文稿""讲一下"
+- 内容是讲给别人听的，有人口述，每页一个观点
+- ~5-20 页，大字（32-48px），箭头键翻页
+
+**容易混淆的场景 → 换 reference：**
+- 内容是需要自己阅读学习的密集文档 → [reports-and-research.md]，不要把 2000 字的报告拆成 20 页 slides
+- 要做一个可滚动的叙事页面（scroll-driven storytelling）→ 这不是 deck 的范畴，deck 是全屏单页切换
+- 需要用户在页面中操作而非被讲述 → [sandboxes-and-interactive-tuners.md]
+
 ## Example skeleton
 
 ```html

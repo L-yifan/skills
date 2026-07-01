@@ -65,6 +65,17 @@ For "let me feel whether this multi-screen flow works."
 - Trying to make it pixel-perfect. That's a different artifact. This is for "does the sequence feel right."
 - No way to jump between screens. Users want to compare screen 1 to screen 4 directly.
 
+## 易混淆场景
+
+**确定是本 reference 的信号：**
+- 要展示设计 tokens、组件变体表、动画参数调校、可点击交互流程原型
+- 需要"可操作的预览"——滑块调参实时看效果、点击按钮走完多屏流程
+
+**容易混淆的场景 → 换 reference：**
+- 要展示的是数据图表而不是设计 tokens → [interactive-visualizations.md]，不要把设计 tokens 页面做成数据仪表盘
+- 要对比技术方案而不是设计方向 → [exploration-and-planning.md]，视觉方向探索 (4-6 个 UI mockup) ≠ 技术方案对比
+- 要做一个可复用的调参工具而非一次性原型 → [sandboxes-and-interactive-tuners.md]，区别：sandbox 是有预设 + 导出代码配置的完整工具；design prototype 是"感受这个交互对不对"
+
 ## Example sketch — animation prototype
 
 ```html

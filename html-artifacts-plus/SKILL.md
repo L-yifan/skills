@@ -67,23 +67,57 @@ Every artifact this skill produces must satisfy these rules:
 9. **Export only when it earns its place.** Editors and document-bound artifacts must export back to text. Read-only reports, explainers, diagrams, and references add Copy Markdown or Copy Patch only when the user requests round-trip reuse or the artifact is explicitly bound to source content.
 10. **Typographic and color baseline.** Default prose to 60–75ch, line-height 1.5–1.6, and a clean serif or sans-serif appropriate to the task. The fallback palette is neutral paper and white surfaces with a restrained warm terracotta accent; large tinted card fields, purple themes, generic Tailwind dashboards, emoji headers, shadows, and gradients are not defaults. Refer to `references/matching-your-style.md` for the exact tokens.
 
-## Category index
+## Category index — 内容特征 → 制品选择
 
-Pick the matching reference file before drafting. If a request spans categories, read all relevant references.
+先分析用户提供的内容特征，再选参考文件。不要只看请求的措辞，要看**内容的形状**。如果跨越多个类别，读取所有相关 reference。
 
-| If the request is about... | Read reference... |
-|---|---|
-| Brainstorming options, side-by-side comparisons, implementation plans, exploring directions before committing | `references/exploration-and-planning.md` |
-| Annotated diffs, PR writeups, code review, module maps, explaining code | `references/code-review-and-pr.md` |
-| Design systems, component sheets, mockups, prototyping animations or interactions | `references/design-and-prototypes.md` |
-| Inline SVG figures, flowcharts, architecture diagrams, technical illustrations | `references/diagrams-and-illustrations.md` |
-| Native SVG charts, visual metrics, performance graphs, offline-first dashboards | `references/interactive-visualizations.md` |
-| Status reports, incident timelines, post-mortems, concept explainers, feature deep-dives, learning material | `references/reports-and-research.md` |
-| Slide decks and arrow-key presentations | `references/decks.md` |
-| One-off custom editors: triage boards, flag toggles, prompt tuners, dataset curators | `references/custom-editors.md` |
-| Interactive playgrounds, animation sandboxes, template builders, algorithmic state visualizers | `references/sandboxes-and-interactive-tuners.md` |
-| Editing existing markdown, JSON, YAML, prompt, config, or plan files through HTML and exporting a patch | `references/document-bound-editors.md` |
-| Matching the user's existing visual style or design system | `references/matching-your-style.md` |
+| 内容特征（用户给了什么？） | 最佳制品布局 | 读取参考 | 关键交互 | 如果…请改用… |
+|---|---|---|---|---|
+| 多个方案/选项/路径需要对比决策 | 等宽多列对比 + 指标行 + 推荐块 | `exploration-and-planning.md` | 只读，可加折叠 | 内容只有一个方案 → `reports-and-research.md` |
+| 设计方向探索、UI 变体展示 | 网格化迷你模型，可展开 | `exploration-and-planning.md` | 只读，点击放大 | 只需要一个组件所有状态 → `design-and-prototypes.md` |
+| 实现计划、里程碑路线图 | 时间线条 + 数据流图 + 风险表 | `exploration-and-planning.md` | 只读 | 只需要图 → `diagrams-and-illustrations.md` |
+| 代码 diff / PR 审查 | annotated diff + 行内批注 + 严重度标签 | `code-review-and-pr.md` | 只读，跳转链接 | 内容是纯文本对比非代码 → `reports-and-research.md` |
+| PR 描述撰写 | 文件导览 + before/after 并排 + 风险 | `code-review-and-pr.md` | 只读 | 需要编辑源文件 → `document-bound-editors.md` |
+| 代码库模块讲解 | 模块关系图 + 热路径高亮 + 入口指引 | `code-review-and-pr.md` | 只读，可折叠细节 | 只需要图 → `diagrams-and-illustrations.md` |
+| 设计系统/组件变体展示 | token 色板 + 组件状态矩阵 + 复制按钮 | `design-and-prototypes.md` | 复制 token/属性值 | 只是设计方向探索 → `exploration-and-planning.md` |
+| 动画/交互原型调参 | 舞台 + 参数滑块 + 实时代码输出 | `design-and-prototypes.md` | 拖拽滑块、实时预览、复制代码 | 通用参数调优 → `sandboxes-and-interactive-tuners.md` |
+| 流程图/架构图/技术插图 | SVG 图 + 点击展开侧栏 + 复制 SVG | `diagrams-and-illustrations.md` | 点击节点、复制 SVG | 需要数据图表 → `interactive-visualizations.md` |
+| 数据图表/指标看板/性能图 | 原生 SVG 柱/线/区图 + hover 工具提示 | `interactive-visualizations.md` | hover 数据、可能切换视图 | 只是静态插图 → `diagrams-and-illustrations.md` |
+| 状态报告/事故回顾/概念讲解 | TL;DR + 时间线 + 折叠区 + 边栏词汇表 | `reports-and-research.md` | 折叠展开、tab 切换 | 需要投屏演讲 → `decks.md` |
+| 投屏演讲稿 | 全屏 slide + 键盘翻页 + 页码指示器 | `decks.md` | ← → 翻页、F 全屏 | 需要仔细阅读 → `reports-and-research.md` |
+| 一次性工具（分类/排序/调参/标注） | 工作区主导 + 控件侧栏 + 导出按钮 | `custom-editors.md` | 拖拽/切换/输入 + 导出 Markdown/JSON | 绑定到源文件 → `document-bound-editors.md` |
+| 交互沙盒/算法可视化 | 分栏：控件 + 画布 + 代码输出 | `sandboxes-and-interactive-tuners.md` | 滑块/按钮 + 实时刷新 + 复制配置 | 只是一个编辑器 → `custom-editors.md` |
+| 编辑已有文件并导出 patch | 源文件绑定 + 可编辑区 + Patch/Markdown Diff/Agent Instruction 三导出 | `document-bound-editors.md` | 编辑 + 导出 + 重置 | 不绑定源文件 → `custom-editors.md` |
+| 匹配用户现有视觉风格 | 从代码库提取 token 生成 design-system.html | `matching-your-style.md` | 只读参考 | 没有现有风格 → 直接用 fallback CSS |
+
+### 常见内容→制品匹配错误
+
+- **给了代码 diff → 却生成报告页**：代码 diff 应该走 annotated diff 布局（`code-review-and-pr.md`），不是报告格式。
+- **给了多个方案 → 却串行堆叠**：多方案对比应该用等宽列并排（`exploration-and-planning.md`），不是纵向 section 堆叠。
+- **给了 JSON/YAML 配置 → 却生成只读视图**：用户要编辑配置时应该走 `document-bound-editors.md` 或 `custom-editors.md`，给表单/编辑器而非纯展示。
+- **给了时间线数据 → 却用列表**：时间线应该渲染为视觉时间轴（`reports-and-research.md`），不是 markdown 风格有序列表。
+- **只是静态报告 → 却加了拖拽/排序**：只读报告不需要交互。交互只为操作服务，不为装饰。
+- **需要投屏 → 却生成滚动长页**：演讲内容应该走 `decks.md` 的 slide 模式，不是报告的长滚动布局。
+
+## 交互决策指南
+
+不是所有 HTML 制品都需要交互。在添加交互前，先读 `references/interaction-decisions.md`，确认交互确实服务于用户的操作意图。
+
+快速原则：
+- **只读 = 不需要交互。** 报告、讲解、对比、图表、插图——用户只看不操作。
+- **操作 = 需要交互 + 导出。** 编辑器、沙盒、分类板——用户操作后必须能导出结果。
+- **投屏 = 只需要翻页交互。** 上一个/下一个，可能需要全屏。
+- **数据探索 = 需要筛选/排序/hover。** 但不要加编辑功能。
+
+## 生成后自检（保存前必查）
+
+在保存 HTML 文件之前，快速自问 3 个问题：
+
+1. **布局匹配吗？** — 内容的形状是否驱动了布局选择？（对比→列 / 流程→图 / 时间→时间线 / 代码→diff / 配置→表单）还是我用了一个通用报告布局敷衍了事？
+2. **交互恰好吗？** — 加了交互是因为用户需要操作（编辑/排序/筛选/导出），还是因为"好看"？只读内容有没有被多余的交互干扰？
+3. **用户拿到能做什么？** — 这个 HTML 是让人更好地**读**（对比、图示、时间线）、更好地**讲**（投屏）、还是更好地**改**（编辑→导出）？如果三个都不沾，考虑是否应该用 markdown。
+
+如果任何一题回答不确定，重新审视 Category Index 决策表，确认选对了制品类型。
 
 ## Document-bound editor trigger
 

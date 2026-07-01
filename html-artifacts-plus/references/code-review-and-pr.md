@@ -61,6 +61,17 @@ For "I'm new to this package, walk me through it" or "what does this module do."
 - Drawing every relationship between every file. The diagram becomes a hairball. Show the structural relationships, not the textual ones.
 - Treating it as documentation generation. It's an explainer, not API docs.
 
+## 易混淆场景
+
+**确定是本 reference 的信号：**
+- 需要审查代码变更（CR）或为 PR 写描述，diff 是制品的核心
+- 要解释某个模块/包的代码结构（模块地图），需要"入口在哪里 → 从哪开始读"
+
+**容易混淆的场景 → 换 reference：**
+- 要解释一个技术概念（如"一致性哈希怎么工作"）而不是审查特定代码 → [reports-and-research.md]，不要生成带 diff 的代码审查页
+- 要画架构图/流程图而不是标注 diff → [diagrams-and-illustrations.md]，不要在 PR 描述中手工绘制 SVG 架构图
+- 要对比两个实现方案 → [exploration-and-planning.md]，PR review 不用于方案选型
+
 ## Example sketch — annotated diff
 
 ```html

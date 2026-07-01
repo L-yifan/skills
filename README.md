@@ -8,7 +8,7 @@
 
 | 技能名 | 描述 | 安装命令 |
 |--------|------|----------|
-| html-artifacts-plus | 生成自包含 HTML artifacts，并支持文档绑定编辑器导出可审查 patch | `npx skills add https://github.com/L-yifan/skills --skill html-artifacts-plus` |
+| html-artifacts-plus | 生成自包含 HTML artifacts（含内容特征决策表 + 交互指南 + 生成自检），并支持文档绑定编辑器导出可审查 patch | `npx skills add https://github.com/L-yifan/skills --skill html-artifacts-plus` |
 | humanizer-zh | 去除中文文本中的 AI 写作痕迹 | `npx skills add https://github.com/L-yifan/skills --skill humanizer-zh` |
 | structural-thinker | 从数据结构视角分析并优化任何系统、流程、设计或问题 | `npx skills add https://github.com/L-yifan/skills --skill structural-thinker` |
 | github | GitHub CLI 增强 | `npx skills add https://github.com/L-yifan/skills --skill github` |
@@ -196,7 +196,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-06-28
+- **更新日期**: 2026-07-01
 
 ## License
 

@@ -80,6 +80,18 @@ For "write up the outage from yesterday."
 - Skipping the customer impact summary. Leadership reads only that and the action items.
 - Burying timestamps. Every timeline event needs a clock.
 
+## 易混淆场景
+
+**确定是本 reference 的信号：**
+- 输出是阅读型文档——报告、解释器、事故回顾、状态更新
+- 用户是"读者"——要学习、理解、回顾，不是操作
+- 典型信号：TL;DR、时间线、术语表、FAQ、"解释一下 X"
+
+**容易混淆的场景 → 换 reference：**
+- 输出是要投屏讲的而不是阅读的 → [decks.md]，不要在 deck 中放段落正文
+- 输出需要用户操作/编辑/分类 → [custom-editors.md] 或 [document-bound-editors.md]
+- 要对比多个方案选型 → [exploration-and-planning.md]，报告的"对比"是帮助理解概念；规划的"对比"是帮助决策
+
 ## Example sketch — concept explainer with live demo
 
 ```html

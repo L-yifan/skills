@@ -58,6 +58,21 @@ If the task is one-off and the input is structured, this pattern fits.
 - Creating server-style state. No backend, API, auth, or hidden network dependency.
 - Over-polishing the visual layer while the editing flow remains slow.
 
+## 易混淆场景
+
+**确定是本 reference 的信号：**
+- 用户要做一次性操作工具——分类、排序、过滤、调参、标注
+- 输出是操作结果（复制为 Markdown/JSON/CSV），不是修改源文件
+- 编辑器不绑定到特定源文件
+
+**容易混淆的场景 → 换 reference：**
+- 编辑器要编辑特定源文件并导出 patch → [document-bound-editors.md]，关键区分：文件的"归属感"
+  - custom-editor："分类这 20 个 issue，复制结果"——没有源文件
+  - document-bound-editor："编辑 docs/roadmap.md 的实现计划章节，导出 patch"——有源文件
+- 编辑器是给用户反复调参/实验的工具 → [sandboxes-and-interactive-tuners.md]，关键区分：一次性操作 vs 反复实验
+  - custom-editor：分类完就结束
+  - sandbox：调参数 → 看效果 → 再调 → 复制配置
+
 ## Example shapes
 
 ### Triage board

@@ -56,6 +56,18 @@ body {
 
 ---
 
+## 易混淆场景
+
+**确定是本 reference 的信号：**
+- 用户要反复实验/调参——动滑块看动画变化、切换预设看不同效果
+- 输出包含可复制的代码/配置（CSS、JSON、prompt）
+- 典型信号："tune""playground""sandbox""调一下""试一下不同参数"
+
+**容易混淆的场景 → 换 reference：**
+- 用户只是要看一下交互原型对不对（不是调参实验）→ [design-and-prototypes.md]，animation prototype 展示动画效果；sandbox 导出可用的配置
+- 用户要一次性操作工具（分类/排序/标注）→ [custom-editors.md]，sandbox 有预设切换 + 持续实验；custom-editor 是一次性操作
+- 用户要调的是动画参数但属于设计原型阶段 → [design-and-prototypes.md]，设计原型关注"交互对不对"；sandbox 关注"参数是多少 + 复制代码"
+
 ## Example Skeleton: Transition & Code Exporter Sandbox
 
 This sandbox allows the user to visually test transition speeds and easing functions, watch the resulting CSS change, and copy it to their clipboard.
