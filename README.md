@@ -69,7 +69,6 @@
 
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
-| crewai-multi-agent | 多 Agent 编排框架 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill crewai-multi-agent` |
 | mcp-builder | MCP 服务器构建 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill mcp-builder` |
 
 ## Agent 工作流与工程规划
@@ -77,19 +76,13 @@
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
 | grill-me | 通过连续追问压力测试计划或设计，直到形成清晰共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grill-me` |
-| grill-with-docs | 结合代码库文档、领域术语和 ADR 校验方案，并在决策明确时同步更新文档 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grill-with-docs` |
 
 ## 论文写作与研究
 
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
-| ml-paper-writing | ML/AI 论文写作指南 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill ml-paper-writing` |
 | brainstorming-research-ideas | 研究头脑风暴 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill brainstorming-research-ideas` |
 | creative-thinking-for-research | 研究创意思维 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill creative-thinking-for-research` |
-| nature-polishing | 学术论文润色与翻译（12 步工作流，Nature 风格散文） | [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) | `npx skills add https://github.com/Yuan1z0825/nature-skills --skill nature-polishing` |
-| nature-data | 数据可用性声明与 FAIR 合规检查（双语） | [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) | `npx skills add https://github.com/Yuan1z0825/nature-skills --skill nature-data` |
-| nature-paper2ppt | 论文转中文 PPT（Journal Club / 组会，输出 .pptx） | [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) | `npx skills add https://github.com/Yuan1z0825/nature-skills --skill nature-paper2ppt` |
-| nature-citation | 文献检索与引用（Crossref 发现，导出 ENW/RIS/Zotero RDF） | [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) | `npx skills add https://github.com/Yuan1z0825/nature-skills --skill nature-citation` |
 | nature-response | 审稿回复信起草与审计（逐点回复，语气校准） | [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) | `npx skills add https://github.com/Yuan1z0825/nature-skills --skill nature-response` |
 
 ## 前端设计与 Web 开发
@@ -103,7 +96,6 @@
 | theme-factory | Artifact 主题应用 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill theme-factory` |
 | web-artifacts-builder | 复杂 HTML artifacts 构建 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill web-artifacts-builder` |
 | web-design-engineer | 网页、落地页与复杂前端交互设计 | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) | `npx skills add https://github.com/ConardLi/garden-skills --skill web-design-engineer` |
-| web-video-presentation | 网页视频与演示工程构建 | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) | `npx skills add https://github.com/ConardLi/garden-skills --skill web-video-presentation` |
 
 ## 图像生成与多媒体
 
@@ -118,10 +110,8 @@ Google Stitch 是 Google Labs 的 AI 设计平台，支持 Text-to-UI 设计、s
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
 | stitch-design | 统一入口，设计工作入口 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill stitch-design` |
-| enhance-prompt | 提示词增强（UI/UX 专业术语） | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill enhance-prompt` |
 | design-md | 设计文档生成（.stitch/DESIGN.md） | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill design-md` |
 | stitch-loop | 循环处理工作流 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill stitch-loop` |
-| react-components | React 组件生成（Vite + Tailwind） | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill react-components` |
 | shadcn-ui | shadcn/ui 组件库集成 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill shadcn-ui` |
 | remotion | 视频动画生成 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill remotion` |
 
@@ -133,14 +123,6 @@ Google Stitch 是 Google Labs 的 AI 设计平台，支持 Text-to-UI 设计、s
 |--------|------|------|----------|
 | doc-coauthoring | 文档协作编写工作流 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill doc-coauthoring` |
 | internal-comms | 内部通信格式编写 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill internal-comms` |
-
-## Obsidian 与知识管理
-
-| 技能名 | 描述 | 来源 | 安装命令 |
-|--------|------|------|----------|
-| obsidian-markdown | Obsidian Markdown 语法 | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | `npx skills add https://github.com/kepano/obsidian-skills --skill obsidian-markdown` |
-| obsidian-bases | Obsidian Bases（.base 文件） | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | `npx skills add https://github.com/kepano/obsidian-skills --skill obsidian-bases` |
-| json-canvas | JSON Canvas 文件（.canvas） | [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills) | `npx skills add https://github.com/kepano/obsidian-skills --skill json-canvas` |
 
 ## 开发工具
 
