@@ -30,6 +30,7 @@
 | pptx | PowerPoint 演示文稿处理 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill pptx` |
 | xlsx | 电子表格（.xlsx, .xlsm, .csv）处理 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill xlsx` |
 | MinerU Document Extractor | 多格式文档提取（PDF、图片、Word、PPT、网页转 Markdown/HTML/LaTeX/DOCX） | [opendatalab/mineru-ecosystem](https://github.com/opendatalab/MinerU-Ecosystem) | `npx skills add https://github.com/opendatalab/mineru-ecosystem --skill "MinerU Document Extractor"` |
+| kb-retriever | 检索与问答本地知识库（支持分层检索） | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) | `npx skills add https://github.com/ConardLi/garden-skills --skill kb-retriever` |
 ## Web 研究与自动化
 
 | 技能名 | 描述 | 来源 | 安装命令 |
@@ -47,6 +48,7 @@
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
 | humanizer | 去除英文文本中的 AI 写作痕迹 | [blader/humanizer](https://github.com/blader/humanizer) | `npx skills add https://github.com/blader/humanizer` |
+| beautiful-article | 将任意素材编辑为排版精美的文章 | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) | `npx skills add https://github.com/ConardLi/garden-skills --skill beautiful-article` |
 
 ## AI/ML 研究与开发
 
@@ -100,6 +102,14 @@
 | brand-guidelines | 品牌颜色和排版指南 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill brand-guidelines` |
 | theme-factory | Artifact 主题应用 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill theme-factory` |
 | web-artifacts-builder | 复杂 HTML artifacts 构建 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill web-artifacts-builder` |
+| web-design-engineer | 网页、落地页与复杂前端交互设计 | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) | `npx skills add https://github.com/ConardLi/garden-skills --skill web-design-engineer` |
+| web-video-presentation | 网页视频与演示工程构建 | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) | `npx skills add https://github.com/ConardLi/garden-skills --skill web-video-presentation` |
+
+## 图像生成与多媒体
+
+| 技能名 | 描述 | 来源 | 安装命令 |
+|--------|------|------|----------|
+| gpt-image-2 | 图像生成与图像编辑 Prompt 工程 | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) | `npx skills add https://github.com/ConardLi/garden-skills --skill gpt-image-2` |
 
 ## Google Stitch 设计系统
 
@@ -196,7 +206,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-07-01
+- **更新日期**: 2026-07-02
 
 ## License
 
