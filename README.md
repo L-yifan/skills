@@ -50,20 +50,11 @@
 | humanizer | 去除英文文本中的 AI 写作痕迹 | [blader/humanizer](https://github.com/blader/humanizer) | `npx skills add https://github.com/blader/humanizer` |
 | beautiful-article | 将任意素材编辑为排版精美的文章 | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) | `npx skills add https://github.com/ConardLi/garden-skills --skill beautiful-article` |
 
-## AI/ML 研究与开发
+## AI/ML 研究
 
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
-| langchain | LLM 应用开发框架 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill langchain` |
-| llamaindex | RAG 框架 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill llamaindex` |
-| chroma | 开源向量数据库 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill chroma` |
 | asta-skill | Semantic Scholar / Asta MCP 学术检索、论文发现与引文追踪 | [Agents365-ai/asta-skill](https://github.com/Agents365-ai/asta-skill) | `npx skills add https://github.com/Agents365-ai/asta-skill --skill asta-skill` |
-| sentence-transformers | 文本嵌入模型 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill sentence-transformers` |
-| dspy | 声明式 Prompt 优化 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill dspy` |
-| guidance | 结构化 Prompt 控制 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill guidance` |
-| instructor | LLM 输出解析 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill instructor` |
-| outlines | 结构化输出保证 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill outlines` |
-| langsmith-observability | LLM 应用追踪与调试 | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) | `npx skills add https://github.com/Orchestra-Research/AI-Research-SKILLs --skill observability` |
 
 ## Agent 框架
 
@@ -115,7 +106,6 @@ Google Stitch 是 Google Labs 的 AI 设计平台，支持 Text-to-UI 设计、s
 |--------|------|------|----------|
 | stitch-design | 统一入口，设计工作入口 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill stitch-design` |
 | design-md | 设计文档生成（.stitch/DESIGN.md） | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill design-md` |
-| stitch-loop | 循环处理工作流 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill stitch-loop` |
 | shadcn-ui | shadcn/ui 组件库集成 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill shadcn-ui` |
 | remotion | 视频动画生成 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill remotion` |
 
