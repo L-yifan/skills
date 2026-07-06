@@ -71,6 +71,7 @@
 | domain-modeling | 构建并精炼项目的领域模型与统一语言，记录架构决策（ADR） | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill domain-modeling` |
 | handoff | 将当前对话压缩为交接文档以供其他 Agent 接续工作 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill handoff` |
 | improve-codebase-architecture | 扫描代码库寻找架构深化机会，生成可视化 HTML 报告并引导重构 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill improve-codebase-architecture` |
+| teach | 引导并帮助用户在当前工作区学习一个新技能或概念（支持多会话状态保存） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill teach` |
 
 ## 论文写作与研究
 
@@ -130,6 +131,7 @@ Google Stitch 是 Google Labs 的 AI 设计平台，支持 Text-to-UI 设计、s
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
 | skill-creator | 新技能创建指南 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill skill-creator` |
+| writing-great-skills | 编写与编辑高质量技能的参考指南——提供让技能行为更可预测的术语和原则 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill writing-great-skills` |
 
 ---
 
