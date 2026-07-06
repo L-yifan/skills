@@ -76,6 +76,10 @@
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
 | grill-me | 通过连续追问压力测试计划或设计，直到形成清晰共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grill-me` |
+| diagnosing-bugs | 困难 Bug 与性能退化的诊断循环 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill diagnosing-bugs` |
+| domain-modeling | 构建并精炼项目的领域模型与统一语言，记录架构决策（ADR） | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill domain-modeling` |
+| handoff | 将当前对话压缩为交接文档以供其他 Agent 接续工作 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill handoff` |
+| improve-codebase-architecture | 扫描代码库寻找架构深化机会，生成可视化 HTML 报告并引导重构 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill improve-codebase-architecture` |
 
 ## 论文写作与研究
 
@@ -188,7 +192,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-07-03
+- **更新日期**: 2026-07-07
 
 ## License
 
