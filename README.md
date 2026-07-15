@@ -67,6 +67,7 @@
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
 | grill-me | 通过连续追问压力测试计划或设计，直到形成清晰共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grill-me` |
+| wayfinder | 将大型、路径尚不清晰的工作规划为可逐项解决的决策路线图 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill wayfinder` |
 | diagnosing-bugs | 困难 Bug 与性能退化的诊断循环 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/anthropics/skills --skill diagnosing-bugs` |
 | domain-modeling | 构建并精炼项目的领域模型与统一语言，记录架构决策（ADR） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/anthropics/skills --skill domain-modeling` |
 | handoff | 将当前对话压缩为交接文档以供其他 Agent 接续工作 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/anthropics/skills --skill handoff` |
@@ -184,7 +185,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-07-07
+- **更新日期**: 2026-07-15
 
 ## License
 
