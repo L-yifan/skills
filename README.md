@@ -66,13 +66,19 @@
 
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
+| setup-matt-pocock-skills | 项目初始化向导，配置 Issue Tracker、Triage 标签与领域文档路径 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-skills` |
 | grill-me | 通过连续追问压力测试计划或设计，直到形成清晰共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grill-me` |
+| grill-with-docs | 结合项目现有文档（CONTEXT.md / ADRs）通过追问压力测试方案并形成共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grill-with-docs` |
+| to-spec | 将对齐的方案合成结构化的技术规格说明书（Spec / PRD）并发布到 Issue Tracker | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill to-spec` |
+| to-tickets | 将技术规格说明书拆解为可独立交付的原子化任务卡片（Tickets） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill to-tickets` |
+| implement | 基于 TDD 测试驱动开发流程自动领取并实现 Ticket 代码与验证 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill implement` |
 | wayfinder | 将大型、路径尚不清晰的工作规划为可逐项解决的决策路线图 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill wayfinder` |
 | diagnosing-bugs | 困难 Bug 与性能退化的诊断循环 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/anthropics/skills --skill diagnosing-bugs` |
 | domain-modeling | 构建并精炼项目的领域模型与统一语言，记录架构决策（ADR） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/anthropics/skills --skill domain-modeling` |
 | handoff | 将当前对话压缩为交接文档以供其他 Agent 接续工作 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/anthropics/skills --skill handoff` |
 | improve-codebase-architecture | 扫描代码库寻找架构深化机会，生成可视化 HTML 报告并引导重构 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/anthropics/skills --skill improve-codebase-architecture` |
 | teach | 引导并帮助用户在当前工作区学习一个新技能或概念（支持多会话状态保存） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill teach` |
+
 
 ## 论文写作与研究
 
@@ -185,7 +191,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-07-15
+- **更新日期**: 2026-07-20
 
 ## License
 
