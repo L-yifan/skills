@@ -14,7 +14,7 @@
 | deep-wiki | GitHub 仓库 AI 文档 | `npx skills add https://github.com/L-yifan/skills --skill deep-wiki` |
 | agent-team-prompting | Claude Code agent team 启动 Prompt 编写与评估 | `npx skills add https://github.com/L-yifan/skills --skill agent-team-prompting` |
 | skill-backup | 将好用的外部技能或自建技能备份到个人 skills 索引仓库（含技能源定位、更新陷阱警示、备份前验证） | `npx skills add https://github.com/L-yifan/skills --skill skill-backup` |
-| skill-discovery | 根据任务从个人 skills 索引仓库中检索并推荐合适技能 | `npx skills add https://github.com/L-yifan/skills --skill skill-discovery` |
+| skill-discovery | 从 README 实时检索并推荐技能（API+grep，零冗余） | `npx skills add https://github.com/L-yifan/skills --skill skill-discovery` |
 | uv | 检查并安装 uv Python 包管理器（科学类技能的前置依赖） | `npx skills add https://github.com/L-yifan/skills --skill uv` |
 | requirement-decomposition | 将混乱需求拆分为结构清晰、可独立验证的子任务（1-15个，边界明确） | `npx skills add https://github.com/L-yifan/skills --skill requirement-decomposition` |
 
@@ -32,6 +32,7 @@
 | xlsx | 电子表格（.xlsx, .xlsm, .csv）处理 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill xlsx` |
 | MinerU Document Extractor | 多格式文档提取（PDF、图片、Word、PPT、网页转 Markdown/HTML/LaTeX/DOCX） | [opendatalab/mineru-ecosystem](https://github.com/opendatalab/MinerU-Ecosystem) | `npx skills add https://github.com/opendatalab/mineru-ecosystem --skill "MinerU Document Extractor"` |
 | kb-retriever | 检索与问答本地知识库（支持分层检索） | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) | `npx skills add https://github.com/ConardLi/garden-skills --skill kb-retriever` |
+| obsidian-vault | Obsidian 知识库笔记管理（wikilinks + Index 笔记） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill obsidian-vault` |
 ## Web 研究与自动化
 
 | 技能名 | 描述 | 来源 | 安装命令 |
