@@ -52,7 +52,6 @@
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
 | humanizer | 去除英文文本中的 AI 写作痕迹 | [blader/humanizer](https://github.com/blader/humanizer) | `npx skills add https://github.com/blader/humanizer` |
-| beautiful-article | 将任意素材编辑为排版精美的文章 | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) | `npx skills add https://github.com/ConardLi/garden-skills --skill beautiful-article` |
 
 ## AI/ML 研究
 
