@@ -77,6 +77,7 @@
 | to-tickets | 将技术规格说明书拆解为可独立交付的原子化任务卡片（Tickets） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill to-tickets` |
 | implement | 基于 TDD 测试驱动开发流程自动领取并实现 Ticket 代码与验证 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill implement` |
 | wayfinder | 将大型、路径尚不清晰的工作规划为可逐项解决的决策路线图 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill wayfinder` |
+| prototype | 构建抛弃型原型（Logic 终端 TUI 或 UI 多变体）以快速验证设计逻辑或界面效果 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill prototype` |
 | diagnosing-bugs | 困难 Bug 与性能退化的诊断循环 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill diagnosing-bugs` |
 | domain-modeling | 构建并精炼项目的领域模型与统一语言，记录架构决策（ADR） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill domain-modeling` |
 | handoff | 将当前对话压缩为交接文档以供其他 Agent 接续工作 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill handoff` |
