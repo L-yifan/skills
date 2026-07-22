@@ -71,6 +71,7 @@
 |--------|------|------|----------|
 | setup-matt-pocock-skills | 项目初始化向导，配置 Issue Tracker、Triage 标签与领域文档路径 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-skills` |
 | grill-me | 通过连续追问压力测试计划或设计，直到形成清晰共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grill-me` |
+| grilling | 通过连续追问与压力测试对计划、决策或想法进行审查并形成共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grilling` |
 | grill-with-docs | 结合项目现有文档（CONTEXT.md / ADRs）通过追问压力测试方案并形成共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grill-with-docs` |
 | to-spec | 将对齐的方案合成结构化的技术规格说明书（Spec / PRD）并发布到 Issue Tracker | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill to-spec` |
 | to-tickets | 将技术规格说明书拆解为可独立交付的原子化任务卡片（Tickets） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill to-tickets` |
