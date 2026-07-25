@@ -121,8 +121,6 @@ Google Stitch 是 Google Labs 的 AI 设计平台，支持 Text-to-UI 设计、s
 | stitch-design | 统一入口，设计工作入口 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill stitch-design` |
 | design-md | 设计文档生成（.stitch/DESIGN.md） | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill design-md` |
 | shadcn-ui | shadcn/ui 组件库集成 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill shadcn-ui` |
-| remotion | 视频动画生成 | [google-labs-code/stitch-skills](https://github.com/google-labs-code/stitch-skills) | `npx skills add https://github.com/google-labs-code/stitch-skills --skill remotion` |
-
 > **提示**：安装这些 skills 前，需先配置 Stitch MCP server。详情见 [stitch-mcp](https://github.com/davideast/stitch-mcp)。
 
 ## 文档协作与沟通
