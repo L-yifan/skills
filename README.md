@@ -12,7 +12,6 @@
 | humanizer-zh | 去除中文文本中的 AI 写作痕迹 | `npx skills add https://github.com/L-yifan/skills --skill humanizer-zh` |
 | structural-thinker | 从数据结构视角分析并优化任何系统、流程、设计或问题 | `npx skills add https://github.com/L-yifan/skills --skill structural-thinker` |
 | deep-wiki | GitHub 仓库 AI 文档 | `npx skills add https://github.com/L-yifan/skills --skill deep-wiki` |
-| agent-team-prompting | Claude Code agent team 启动 Prompt 编写与评估 | `npx skills add https://github.com/L-yifan/skills --skill agent-team-prompting` |
 | skill-backup | 将好用的外部技能或自建技能备份到个人 skills 索引仓库（含技能源定位、更新陷阱警示、备份前验证） | `npx skills add https://github.com/L-yifan/skills --skill skill-backup` |
 | skill-discovery | 从 README 实时检索并推荐技能（API+grep，零冗余） | `npx skills add https://github.com/L-yifan/skills --skill skill-discovery` |
 | uv | 检查并安装 uv Python 包管理器（科学类技能的前置依赖） | `npx skills add https://github.com/L-yifan/skills --skill uv` |
@@ -197,7 +196,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-07-23
+- **更新日期**: 2026-07-26
 
 ## License
 
