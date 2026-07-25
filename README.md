@@ -110,6 +110,7 @@
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
 | gpt-image-2 | 图像生成与图像编辑 Prompt 工程 | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) | `npx skills add https://github.com/ConardLi/garden-skills --skill gpt-image-2` |
+| video-shotcraft | 基于 Remotion 的 AI Agent 电影级视频/宣传片制作工具包（支持网页截图转 2.5D/3D 动态镜头与音效对齐） | [Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) | `npx skills add https://github.com/Vincentwei1021/video-shotcraft` |
 
 ## Google Stitch 设计系统
 
