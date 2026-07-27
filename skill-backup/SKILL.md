@@ -13,7 +13,7 @@ description: Maintain a personal skills index repository such as L-yifan/skills.
 
 ### Step 1：定位索引仓库并分类
 
-优先使用用户给出的本地 checkout 或仓库地址；否则查找常见本地 clone，必要时使用 `L-yifan/skills` 建立具名临时 clone。记录实际工作目录及其初始 `git status`。
+优先使用用户给出的本地 checkout 或仓库地址；否则查找常见本地 clone，必要时使用 `L-yifan/skills` 建立具名临时 clone。记录实际工作目录、是否为本次创建的临时 clone，以及其初始 `git status`。用户提供的 checkout 永远不是临时目录，不得自动删除。
 
 随后分类：GitHub URL、市场链接或第三方技能默认是**外部技能**；本地目录、用户新建或为该仓库编写的技能是**自建技能**。用户明确要求 vendoring 时，按自建技能处理。
 
@@ -31,7 +31,7 @@ description: Maintain a personal skills index repository such as L-yifan/skills.
 
 若源目录缺少仓库旧版本中的文件，先判定该差异是有意删除还是源文件丢失；无法判定时保留旧文件并向用户报告。
 
-完成条件：已记录选中的源目录及依据；`SKILL.md`、reference 和 script 的文件清单均已与旧版本核验。
+完成条件：已记录选中的源目录及依据；`SKILL.md`、reference 和 script 的文件清单均已与旧版本核验。若为托管安装目录建立了用户拥有的中转源副本，也记录其路径和“仅本次中转”身份。
 
 ### Step 3：同步自建技能与 README
 
@@ -41,8 +41,15 @@ description: Maintain a personal skills index repository such as L-yifan/skills.
 
 ### Step 4：验证、发布与交付
 
-检查 `git diff` 与 `git status --short`；验证 README 表格列数一致；对自建技能验证 frontmatter 的 `name` 与 `description` 均存在且非空。清理临时 clone，除非用户要求保留。仅在用户要求时提交、推送或创建 PR。
+检查 `git diff` 与 `git status --short`；验证 README 表格列数一致；对自建技能验证 frontmatter 的 `name` 与 `description` 均存在且非空。仅在用户要求时提交、推送或创建 PR。
+
+**临时目录收尾规则：**
+
+- 若本次创建了临时 clone 或中转源副本，且用户要求的推送已成功：确认提交已在远端、`git status --short` 为空、分支不再领先远端后，自动删除这两个临时目录。
+- 若未获授权提交/推送、推送失败，或尚有未提交变更：保留临时 clone 与中转源副本，明确报告路径和保留原因，不能为了清理而丢弃未发布内容。
+- 用户明确提供的 checkout、原始自建技能目录及其他预先存在的目录永远不得自动删除。
+- 清理前先解析每个目标的绝对路径，确认其位于本次创建的临时父目录内；清理后验证路径不存在。
 
 最终回复列出已改变的文件、发布状态和完整安装命令：自建技能使用实际索引仓库与同步目录名；外部技能仅使用上游已验证命令。未推送的自建技能须说明命令会在推送后取得本次版本；没有可靠外部命令时明确说明不可安全推断。
 
-完成条件：所有变更均已验证并说明；临时目录已清理或说明原因；交付中不存在猜测的安装命令。
+完成条件：所有变更均已验证并说明；临时目录已根据上述收尾规则清理，或说明保留路径与原因；交付中不存在猜测的安装命令。

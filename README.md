@@ -12,7 +12,7 @@
 | humanizer-zh | 去除中文文本中的 AI 写作痕迹 | `npx skills add https://github.com/L-yifan/skills --skill humanizer-zh` |
 | structural-thinker | 从数据结构视角分析并优化任何系统、流程、设计或问题 | `npx skills add https://github.com/L-yifan/skills --skill structural-thinker` |
 | deep-wiki | GitHub 仓库 AI 文档 | `npx skills add https://github.com/L-yifan/skills --skill deep-wiki` |
-| skill-backup | 将自建或外部技能同步到个人索引仓库（含来源核验、分支流程与可验证交付） | `npx skills add https://github.com/L-yifan/skills --skill skill-backup` |
+| skill-backup | 将自建或外部技能同步到个人索引仓库（含来源核验、发布状态与临时目录收尾规则） | `npx skills add https://github.com/L-yifan/skills --skill skill-backup` |
 | skill-discovery | 从个人索引推荐技能，并严格区分索引内与索引外候选 | `npx skills add https://github.com/L-yifan/skills --skill skill-discovery` |
 | agent-md-improver | 审计、精简并优化 AGENTS.md 和 CLAUDE.md；仅保留经证实、不可推断且与作用域相关的约束 | `npx skills add https://github.com/L-yifan/skills --skill agent-md-improver` |
 | agent-automation-recommender | 分析代码库并从 6 个维度推荐适合 Claude Code、Antigravity、Codex 的 Agent 自动化扩展方案 | `npx skills add https://github.com/L-yifan/skills --skill agent-automation-recommender` |
