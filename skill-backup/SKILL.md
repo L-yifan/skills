@@ -86,6 +86,18 @@ Delete the temporary clone directory after publishing, so no stale checkout is l
 - If the user asks to commit, push, or open a PR, follow the repository's Git/GitHub workflow.
 - Otherwise leave a clean summary of the local files changed and whether publishing remains.
 
+### Step 11: 最终交付（必须）
+
+无论本次备份是否已提交或推送，最终回复都必须包含本次备份技能的**完整、可复制安装命令**，并使用明确标签，例如：
+
+```markdown
+安装命令：`npx skills add https://github.com/<owner>/<repo> --skill <skill-name>`
+```
+
+- 对自建技能，命令中的仓库必须是实际备份仓库，技能名必须与已同步目录名一致。
+- 对外部技能，优先使用 README 索引行中记录的完整安装命令；若不存在该命令，要明确说明不能安全推断，而不是编造命令。
+- 若改动尚未推送，仍输出目标安装命令，但同时说明该命令会在推送后获取本次版本。
+
 ## Common Cases
 
 | 用户意图 | 典型表达 | 处理方式 |

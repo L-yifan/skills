@@ -12,10 +12,9 @@
 | humanizer-zh | 去除中文文本中的 AI 写作痕迹 | `npx skills add https://github.com/L-yifan/skills --skill humanizer-zh` |
 | structural-thinker | 从数据结构视角分析并优化任何系统、流程、设计或问题 | `npx skills add https://github.com/L-yifan/skills --skill structural-thinker` |
 | deep-wiki | GitHub 仓库 AI 文档 | `npx skills add https://github.com/L-yifan/skills --skill deep-wiki` |
-| skill-backup | 将好用的外部技能或自建技能备份到个人 skills 索引仓库（含技能源定位、更新陷阱警示、备份前验证） | `npx skills add https://github.com/L-yifan/skills --skill skill-backup` |
+| skill-backup | 将好用的外部技能或自建技能备份到个人 skills 索引仓库（含来源验证、完整性检查与安装命令交付） | `npx skills add https://github.com/L-yifan/skills --skill skill-backup` |
 | skill-discovery | 从 README 实时检索并推荐技能（API+grep，零冗余） | `npx skills add https://github.com/L-yifan/skills --skill skill-discovery` |
 | uv | 检查并安装 uv Python 包管理器（科学类技能的前置依赖） | `npx skills add https://github.com/L-yifan/skills --skill uv` |
-| requirement-decomposition | 将混乱需求拆分为结构清晰、可独立验证的子任务（1-15个，边界明确） | `npx skills add https://github.com/L-yifan/skills --skill requirement-decomposition` |
 | agent-md-improver | 审计与优化 AGENTS.md 和 CLAUDE.md 指令文件（质量评估报告与针对性更新） | `npx skills add https://github.com/L-yifan/skills --skill agent-md-improver` |
 | agent-automation-recommender | 分析代码库并从 6 个维度推荐适合 Claude Code、Antigravity、Codex 的 Agent 自动化扩展方案 | `npx skills add https://github.com/L-yifan/skills --skill agent-automation-recommender` |
 | antibes-holiday | 创作原创轻松写意的黑色钢笔手绘风图形、故事场景与 Logo 标志（含笔触质感与动态结构三阶段指导） | `npx skills add https://github.com/L-yifan/skills --skill antibes-holiday` |
@@ -197,7 +196,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-07-27
+- **更新日期**: 2026-07-28
 
 ## License
 
