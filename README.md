@@ -14,7 +14,7 @@
 | deep-wiki | GitHub 仓库 AI 文档 | `npx skills add https://github.com/L-yifan/skills --skill deep-wiki` |
 | skill-backup | 将自建或外部技能同步到个人索引仓库（含来源核验、分支流程与可验证交付） | `npx skills add https://github.com/L-yifan/skills --skill skill-backup` |
 | skill-discovery | 从个人索引推荐技能，并严格区分索引内与索引外候选 | `npx skills add https://github.com/L-yifan/skills --skill skill-discovery` |
-| agent-md-improver | 审计与优化 AGENTS.md 和 CLAUDE.md 指令文件（质量评估报告与针对性更新） | `npx skills add https://github.com/L-yifan/skills --skill agent-md-improver` |
+| agent-md-improver | 审计、精简并优化 AGENTS.md 和 CLAUDE.md；仅保留经证实、不可推断且与作用域相关的约束 | `npx skills add https://github.com/L-yifan/skills --skill agent-md-improver` |
 | agent-automation-recommender | 分析代码库并从 6 个维度推荐适合 Claude Code、Antigravity、Codex 的 Agent 自动化扩展方案 | `npx skills add https://github.com/L-yifan/skills --skill agent-automation-recommender` |
 | antibes-holiday | 创作原创轻松写意的黑色钢笔手绘风图形、故事场景与 Logo 标志（含笔触质感与动态结构三阶段指导） | `npx skills add https://github.com/L-yifan/skills --skill antibes-holiday` |
 

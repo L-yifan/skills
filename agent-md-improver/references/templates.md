@@ -1,285 +1,75 @@
-# Agent Instruction File Templates (AGENTS.md / CLAUDE.md)
+# Minimal Context Report Template
 
-## Key Principles
-
-- **Concise**: Dense, human-readable content; one line per concept when possible
-- **Actionable**: Commands should be copy-paste ready
-- **Project-specific**: Document patterns unique to this project, not generic advice
-- **Current**: All info should reflect actual codebase state
-
----
-
-## Recommended Sections
-
-Use only the sections relevant to the project. Not all sections are needed.
-
-### Commands
-
-Document the essential commands for working with the project.
+Use this report before editing. Omit sections with no evidence.
 
 ```markdown
-## Commands
+## Minimal Context Report
 
-| Command | Description |
-|---------|-------------|
-| `<install command>` | Install dependencies |
-| `<dev command>` | Start development server |
-| `<build command>` | Production build |
-| `<test command>` | Run tests |
-| `<lint command>` | Lint/format code |
+### Effective scope
+
+| File | Governs | Relationship |
+|---|---|---|
+| `AGENTS.md` | `<scope>` | root / inherited / override |
+
+### Must fix
+
+- **Remove / rewrite / move:** `<instruction>`
+  - **Evidence:** `<path, command, or observed conflict>`
+  - **Reason:** `<duplicate, stale, wrong scope, or untestable>`
+  - **Decision effect:** `<what future agents will do better>`
+
+### Minimal changes
+
+| Decision | Location | Change | Evidence |
+|---|---|---|---|
+| Keep | `<file>` | `<non-obvious constraint>` | `<source>` |
+| Remove | `<file>` | `<derivable or duplicate text>` | `<source>` |
+| Move | `<file>` | `<specialized procedure>` | `<target + trigger>` |
+| Add | `<file>` | `<recurring hidden constraint>` | `<source>` |
+| Rewrite | `<file>` | `<vague rule>` | `<source>` |
+
+### Proposed diff
+
+```diff
+- <redundant or conflicting instruction>
++ <verified, scoped instruction>
 ```
 
-### Architecture
+### Verification after approval
 
-Describe the project structure so AI agents understand where things live.
-
-```markdown
-## Architecture
-
-```
-<root>/
-  <dir>/    # <purpose>
-  <dir>/    # <purpose>
-  <dir>/    # <purpose>
-```
+- `<command or source check>`
 ```
 
-### Key Files
+## Diff patterns
 
-List important files that agents should know about.
+### Remove a derivable command
 
-```markdown
-## Key Files
-
-- `<path>` - <purpose>
-- `<path>` - <purpose>
+```diff
+- Run `npm test` before every change.
 ```
 
-### Code Style
+Use this only when `npm test` is directly discoverable and no project-specific condition changes when it should run.
 
-Document project-specific coding conventions.
+### Keep a hidden constraint
 
-```markdown
-## Code Style
-
-- <convention>
-- <convention>
-- <preference over alternative>
+```diff
++ When changing generated API clients, update `schema/openapi.yaml` and run `pnpm generate`; do not edit `src/generated/` directly. Verify with `pnpm generate --check`.
 ```
 
-### Environment
+### Move a specialized procedure
 
-Document required environment variables and setup.
-
-```markdown
-## Environment
-
-Required:
-- `<VAR_NAME>` - <purpose>
-- `<VAR_NAME>` - <purpose>
-
-Setup:
-- <setup step>
+```diff
+- <long deployment or migration procedure>
++ For production migrations, read `references/production-migrations.md` before editing migration files.
 ```
 
-### Testing
+The referenced procedure must exist and state its trigger clearly. Do not create a reference merely to hide generic prose.
 
-Document testing approach and commands.
+### Resolve a conflict
 
-```markdown
-## Testing
-
-- `<test command>` - <what it tests>
-- <testing convention or pattern>
+```diff
+- Never add comments.
++ Match the surrounding module's comment density and conventions; preserve comments required for generated or public APIs.
 ```
 
-### Gotchas
-
-Document non-obvious patterns, quirks, and warnings.
-
-```markdown
-## Gotchas
-
-- <non-obvious thing that causes issues>
-- <ordering dependency or prerequisite>
-- <common mistake to avoid>
-```
-
-### Workflow
-
-Document development workflow patterns.
-
-```markdown
-## Workflow
-
-- <when to do X>
-- <preferred approach for Y>
-```
-
----
-
-## Template: Standard AGENTS.md (Universal Agent Root)
-
-```markdown
-# <Project Name>
-
-<One-line description of project>
-
-## Project Instructions & Rules
-
-- <core rule 1>
-- <core rule 2>
-
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `<command>` | <description> |
-
-## Architecture
-
-```
-<structure>
-```
-
-## Gotchas & Guidelines
-
-- <gotcha 1>
-- <gotcha 2>
-```
-
----
-
-## Template: Project Root (Minimal)
-
-```markdown
-# <Project Name>
-
-<One-line description>
-
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `<command>` | <description> |
-
-## Architecture
-
-```
-<structure>
-```
-
-## Gotchas
-
-- <gotcha>
-```
-
----
-
-## Template: Project Root (Comprehensive)
-
-```markdown
-# <Project Name>
-
-<One-line description>
-
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `<command>` | <description> |
-
-## Architecture
-
-```
-<structure with descriptions>
-```
-
-## Key Files
-
-- `<path>` - <purpose>
-
-## Code Style
-
-- <convention>
-
-## Environment
-
-- `<VAR>` - <purpose>
-
-## Testing
-
-- `<command>` - <scope>
-
-## Gotchas
-
-- <gotcha>
-```
-
----
-
-## Template: Package/Module
-
-For packages within a monorepo or distinct modules.
-
-```markdown
-# <Package Name>
-
-<Purpose of this package>
-
-## Usage
-
-```
-<import/usage example>
-```
-
-## Key Exports
-
-- `<export>` - <purpose>
-
-## Dependencies
-
-- `<dependency>` - <why needed>
-
-## Notes
-
-- <important note>
-```
-
----
-
-## Template: Monorepo Root
-
-```markdown
-# <Monorepo Name>
-
-<Description>
-
-## Packages
-
-| Package | Description | Path |
-|---------|-------------|------|
-| `<name>` | <purpose> | `<path>` |
-
-## Commands
-
-| Command | Description |
-|---------|-------------|
-| `<command>` | <description> |
-
-## Cross-Package Patterns
-
-- <shared pattern>
-- <generation/sync pattern>
-```
-
----
-
-## Update Principles
-
-When updating any instruction file (`AGENTS.md`, `CLAUDE.md`, etc.):
-
-1. **Be specific**: Use actual file paths, real commands from this project
-2. **Be current**: Verify info against the actual codebase
-3. **Be brief**: One line per concept when possible
-4. **Be useful**: Would this help a new AI Agent session understand the project?
+Use conditional wording when repository context, rather than a blanket prohibition, determines the right action.

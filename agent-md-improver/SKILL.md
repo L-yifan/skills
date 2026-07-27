@@ -1,180 +1,83 @@
 ---
 name: agent-md-improver
-description: Audit and improve AGENTS.md and CLAUDE.md files in repositories. Use when user asks to check, audit, update, improve, or fix AGENTS.md or CLAUDE.md files. Scans for AGENTS.md and CLAUDE.md files, evaluates quality against templates, outputs quality report, then makes targeted updates. Also use when the user mentions "agent instructions maintenance" or "project memory optimization".
-tools: Read, Glob, Grep, Bash, Edit
+description: Audit, simplify, and update repository AGENTS.md and CLAUDE.md files. Use when Codex needs to review, improve, deconflict, or reduce agent instructions; maintain project memory; or decide what belongs in an instruction file versus code, a skill, or a reference. Preserve only current, non-obvious, task-relevant constraints backed by repository evidence.
 ---
 
-# Agent Instruction Files (AGENTS.md / CLAUDE.md) Improver
+# Agent Instruction Files Improver
 
-Audit, evaluate, and improve AGENTS.md and CLAUDE.md files across a codebase to ensure AI agents have optimal project context.
-
-**This skill can write to AGENTS.md and CLAUDE.md files.** After presenting a quality report and getting user approval, it updates instruction files with targeted improvements.
+Treat instruction files as a minimal decision layer, not a project manual. Prefer deleting, consolidating, or moving instructions over adding prose.
 
 ## Workflow
 
-### Phase 1: Discovery
+### 1. Establish scope before judging content
 
-Find all AGENTS.md and CLAUDE.md files in the repository:
+1. Find instruction files with `rg --files -g 'AGENTS.md' -g 'AGENTS.local.md' -g '.agents.md' -g 'CLAUDE.md' -g '.claude.md' -g '.claude.local.md'`.
+2. Identify the user's target directory and the files that actually govern it. Record parent-to-child precedence and local overrides.
+3. Do not inspect or change global instruction files unless the user explicitly includes them.
+4. Do not treat every nested instruction file as a candidate for expansion. A nested file should exist only for a real domain or workflow boundary.
 
-```bash
-find . -name "AGENTS.md" -o -name ".agents.md" -o -name "AGENTS.local.md" -o -name "CLAUDE.md" -o -name ".claude.md" -o -name ".claude.local.md" 2>/dev/null | head -50
-```
+### 2. Build an evidence-backed instruction inventory
 
-**File Types & Locations:**
+Read each applicable file completely. For every instruction, verify it against the codebase, configuration, scripts, and recent task evidence.
 
-| Type | Location | Purpose |
-|------|----------|---------|
-| General Agent root | `./AGENTS.md` | Primary cross-agent project context (checked into git, shared with team) |
-| Claude root | `./CLAUDE.md` | Primary Claude Code project context |
-| Local overrides | `./AGENTS.local.md` / `./.claude.local.md` | Personal/local settings (gitignored, not shared) |
-| Global defaults | `~/.config/AGENTS.md` / `~/.claude/CLAUDE.md` | User-wide defaults across all projects |
-| Package-specific | `./packages/*/AGENTS.md` / `./packages/*/CLAUDE.md` | Module-level context in monorepos |
-| Subdirectory | Any nested location | Feature/domain-specific context |
+Classify each item before proposing a change:
 
-**Note:** Modern AI coding tools auto-discover instruction files in parent directories, making monorepo setups work automatically.
+| Decision | Use when |
+|---|---|
+| **Keep** | It is current, non-obvious, applies in scope, and materially changes a decision. |
+| **Remove** | It is generic, duplicate, stale, contradicted, or directly derivable from files and tool output. |
+| **Move** | It is valid but specialized, long, or low-frequency; place it in a focused skill or reference and retain only a trigger/link here. |
+| **Add** | It cannot be reliably inferred, recurs, and prevents a meaningful failure or wrong decision. |
+| **Rewrite** | The constraint is necessary but vague, untestable, overly absolute, or located at the wrong scope. |
 
-### Phase 2: Quality Assessment
+Preserve explicit guardrails for destructive operations, secrets, security, compliance, releases, and other high-cost failures. Do not weaken those merely to make a file shorter.
 
-For each instruction file found, evaluate against quality criteria. See [references/quality-criteria.md](references/quality-criteria.md) for detailed rubrics.
+### 3. Audit derivability and conflicts
 
-**Quick Assessment Checklist:**
+For each candidate addition or retained line, ask:
 
-| Criterion | Weight | Check |
-|-----------|--------|-------|
-| Commands/workflows documented | High | Are build/test/deploy commands present? |
-| Architecture clarity | High | Can Claude understand the codebase structure? |
-| Non-obvious patterns | Medium | Are gotchas and quirks documented? |
-| Conciseness | Medium | No verbose explanations or obvious info? |
-| Currency | High | Does it reflect current codebase state? |
-| Actionability | High | Are instructions executable, not vague? |
+1. Can an agent infer this from `package.json`, scripts, CI, directory names, tests, tool help, or nearby code?
+2. Is it already stated by a parent, child, tool description, or another source of truth?
+3. Is it needed for most tasks in this scope, or only a specialized workflow?
+4. Does it specify a condition, action, and verifiable outcome?
 
-**Quality Scores:**
-- **A (90-100)**: Comprehensive, current, actionable
-- **B (70-89)**: Good coverage, minor gaps
-- **C (50-69)**: Basic info, missing key sections
-- **D (30-49)**: Sparse or outdated
-- **F (0-29)**: Missing or severely outdated
+If the answer to 1 or 2 is yes, remove or link instead of repeating it. If the answer to 3 is no, move it behind progressive disclosure. Resolve a conflict by choosing one source of truth; never preserve contradictory wording to be "safe."
 
-### Phase 3: Quality Report Output
+### 4. Report before editing
 
-**ALWAYS output the quality report BEFORE making any updates.**
+Always present a **Minimal Context Report** and wait for approval before writing. Use [references/templates.md](references/templates.md) for the report and diff structure. Include:
 
-Format:
+- files that govern the requested scope and their precedence;
+- evidence-backed keep, remove, move, add, and rewrite decisions;
+- must-fix conflicts or stale instructions separately from optional polish;
+- the expected effect on agent decisions, not a chapter-completeness score.
 
-```
-## Agent Instruction Quality Report
+Use [references/quality-criteria.md](references/quality-criteria.md) when a scored assessment is useful or requested. Do not reward a file merely for listing commands, architecture, or every key file.
 
-### Summary
-- Files found: X
-- Average score: X/100
-- Files needing update: X
+### 5. Propose and apply the smallest safe diff
 
-### File-by-File Assessment
+1. Show exact diffs, with deletions before additions.
+2. Add only verified repository-specific facts. Cite the configuration, code, test, or command that supports each addition.
+3. Keep low-frequency procedures in a skill or one-level-deep reference; the instruction file should state when to load it.
+4. Do not create an instruction file simply because none exists. Create one only when verified non-inferable constraints recur in the requested scope.
+5. After approval, preserve the existing structure where possible and apply the diff.
 
-#### 1. ./AGENTS.md (or ./CLAUDE.md) (Project Root)
-**Score: XX/100 (Grade: X)**
+### 6. Verify the result
 
-| Criterion | Score | Notes |
-|-----------|-------|-------|
-| Commands/workflows | X/20 | ... |
-| Architecture clarity | X/20 | ... |
-| Non-obvious patterns | X/15 | ... |
-| Conciseness | X/15 | ... |
-| Currency | X/15 | ... |
-| Actionability | X/15 | ... |
+After editing, re-check the affected scope:
 
-**Issues:**
-- [List specific problems]
+- every path and command is real and current;
+- no child file repeats or contradicts its parent;
+- no retained line is obvious from the repository alone;
+- high-risk guardrails remain explicit;
+- referenced skills and documents exist and are loaded only when relevant.
 
-**Recommended additions:**
-- [List what should be added]
+Report what changed and any facts that still require owner confirmation.
 
-#### 2. ./packages/api/AGENTS.md (Package-specific)
-...
-```
+## Writing rules
 
-### Phase 4: Targeted Updates
-
-After outputting the quality report, ask user for confirmation before updating.
-
-**Update Guidelines (Critical):**
-
-1. **Propose targeted additions only** - Focus on genuinely useful info:
-   - Commands or workflows discovered during analysis
-   - Gotchas or non-obvious patterns found in code
-   - Package relationships that weren't clear
-   - Testing approaches that work
-   - Configuration quirks
-
-2. **Keep it minimal** - Avoid:
-   - Restating what's obvious from the code
-   - Generic best practices already covered
-   - One-off fixes unlikely to recur
-   - Verbose explanations when a one-liner suffices
-
-3. **Show diffs** - For each change, show:
-   - Which instruction file (`AGENTS.md`, `CLAUDE.md`, etc.) to update
-   - The specific addition (as a diff or quoted block)
-   - Brief explanation of why this helps future AI agent sessions
-
-**Diff Format:**
-
-```markdown
-### Update: ./AGENTS.md
-
-**Why:** Build command was missing, causing confusion about how to run the project.
-
-```diff
-+ ## Quick Start
-+
-+ ```bash
-+ npm install
-+ npm run dev  # Start development server on port 3000
-+ ```
-```
-```
-
-### Phase 5: Apply Updates
-
-After user approval, apply changes using the Edit tool. Preserve existing content structure.
-
-## Templates
-
-See [references/templates.md](references/templates.md) for instruction file templates by project type (supporting `AGENTS.md`, `CLAUDE.md`, etc.).
-
-## Common Issues to Flag
-
-1. **Stale commands**: Build commands that no longer work
-2. **Missing dependencies**: Required tools not mentioned
-3. **Outdated architecture**: File structure that's changed
-4. **Missing environment setup**: Required env vars or config
-5. **Broken test commands**: Test scripts that have changed
-6. **Undocumented gotchas**: Non-obvious patterns not captured
-
-## User Tips to Share
-
-When presenting recommendations, remind users:
-
-- **`#` key shortcut (Claude Code specific)**: During a Claude session, press `#` to auto-incorporate learnings into CLAUDE.md
-- **Keep it concise**: Instruction files should be human-readable and token-dense; concise is better than verbose
-- **Actionable commands**: All documented commands should be copy-paste ready
-- **Use local overrides**: Use `AGENTS.local.md` or `.claude.local.md` for personal preferences not shared with the team (add to `.gitignore`)
-- **Global defaults**: Put user-wide preferences in `~/.config/AGENTS.md` or `~/.claude/CLAUDE.md`
-
-## What Makes Great Agent Instruction Files (AGENTS.md / CLAUDE.md)
-
-**Key principles:**
-- Concise and human-readable
-- Actionable commands that can be copy-pasted
-- Project-specific patterns, not generic advice
-- Non-obvious gotchas and warnings
-
-**Recommended sections** (use only what's relevant):
-- Commands (build, test, dev, lint)
-- Architecture (directory structure)
-- Key Files (entry points, config)
-- Code Style (project conventions)
-- Environment (required vars, setup)
-- Testing (commands, patterns)
-- Gotchas (quirks, common mistakes)
-- Workflow (when to do what)
+- State project-specific constraints, not generic agent advice.
+- Put instructions at the narrowest scope that reliably governs the affected work.
+- Prefer conditional instructions: trigger → action → expected verification.
+- Treat code, tests, CI, and tool schemas as primary evidence; instruction files should describe the exceptions those artifacts cannot express.
+- Use concise tables or bullets only when they reduce ambiguity.

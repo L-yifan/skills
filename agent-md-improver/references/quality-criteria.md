@@ -1,109 +1,39 @@
-# Agent Instruction Files (AGENTS.md / CLAUDE.md) Quality Criteria
+# Minimal Context Quality Criteria
 
-## Scoring Rubric
+Score only after establishing which instruction files govern the requested scope. A higher score means the file improves decisions without duplicating what the repository already says.
 
-### 1. Commands/Workflows (20 points)
+| Criterion | Weight | Evidence of quality |
+|---|---:|---|
+| Evidence fidelity | 25 | Every factual instruction is verified against code, config, CI, or a repeatable command. |
+| Non-derivability | 25 | Lines capture exceptions, hidden constraints, or team choices that an agent cannot reliably infer. |
+| Scope and precedence | 20 | Rules live at the narrowest correct level; parent, child, and local files do not conflict. |
+| Actionability and risk control | 15 | High-risk instructions name a trigger, action, and verification; commands and paths are executable. |
+| Context efficiency | 15 | No generic advice, redundant restatement, long low-frequency procedures, or filler. |
 
-**20 points**: All essential commands documented with context
-- Build, test, lint, deploy commands present
-- Development workflow clear
-- Common operations documented
+## Assessment process
 
-**15 points**: Most commands present, some missing context
+1. Determine the target scope and applicable instruction hierarchy.
+2. Cross-check every retained or proposed fact against repository evidence.
+3. Classify each line as keep, remove, move, add, or rewrite.
+4. Score the governing set, not each file in isolation when files inherit from one another.
+5. Report must-fix conflicts before optional improvements.
 
-**10 points**: Basic commands only, no workflow
+## Red flags
 
-**5 points**: Few commands, many missing
+- A root file repeats package scripts, directory listings, or style conventions visible in the repository.
+- A nested file restates its parent without adding a domain-specific boundary.
+- The same rule appears in a system prompt, tool description, skill, and project file.
+- Absolute rules suppress legitimate context-dependent judgment.
+- A long, rare procedure is always loaded instead of referenced on demand.
+- A command, path, dependency, or workflow is not verified.
+- A safety or release constraint is shortened until its trigger or verification is unclear.
 
-**0 points**: No commands documented
+## Classification guide
 
-### 2. Architecture Clarity (20 points)
-
-**20 points**: Clear codebase map
-- Key directories explained
-- Module relationships documented
-- Entry points identified
-- Data flow described where relevant
-
-**15 points**: Good structure overview, minor gaps
-
-**10 points**: Basic directory listing only
-
-**5 points**: Vague or incomplete
-
-**0 points**: No architecture info
-
-### 3. Non-Obvious Patterns (15 points)
-
-**15 points**: Gotchas and quirks captured
-- Known issues documented
-- Workarounds explained
-- Edge cases noted
-- "Why we do it this way" for unusual patterns
-
-**10 points**: Some patterns documented
-
-**5 points**: Minimal pattern documentation
-
-**0 points**: No patterns or gotchas
-
-### 4. Conciseness (15 points)
-
-**15 points**: Dense, valuable content
-- No filler or obvious info
-- Each line adds value
-- No redundancy with code comments
-
-**10 points**: Mostly concise, some padding
-
-**5 points**: Verbose in places
-
-**0 points**: Mostly filler or restates obvious code
-
-### 5. Currency (15 points)
-
-**15 points**: Reflects current codebase
-- Commands work as documented
-- File references accurate
-- Tech stack current
-
-**10 points**: Mostly current, minor staleness
-
-**5 points**: Several outdated references
-
-**0 points**: Severely outdated
-
-### 6. Actionability (15 points)
-
-**15 points**: Instructions are executable
-- Commands can be copy-pasted
-- Steps are concrete
-- Paths are real
-
-**10 points**: Mostly actionable
-
-**5 points**: Some vague instructions
-
-**0 points**: Vague or theoretical
-
-## Assessment Process
-
-1. Read the instruction file (`AGENTS.md`, `CLAUDE.md`, etc.) completely
-2. Cross-reference with actual codebase:
-   - Run documented commands (mentally or actually)
-   - Check if referenced files exist
-   - Verify architecture descriptions
-3. Score each criterion
-4. Calculate total and assign grade
-5. List specific issues found
-6. Propose concrete improvements
-
-## Red Flags
-
-- Commands that would fail (wrong paths, missing deps)
-- References to deleted files/folders
-- Outdated tech versions
-- Copy-paste from templates without customization
-- Generic advice not specific to the project
-- "TODO" items never completed
-- Duplicate or conflicting info across multiple instruction files
+| If the instruction is… | Prefer… |
+|---|---|
+| visible in code or tool help | removing it |
+| true only for a specialist workflow | moving it to a focused skill or reference |
+| valid but duplicated | retaining one source of truth and linking if needed |
+| vague but high-risk | rewriting it as trigger → action → verification |
+| a recurring, hidden repository constraint | adding it with evidence |
