@@ -45,17 +45,19 @@ Use this baseline if the user hasn't specified anything and there's no codebase 
   --ink:       #1a1a1f;
   --ink-soft:  #555560;
   --rule:      #e7e5df;
-  --accent:    #b97051;     /* accessible lighter terracotta for text and controls */
+  --accent:    #a25d43;     /* AA-safe terracotta for text and controls on the light baseline */
   --accent-2:  #d4916e;     /* large type, charts, and decoration only */
   --accent-soft:#f8ede5;     /* selected rows and small badges only */
-  --warn:      #d97706;
+  --warn:      #a16207;
   --danger:    #b91c1c;
   --ok:        #15803d;
 
   --serif: Charter, "Iowan Old Style", "Source Serif 4",
-           ui-serif, Georgia, serif;
-  --sans:  "Plus Jakarta Sans", "DM Sans", ui-sans-serif,
-           system-ui, -apple-system, sans-serif;
+           "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC",
+           STSong, SimSun, ui-serif, Georgia, serif;
+  --sans:  "Plus Jakarta Sans", "DM Sans", "Source Han Sans SC",
+           "Noto Sans CJK SC", "Microsoft YaHei", "PingFang SC",
+           "Hiragino Sans GB", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --mono:  ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
 }
 
@@ -106,7 +108,7 @@ The baseline provides two accent tones. When an artifact needs more — chart da
 ```css
 :root {
   --hue-base: 25;           /* terracotta hue ≈ 25 */
-  --accent:      oklch(0.60 0.14 var(--hue-base));
+  --accent:      oklch(0.53 0.12 var(--hue-base)); /* AA-safe text/control anchor */
   --accent-2:    oklch(0.70 0.14 var(--hue-base));
   /* Rotate hue for complementary tones, keeping L and C constant */
   --chart-a:     oklch(0.60 0.12 var(--hue-base));
@@ -117,13 +119,13 @@ The baseline provides two accent tones. When an artifact needs more — chart da
 
 The rule: **keep lightness (L) and chroma (C) constant, rotate hue (h)**. This guarantees perceptually even contrast across the set. Never invent new hues from scratch — derive them from the base.
 
-## Typography: avoid the AI-overused stack
+## Typography: choose available type, not an AI-default stack
 
-The fallback `--sans` variable deliberately avoids fonts that have become markers of AI-generated content. The following fonts are fine *if the user's brand already uses them*, but should never be the agent's *default* choice when no design system exists:
+The fallback `--sans` variable does not mechanically reach for the most familiar UI stack. But type should be chosen for brand fit, legibility, script coverage, and local availability—not to avoid a font by reputation. The following fonts are valid when the user's brand, existing codebase, or runtime availability makes them the right fit; avoid using any one of them merely by reflex when no design system exists:
 
-**Avoid as default:** Inter · Roboto · Arial · Helvetica · Fraunces · system-ui (alone)
+**Do not choose by reflex:** Inter · Roboto · Arial · Helvetica · Fraunces · system-ui (alone)
 
-**Preferred alternatives for sans-serif:**
+**Useful alternatives when available:**
 
 | Font | Character | Use |
 |---|---|---|
@@ -133,7 +135,9 @@ The fallback `--sans` variable deliberately avoids fonts that have become marker
 | Outfit | Rounded geometric, approachable | Friendly product surfaces |
 | Geist Sans | Neutral, Vercel's house font | Developer-facing tools |
 
-**Preferred serif** (already in `--serif`): Charter · Iowan Old Style · Source Serif 4
+**Useful serif choices** (already in `--serif`): Charter · Iowan Old Style · Source Serif 4
+
+For Chinese content, keep the CJK fallbacks in the default stacks. When a required custom font is not embedded or installed locally, use the platform system stack rather than adding a network dependency solely to make the typography feel less generic.
 
 If the user's codebase or brand already specifies Inter or Roboto, *use it* — brand consistency always beats font snobbery. The anti-overuse rule applies only when the agent is choosing a font with no external guidance.
 

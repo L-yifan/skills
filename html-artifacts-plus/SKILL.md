@@ -4,7 +4,7 @@ description: Produce self-contained HTML artifacts instead of markdown when the 
 ---
 
 > [!IMPORTANT]
-> **PRE-REQUISITE DIRECTIVE FOR THE AGENT**: Before generating any HTML codebase or design, you **MUST** read and check `references/matching-your-style.md` first to fetch the default CSS baseline (editorial spacing, real type, 70ch line limit, warm restrained accent) and avoid the AI-default visual traps.
+> **PRE-REQUISITE DIRECTIVE FOR THE AGENT**: Before generating any HTML codebase or design, you **MUST** read and check `references/matching-your-style.md` first. Use it to resolve the visual source of truth, apply the default CSS baseline when no stronger source exists (editorial spacing, real type, 70ch line limit, warm restrained accent), and avoid AI-default visual traps. It is a baseline and quality gate, not a mandate to make every artifact look editorial.
 > Additionally, if the workspace contains related reference documents, read them to align visual parameters.
 
 # HTML Artifacts Plus
@@ -39,6 +39,16 @@ Resolve visual style in this order. Earlier sources always win:
 4. The neutral warm editorial baseline in `references/matching-your-style.md`.
 
 Examples are structural references, not visual themes. Never copy an example's complete palette, card treatment, or typography without checking the first three sources above. Borrow the upstream `dogum/html-artifacts` approach to whitespace, hairline rules, and content-led layout; do not borrow its purple `#7c3aed` accent.
+
+## 轻量前端设计判断
+
+此技能的目标是做出适合内容的 HTML 制品，不是把每个任务都变成完整的网页设计项目。不要引入 v0、用户确认闸门、设计评分或额外流程；但在开始编码前，先完成以下简短判断，并让它实际影响页面选择。
+
+1. **先定页面的阅读情境。** 在心中明确：谁会使用它、主要阅读距离（手机/电脑/投屏）、信息密度、视觉温度（安静/权威/活跃等），以及用户是否真的需要操作。用这些答案决定字号、留白、布局密度、是否使用全屏模式和交互强度；不要只因为 HTML 能做，就添加装饰或交互。
+2. **先做容量检查。** 在写细节前粗略判断首屏和关键区块：内容是否塞不下、是否过于空洞、重点是否被同权重的卡片或模块淹没。必要时先调整信息层级、分栏或叙事顺序，而不是缩小字体或堆叠更多容器。
+3. **品牌任务坚持资产优先。** 当制品围绕明确品牌、产品或现有应用时，优先使用真实 Logo、产品图和界面截图，并从这些资产或既有设计系统提取视觉语言。缺少资产时，使用带标签的诚实占位；不要用 CSS 轮廓、手绘 SVG 或单靠颜色去伪造品牌识别。
+
+这些判断默认在内部完成。只有当用户明确要求设计方向、页面风格探索，或现有上下文无法支撑选择时，才把它们整理成简短说明并向用户确认。
 
 ## When to stay in markdown
 
@@ -118,6 +128,14 @@ Every artifact this skill produces must satisfy these rules:
 3. **用户拿到能做什么？** — 这个 HTML 是让人更好地**读**（对比、图示、时间线）、更好地**讲**（投屏）、还是更好地**改**（编辑→导出）？如果三个都不沾，考虑是否应该用 markdown。
 
 如果任何一题回答不确定，重新审视 Category Index 决策表，确认选对了制品类型。
+
+再做一次不打分的视觉快速检查：
+
+4. **层级清楚吗？** 用户能否在几秒内看到标题、当前重点和下一步，而不是先看到同样醒目的装饰或卡片？
+5. **容量恰当吗？** 首屏和关键区块是否既没有拥挤、截断、靠缩小字体硬塞内容，也没有因重复容器而显得空洞？
+6. **重点被保护了吗？** 重复布局、边框、色块和控件是否服务内容，而不是把所有区块做成同样的视觉权重？
+
+这三项不替代 `references/matching-your-style.md` 中的 Visual quality gate；前者检查页面的阅读与叙事，后者继续检查配色、可读性和 AI 陈词滥调。
 
 ## Document-bound editor trigger
 
