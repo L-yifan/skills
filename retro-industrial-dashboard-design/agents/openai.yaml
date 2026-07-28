@@ -1,0 +1,4 @@
+interface:
+  display_name: "Retro Industrial Dashboard Design"
+  short_description: "Guide retro-industrial dot-matrix dashboard design"
+  default_prompt: "Use $retro-industrial-dashboard-design to define a project-specific dashboard visual system and, when requested, produce a compliant DESIGN.md."

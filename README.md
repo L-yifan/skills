@@ -13,6 +13,7 @@
 | deep-wiki | GitHub 仓库 AI 文档 | `npx skills add https://github.com/L-yifan/skills --skill deep-wiki` |
 | skill-backup | 将自建或外部技能同步到个人索引仓库（含来源核验、发布状态与临时目录收尾规则） | `npx skills add https://github.com/L-yifan/skills --skill skill-backup` |
 | skill-discovery | 从个人索引推荐技能，并严格区分索引内与索引外候选 | `npx skills add https://github.com/L-yifan/skills --skill skill-discovery` |
+| retro-industrial-dashboard-design | 为复古工业点阵仪表盘提供项目发现、视觉系统、DESIGN.md、实现与一致性审查指导 | `npx skills add https://github.com/L-yifan/skills --skill retro-industrial-dashboard-design` |
 | agent-md-improver | 审计、精简并优化 AGENTS.md 和 CLAUDE.md；仅保留经证实、不可推断且与作用域相关的约束 | `npx skills add https://github.com/L-yifan/skills --skill agent-md-improver` |
 | agent-automation-recommender | 分析代码库并从 6 个维度推荐适合 Claude Code、Antigravity、Codex 的 Agent 自动化扩展方案 | `npx skills add https://github.com/L-yifan/skills --skill agent-automation-recommender` |
 
