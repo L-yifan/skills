@@ -1,4 +1,3 @@
-<img width="1000" height="97" alt="image" src="https://github.com/user-attachments/assets/956b325b-e53c-4d27-ba5a-884f03afddec" /># My Skills
 
 个人心仪的 Agent Skills 索引，支持 OpenCode、Claude Code、Cursor 等 40+ AI 代理。
 
@@ -32,8 +31,6 @@
 | xlsx | 电子表格（.xlsx, .xlsm, .csv）处理 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill xlsx` |
 | MinerU Document Extractor | 多格式文档提取（PDF、图片、Word、PPT、网页转 Markdown/HTML/LaTeX/DOCX） | [opendatalab/mineru-ecosystem](https://github.com/opendatalab/MinerU-Ecosystem) | `npx skills add https://github.com/opendatalab/mineru-ecosystem --skill "MinerU Document Extractor"` |
 | kb-retriever | 检索与问答本地知识库（支持分层检索） | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) | `npx skills add https://github.com/ConardLi/garden-skills --skill kb-retriever` |
-| obsidian-vault | Obsidian 知识库笔记管理（wikilinks + Index 笔记） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill obsidian-vault` |
-## Web 研究与自动化
 
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
