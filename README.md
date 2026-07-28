@@ -109,6 +109,19 @@
 | antibes-holiday | 原创轻松写意的黑色钢笔插画、叙事场景与早期 Logo 探索 | [haorantang97/antibes-holiday](https://github.com/haorantang97/antibes-holiday) | `npx skills add haorantang97/antibes-holiday --skill antibes-holiday` |
 | video-shotcraft | 基于 Remotion 的 AI Agent 电影级视频/宣传片制作工具包（支持网页截图转 2.5D/3D 动态镜头与音效对齐） | [Vincentwei1021/video-shotcraft](https://github.com/Vincentwei1021/video-shotcraft) | `npx skills add https://github.com/Vincentwei1021/video-shotcraft` |
 
+## Google DESIGN.md 设计系统与 Agent 工具链
+
+`DESIGN.md` 是 Google Labs 开源的 Markdown 驱动设计系统规范工具链，结合机器可读 Token 与人类可读规范说明，支持自动编译为 Tailwind CSS 及 W3C DTCG 标准。
+
+* **CLI 安装/免安装运行**：`npm i -g @google/design.md` 或 `npx @google/design.md <command>`
+
+| 技能名 | 描述 | 来源 | 安装命令 |
+|--------|------|------|----------|
+| design.md | 设计系统规范管理、Token 校验与自动编译导出工具链（CLI：`npx @google/design.md`） | [google-labs-code/design.md](https://github.com/google-labs-code/design.md) | `npx skills add https://github.com/google-labs-code/design.md` |
+| agent-dx-cli-scale | 评价与构建 Agent 友好型 CLI 的设计维度与纵深防御评估准则 | [google-labs-code/design.md](https://github.com/google-labs-code/design.md) | `npx skills add https://github.com/google-labs-code/design.md --skill agent-dx-cli-scale` |
+| ink | 基于 json-render 的 Ink 终端 UI 渲染器，用于生成交互式终端界面 | [google-labs-code/design.md](https://github.com/google-labs-code/design.md) | `npx skills add https://github.com/google-labs-code/design.md --skill ink` |
+| tdd-red-green-refactor | TypeScript/Node.js TDD 测试驱动开发规范与验证流程 | [google-labs-code/design.md](https://github.com/google-labs-code/design.md) | `npx skills add https://github.com/google-labs-code/design.md --skill tdd-red-green-refactor` |
+
 ## Google Stitch 设计系统
 
 Google Stitch 是 Google Labs 的 AI 设计平台，支持 Text-to-UI 设计、shadcn-ui 组件生成、Remotion 视频动画等。配合 [Stitch MCP server](https://github.com/davideast/stitch-mcp) 使用效果最佳。
