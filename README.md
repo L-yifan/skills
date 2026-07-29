@@ -65,6 +65,7 @@
 
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
+| ask-matt | 根据当前情境推荐适合的技能或技能工作流，并给出调用顺序 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill ask-matt` |
 | setup-matt-pocock-skills | 项目初始化向导，配置 Issue Tracker、Triage 标签与领域文档路径 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-skills` |
 | grilling | 通过连续追问与压力测试对计划、决策或想法进行审查并形成共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grilling` |
 | batch-grill-me | 基于决策树前沿（Frontier）按轮次批量追问方案，结合子 Agent 异步探查环境事实 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill batch-grill-me` |
@@ -72,6 +73,9 @@
 | to-spec | 将对齐的方案合成结构化的技术规格说明书（Spec / PRD）并发布到 Issue Tracker | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill to-spec` |
 | to-tickets | 将技术规格说明书拆解为可独立交付的原子化任务卡片（Tickets） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill to-tickets` |
 | implement | 基于 TDD 测试驱动开发流程自动领取并实现 Ticket 代码与验证 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill implement` |
+| tdd | 通过面向公开接口的纵向红—绿—重构循环，以测试驱动功能实现或缺陷修复 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill tdd` |
+| codebase-design | 使用深模块、简洁接口与清晰接缝等原则设计可测试、易演进的代码结构 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill codebase-design` |
+| triage | 对原始 Issue 与外部 PR 进行分类、验证和信息补全，并整理为 Agent 可执行简报 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill triage` |
 | wayfinder | 将大型、路径尚不清晰的工作规划为可逐项解决的决策路线图 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill wayfinder` |
 | prototype | 构建抛弃型原型（Logic 终端 TUI 或 UI 多变体）以快速验证设计逻辑或界面效果 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill prototype` |
 | diagnosing-bugs | 困难 Bug 与性能退化的诊断循环 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill diagnosing-bugs` |
@@ -204,7 +208,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-07-28
+- **更新日期**: 2026-07-29
 
 ## License
 
