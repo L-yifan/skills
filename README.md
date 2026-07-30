@@ -16,6 +16,7 @@
 | retro-industrial-dashboard-design | 为复古工业点阵仪表盘提供项目发现、视觉系统、DESIGN.md、实现与一致性审查指导 | `npx skills add https://github.com/L-yifan/skills --skill retro-industrial-dashboard-design` |
 | agent-md-improver | 审计、精简并优化 AGENTS.md 和 CLAUDE.md；仅保留经证实、不可推断且与作用域相关的约束 | `npx skills add https://github.com/L-yifan/skills --skill agent-md-improver` |
 | agent-automation-recommender | 分析代码库并从 6 个维度推荐适合 Claude Code、Antigravity、Codex 的 Agent 自动化扩展方案 | `npx skills add https://github.com/L-yifan/skills --skill agent-automation-recommender` |
+| agent-team-prompting | 编写、改进并评估 Claude Code agent team 启动提示词，覆盖角色分工、协作规则、质量门槛与最终汇总 | `npx skills add https://github.com/L-yifan/skills --skill agent-team-prompting` |
 
 
 > **注意**：自建技能中，技能源码存放在本仓库（如 deep-wiki、github 等）；外部技能（如下方表格中的技能）仅在 README 中引用，源码存放在其官方仓库。
@@ -208,7 +209,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-07-29
+- **更新日期**: 2026-07-30
 
 ## License
 
