@@ -192,4 +192,3 @@ Before returning an agent-team prompt to the user, verify:
 - It tells the lead to wait for teammates before final synthesis.
 - It defines the final output format.
 - It includes cleanup or shutdown instructions.
-
