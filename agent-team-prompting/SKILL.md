@@ -1,13 +1,13 @@
 ---
 name: agent-team-prompting
-description: Use when the user wants to write, improve, or evaluate prompts for Claude Code agent teams, teammates, multi-agent collaboration, parallel reviewers, competing hypotheses, complex refactors, coordinated investigations, PR reviews, or tasks that need independent Claude Code sessions to discuss and coordinate.
+description: Use when the user wants to write, improve, or evaluate prompts for AI agent teams, teammates, multi-agent collaboration, parallel reviewers, competing hypotheses, complex refactors, coordinated investigations, PR reviews, or tasks that need independent agent sessions to discuss and coordinate.
 ---
 
 # Agent Team Prompting
 
 ## Overview
 
-Use this skill to write launch prompts for Claude Code agent teams. A good agent-team prompt does more than split work: it defines why a team is needed, how teammates coordinate through shared tasks and messages, what each teammate owns, where collaboration is required, and when the team lead should wait, summarize, approve, or clean up.
+Use this skill to write launch prompts for AI agent teams. A good agent-team prompt does more than split work: it defines why a team is needed, how teammates coordinate through shared tasks and messages, what each teammate owns, where collaboration is required, and when the team lead should wait, summarize, approve, or clean up. Keep platform-specific setup separate from the core prompt so the same workflow can be adapted to different agent runtimes, orchestration tools, and interfaces.
 
 ## Agent Teams vs Subagents
 
@@ -15,11 +15,11 @@ Use this decision before writing the prompt.
 
 | Use this | When | Prompt implication |
 | --- | --- | --- |
-| Agent team | The work needs debate, coordination, shared task ownership, direct teammate communication, or long-running independent Claude Code sessions | Ask Claude Code to create an agent team with teammates, task list, mailbox-style communication, and a lead summary |
+| Agent team | The work needs debate, coordination, shared task ownership, direct teammate communication, or long-running independent agent sessions | Ask the orchestrator to create an agent team with teammates, a shared task list, direct communication, and a lead summary |
 | Subagents | Only the final result matters and workers do not need to talk to each other | Ask for subagents or parallel agents instead; do not force agent teams |
-| Single agent | The task is small, sequential, or file-conflict-prone | Keep the prompt focused on one Claude Code session |
+| Single agent | The task is small, sequential, or file-conflict-prone | Keep the prompt focused on one agent session |
 
-Agent teams cost more tokens because each teammate is an independent Claude instance. State that tradeoff briefly when the user is choosing between approaches.
+Agent teams cost more tokens and coordination overhead because each teammate is an independent agent session. State that tradeoff briefly when the user is choosing between approaches.
 
 ## Prompt Assembly Checklist
 
@@ -70,7 +70,7 @@ Coordination rules:
 
 Approval and permissions:
 - Do not modify files until a plan is presented and I approve it. [Remove if implementation may start immediately.]
-- Do not use `--dangerously-skip-permissions` unless I explicitly request it.
+- Do not bypass the runtime's permission, sandbox, or safety controls unless I explicitly request it.
 - Pause and ask for guidance if the team finds a risk outside the original scope.
 
 Quality gates:
@@ -111,26 +111,18 @@ Use these instructions when the work needs true team behavior rather than isolat
 | Shared synthesis | `The team lead must wait for all teammate summaries, deduplicate findings, and mark disagreements.` |
 | Long-running work | `Create small tasks in the shared task list, claim them explicitly, and report completed tasks before taking new ones.` |
 
-## Setup Snippets
+## Platform Setup
 
-Only include setup instructions if the user is preparing the environment or the prompt will be reused by someone else.
-
-```json
-{
-  "env": {
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
-  }
-}
-```
+Only include platform-specific setup instructions if the user is preparing the environment or the prompt will be reused by someone else. Keep these instructions optional and clearly separated from the platform-neutral team prompt.
 
 Useful prompt additions:
 
 ```text
-If agent teams are not enabled, tell me to set CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 before proceeding.
-Use teammate mode [auto|tmux|in-process] if appropriate for this environment.
+If agent teams are not available, tell me which capability or runtime setting must be enabled before proceeding.
+Use the collaboration or execution mode supported by this environment when it materially affects coordination, visibility, or isolation.
 ```
 
-Mention tmux or iTerm2 only when the user asks about display mode, panes, or team visibility. Do not clutter every task prompt with display setup.
+Mention a specific runtime, interface, terminal multiplexer, or display mode only when the user asks about it or when it is required by the target environment. Do not clutter every task prompt with platform setup.
 
 ## Examples
 
@@ -183,7 +175,7 @@ Use the shared task list for research tasks and teammate messages to resolve dis
 
 Before returning an agent-team prompt to the user, verify:
 
-- It explicitly asks Claude Code to create an agent team.
+- It explicitly asks the chosen orchestrator to create an agent team.
 - The task genuinely benefits from teammates communicating directly.
 - Each teammate has a distinct role and output.
 - The prompt includes shared task-list and teammate-message behavior.
