@@ -64,23 +64,62 @@
 
 ## Agent 工作流与工程规划
 
+### Matt Pocock Skills 安装策略
+
+Matt Pocock 的技能不是同一层级的独立工具，首次安装建议先装主流程及其运行依赖，再按任务扩展。核心工程工作流是：
+
+```text
+setup-matt-pocock-skills
+              ↓
+grill-with-docs ─┐
+                 ├→ to-spec → to-tickets → implement
+wayfinder ───────┘
+```
+
+- `setup-matt-pocock-skills`：每个仓库首次使用前运行一次，配置 Issue Tracker、Triage 标签和领域文档布局。
+- `grill-with-docs`：已有代码库、问题可以在一个会话内逐步对齐时使用。
+- `wayfinder`：大型、模糊或超过一个 Agent 会话的工作使用；它先解决决策票据，路线清晰后再进入 `to-spec`，不要直接跳到 `implement`。
+- `to-spec`：把已经对齐的讨论合成为结构化规格说明，并发布到已配置的 Issue Tracker。
+- `to-tickets`：将规格拆成带阻塞关系的纵向、可交付 Tickets。
+- `implement`：逐个实现 Tickets，内部使用 `tdd`，完成后使用 `code-review` 检查实现与规格的一致性。
+
+首次安装以下面的核心集合（6 个主流程入口 + 4 个必需运行依赖）为基线，不要选择 Matt 仓库中的全部技能。先检查主机上已有的技能；已经安装且能被当前 Agent 调用的同名技能，可以从安装命令中删去，不必重复安装：
+
+```bash
+# 查看用户级已安装技能
+npx skills list -g
+
+# 如果当前项目也有项目级技能，再查看项目级列表
+npx skills list
+```
+
+只有“已安装且当前 Agent 可调用”的技能可以跳过；仅安装给其他 Agent、不可用或版本不兼容的同名技能，不应视为已满足依赖。
+
+```bash
+# 示例：主机尚未安装任何核心技能时
+npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-skills grill-with-docs wayfinder to-spec to-tickets implement grilling domain-modeling tdd code-review
+```
+
+其中 `grilling`、`domain-modeling` 是 `grill-with-docs` / `wayfinder` 使用的对齐与领域建模依赖，`tdd`、`code-review` 是 `implement` 使用的实现与收尾依赖。`prototype`、`research`、`triage`、`diagnosing-bugs`、`handoff`、`ask-matt` 等属于按需扩展：只有遇到对应的原型、调查、原始 Issue、困难 Bug、跨会话交接或需要路由推荐时再安装。
+
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
-| ask-matt | 根据当前情境推荐适合的技能或技能工作流，并给出调用顺序 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill ask-matt` |
-| setup-matt-pocock-skills | 项目初始化向导，配置 Issue Tracker、Triage 标签与领域文档路径 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-skills` |
-| grilling | 通过连续追问与压力测试对计划、决策或想法进行审查并形成共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grilling` |
+| ask-matt | 可选路由：根据当前情境推荐适合的技能或技能工作流，并给出调用顺序 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill ask-matt` |
+| setup-matt-pocock-skills | 核心入口（每个仓库运行一次）：配置 Issue Tracker、Triage 标签与领域文档路径 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-skills` |
+| grilling | 核心依赖：通过连续追问与压力测试对计划、决策或想法进行审查并形成共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grilling` |
 | batch-grill-me | 基于决策树前沿（Frontier）按轮次批量追问方案，结合子 Agent 异步探查环境事实 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill batch-grill-me` |
-| grill-with-docs | 结合项目现有文档（CONTEXT.md / ADRs）通过追问压力测试方案并形成共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grill-with-docs` |
-| to-spec | 将对齐的方案合成结构化的技术规格说明书（Spec / PRD）并发布到 Issue Tracker | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill to-spec` |
-| to-tickets | 将技术规格说明书拆解为可独立交付的原子化任务卡片（Tickets） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill to-tickets` |
-| implement | 基于 TDD 测试驱动开发流程自动领取并实现 Ticket 代码与验证 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill implement` |
-| tdd | 通过面向公开接口的纵向红—绿—重构循环，以测试驱动功能实现或缺陷修复 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill tdd` |
+| grill-with-docs | 核心入口：结合项目现有文档（CONTEXT.md / ADRs）通过追问压力测试方案并形成共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grill-with-docs` |
+| to-spec | 核心流程：将对齐的方案合成结构化的技术规格说明书（Spec / PRD）并发布到 Issue Tracker | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill to-spec` |
+| to-tickets | 核心流程：将技术规格说明书拆解为可独立交付、带阻塞关系的纵向任务卡片（Tickets） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill to-tickets` |
+| implement | 核心流程：基于规格或 Tickets，使用 TDD 实现并完成验证与代码审查 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill implement` |
+| tdd | 核心依赖：通过面向公开接口的纵向红—绿—重构循环，以测试驱动功能实现或缺陷修复 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill tdd` |
+| code-review | 核心依赖：从代码规范与规格符合度两个维度审查固定起点之后的变更 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill code-review` |
 | codebase-design | 使用深模块、简洁接口与清晰接缝等原则设计可测试、易演进的代码结构 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill codebase-design` |
 | triage | 对原始 Issue 与外部 PR 进行分类、验证和信息补全，并整理为 Agent 可执行简报 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill triage` |
-| wayfinder | 将大型、路径尚不清晰的工作规划为可逐项解决的决策路线图 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill wayfinder` |
+| wayfinder | 核心入口（大型工作）：将规模大、路径尚不清晰的工作规划为可逐项解决的决策路线图 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill wayfinder` |
 | prototype | 构建抛弃型原型（Logic 终端 TUI 或 UI 多变体）以快速验证设计逻辑或界面效果 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill prototype` |
 | diagnosing-bugs | 困难 Bug 与性能退化的诊断循环 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill diagnosing-bugs` |
-| domain-modeling | 构建并精炼项目的领域模型与统一语言，记录架构决策（ADR） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill domain-modeling` |
+| domain-modeling | 核心依赖：构建并精炼项目的领域模型与统一语言，记录架构决策（ADR） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill domain-modeling` |
 | handoff | 将当前对话压缩为交接文档以供其他 Agent 接续工作 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill handoff` |
 | improve-codebase-architecture | 扫描代码库寻找架构深化机会，生成可视化 HTML 报告并引导重构 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill improve-codebase-architecture` |
 | research | 针对高信任第一方资料源（官方文档、源码、API）进行技术调查并输出带引用的分析文档 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill research` |
@@ -209,7 +248,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-07-31
+- **更新日期**: 2026-08-02
 
 ## License
 
