@@ -142,9 +142,6 @@ npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-sk
 | frontend-design | 生产级前端界面设计 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill frontend-design` |
 | canvas-design | Canvas 视觉艺术创作 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill canvas-design` |
 | algorithmic-art | 算法艺术（p5.js） | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill algorithmic-art` |
-| brand-guidelines | 品牌颜色和排版指南 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill brand-guidelines` |
-| theme-factory | Artifact 主题应用 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill theme-factory` |
-| web-artifacts-builder | 复杂 HTML artifacts 构建 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill web-artifacts-builder` |
 | web-design-engineer | 网页、落地页与复杂前端交互设计 | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) | `npx skills add https://github.com/ConardLi/garden-skills --skill web-design-engineer` |
 
 ## 图像生成与多媒体
