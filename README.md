@@ -138,6 +138,7 @@ npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-sk
 
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
+| interfaces（7 个前端界面技能） | 前端界面综合设计与审查：可访问性、布局、文案、排版、颜色、UI 精修 | [jakubkrehel/skills](https://github.com/jakubkrehel/skills) | `npx skills add jakubkrehel/skills` |
 | frontend-design | 生产级前端界面设计 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill frontend-design` |
 | canvas-design | Canvas 视觉艺术创作 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill canvas-design` |
 | algorithmic-art | 算法艺术（p5.js） | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill algorithmic-art` |
