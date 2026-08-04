@@ -9,10 +9,26 @@ Treat instruction files as a minimal decision layer, not a project manual. Prefe
 
 ## Workflow
 
+### 0. Establish project risk profile and default safe posture
+
+Resolve the target directory, then before auditing, classifying, deleting, rewriting, or moving any instruction, identify whether it is an experimental/side project, internal application, production service, public API/SDK/plugin ecosystem, migration/rollback-sensitive system, or subject to security, privacy, compliance, or release controls.
+
+Use repository and user evidence such as deployment/hosting and CI/CD files, published API schemas or packages, migration/backup/rollback scripts, authentication/permission configuration, privacy/compliance documents, and explicit owner statements. Record each risk as **confirmed**, **inferred**, or **unknown**.
+
+When the risk profile is unknown, use the conservative default: do not propose deleting or weakening safeguards for external compatibility, data migration or rollback, security or permissions, data integrity, release/deployment, privacy, compliance, destructive operations, or secrets. Mark the item **needs owner confirmation**.
+
+Apply aggressive cleanup only when evidence supports an experimental or side-project context and no external contract or high-risk control is affected. Express every risk-sensitive recommendation as trigger → action → verification.
+
+#### Example: same rule, different risk
+
+- Original: `Do not preserve backward compatibility.`
+- Side project: `Remove obsolete internal paths instead of adding new compatibility layers.`
+- Public API or production: `Do not add compatibility layers unless compatibility is required by an external contract. Before removing an existing path, verify callers, migration requirements, and rollback coverage.`
+
 ### 1. Establish scope before judging content
 
 1. Find instruction files with `rg --files -g 'AGENTS.md' -g 'AGENTS.local.md' -g '.agents.md' -g 'CLAUDE.md' -g '.claude.md' -g '.claude.local.md'`.
-2. Identify the user's target directory and the files that actually govern it. Record parent-to-child precedence and local overrides.
+2. Identify the files that actually govern the target. Record parent-to-child precedence and local overrides.
 3. Do not inspect or change global instruction files unless the user explicitly includes them.
 4. Do not treat every nested instruction file as a candidate for expansion. A nested file should exist only for a real domain or workflow boundary.
 
@@ -30,7 +46,7 @@ Classify each item before proposing a change:
 | **Add** | It cannot be reliably inferred, recurs, and prevents a meaningful failure or wrong decision. |
 | **Rewrite** | The constraint is necessary but vague, untestable, overly absolute, or located at the wrong scope. |
 
-Preserve explicit guardrails for destructive operations, secrets, security, compliance, releases, and other high-cost failures. Do not weaken those merely to make a file shorter.
+Preserve explicit high-risk guardrails identified in Step 0 and any other high-cost failure controls; do not weaken them merely to make a file shorter.
 
 ### 3. Audit derivability and conflicts
 
@@ -48,6 +64,7 @@ If the answer to 1 or 2 is yes, remove or link instead of repeating it. If the a
 Always present a **Minimal Context Report** and wait for approval before writing. Use [references/templates.md](references/templates.md) for the report and diff structure. Include:
 
 - files that govern the requested scope and their precedence;
+- the risk profile, evidence status, and items needing owner confirmation;
 - evidence-backed keep, remove, move, add, and rewrite decisions;
 - must-fix conflicts or stale instructions separately from optional polish;
 - the expected effect on agent decisions, not a chapter-completeness score.
@@ -69,7 +86,7 @@ After editing, re-check the affected scope:
 - every path and command is real and current;
 - no child file repeats or contradicts its parent;
 - no retained line is obvious from the repository alone;
-- high-risk guardrails remain explicit;
+- high-risk guardrails remain explicit, and unknown risk was not treated as low risk;
 - referenced skills and documents exist and are loaded only when relevant.
 
 Report what changed and any facts that still require owner confirmation.

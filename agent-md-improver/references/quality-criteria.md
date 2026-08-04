@@ -7,12 +7,12 @@ Score only after establishing which instruction files govern the requested scope
 | Evidence fidelity | 25 | Every factual instruction is verified against code, config, CI, or a repeatable command. |
 | Non-derivability | 25 | Lines capture exceptions, hidden constraints, or team choices that an agent cannot reliably infer. |
 | Scope and precedence | 20 | Rules live at the narrowest correct level; parent, child, and local files do not conflict. |
-| Actionability and risk control | 15 | High-risk instructions name a trigger, action, and verification; commands and paths are executable. |
+| Actionability and risk control | 15 | Recommendations reflect the confirmed or conservative risk profile; high-risk instructions name a trigger, action, and verification, and are not deleted or weakened when compatibility, security, permissions, migration, rollback, data integrity, release, privacy, or compliance risk is unknown. Commands and paths are executable. |
 | Context efficiency | 15 | No generic advice, redundant restatement, long low-frequency procedures, or filler. |
 
 ## Assessment process
 
-1. Determine the target scope and applicable instruction hierarchy.
+1. Determine the target scope and applicable instruction hierarchy; record the risk profile and unknowns before judging changes.
 2. Cross-check every retained or proposed fact against repository evidence.
 3. Classify each line as keep, remove, move, add, or rewrite.
 4. Score the governing set, not each file in isolation when files inherit from one another.
@@ -27,6 +27,7 @@ Score only after establishing which instruction files govern the requested scope
 - A long, rare procedure is always loaded instead of referenced on demand.
 - A command, path, dependency, or workflow is not verified.
 - A safety or release constraint is shortened until its trigger or verification is unclear.
+- A recommendation applies side-project defaults to a production, public-contract, migration-sensitive, security-sensitive, or compliance-sensitive context, or weakens a high-risk constraint while the risk profile is unknown.
 
 ## Classification guide
 

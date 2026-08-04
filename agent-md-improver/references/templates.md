@@ -11,6 +11,24 @@ Use this report before editing. Omit sections with no evidence.
 |---|---|---|
 | `AGENTS.md` | `<scope>` | root / inherited / override |
 
+### Risk profile
+
+Record only what repository or user evidence supports. Use `confirmed` for verified facts, `inferred` for reasonable conclusions, and `unknown` for unconfirmed environments or policies. Do not present an inference or an unconfirmed policy as a repository fact.
+
+| Risk area | Status | Evidence | Decision impact |
+|---|---|---|---|
+| `<environment or concern>` | `confirmed / inferred / unknown` | `<path, command, or owner statement>` | `<safe default or allowed change>` |
+
+### Evidence
+
+| Finding | Status | Source | Notes |
+|---|---|---|---|
+| `<risk fact or policy>` | `confirmed / inferred / unknown` | `<path, command, or owner statement>` | `<why it supports the finding>` |
+
+### Unknowns / Owner confirmation
+
+- `<unconfirmed environment, external contract, or team policy>` — **Owner confirmation needed:** `<decision required and why>`
+
 ### Must fix
 
 - **Remove / rewrite / move:** `<instruction>`
