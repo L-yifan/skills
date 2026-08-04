@@ -14,7 +14,7 @@
 | skill-backup | 将自建或外部技能同步到个人索引仓库（含来源核验、发布状态与临时目录收尾规则） | `npx skills add https://github.com/L-yifan/skills --skill skill-backup` |
 | skill-discovery | 从个人索引推荐技能，并严格区分索引内与索引外候选 | `npx skills add https://github.com/L-yifan/skills --skill skill-discovery` |
 | retro-industrial-dashboard-design | 为复古工业点阵仪表盘提供项目发现、视觉系统、DESIGN.md、实现与一致性审查指导 | `npx skills add https://github.com/L-yifan/skills --skill retro-industrial-dashboard-design` |
-| agent-md-improver | 审计、精简并优化 AGENTS.md 和 CLAUDE.md；仅保留经证实、不可推断且与作用域相关的约束 | `npx skills add https://github.com/L-yifan/skills --skill agent-md-improver` |
+| agent-md-improver | 审计、精简并优化 AGENTS.md 和 CLAUDE.md；先识别项目风险，保护兼容性、迁移、回滚、安全、数据完整性和发布约束 | `npx skills add https://github.com/L-yifan/skills --skill agent-md-improver` |
 | agent-automation-recommender | 分析代码库并从 6 个维度推荐适合 Claude Code、Antigravity、Codex 的 Agent 自动化扩展方案 | `npx skills add https://github.com/L-yifan/skills --skill agent-automation-recommender` |
 | agent-team-prompting | 编写、改进并评估 AI Agent 团队启动提示词，覆盖角色分工、协作规则、质量门槛与最终汇总 | `npx skills add https://github.com/L-yifan/skills --skill agent-team-prompting` |
 
