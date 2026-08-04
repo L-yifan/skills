@@ -180,6 +180,7 @@ Google Stitch 是 Google Labs 的 AI 设计平台，支持 Text-to-UI 设计、s
 |--------|------|------|----------|
 | doc-coauthoring | 文档协作编写工作流 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill doc-coauthoring` |
 | internal-comms | 内部通信格式编写 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill internal-comms` |
+| bro | 将上一条回复改写成简洁、通俗、少术语的人话 | [dmmulroy/skills](https://github.com/dmmulroy/skills) | `npx skills add https://github.com/dmmulroy/skills --skill bro` |
 
 ## 开发工具
 
@@ -246,7 +247,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-08-02
+- **更新日期**: 2026-08-05
 
 ## License
 
