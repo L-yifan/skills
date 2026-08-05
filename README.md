@@ -124,6 +124,7 @@ npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-sk
 | improve-codebase-architecture | 扫描代码库寻找架构深化机会，生成可视化 HTML 报告并引导重构 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill improve-codebase-architecture` |
 | research | 针对高信任第一方资料源（官方文档、源码、API）进行技术调查并输出带引用的分析文档 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill research` |
 | teach | 引导并帮助用户在当前工作区学习一个新技能或概念（支持多会话状态保存） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill teach` |
+| wizard | 生成交互式 Bash 向导，引导人完成配置、密钥设置、第三方后台操作或一次性迁移 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill wizard` |
 
 
 ## 论文写作与研究
