@@ -108,7 +108,6 @@ npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-sk
 | ask-matt | 可选路由：根据当前情境推荐适合的技能或技能工作流，并给出调用顺序 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill ask-matt` |
 | setup-matt-pocock-skills | 核心入口（每个仓库运行一次）：配置 Issue Tracker、Triage 标签与领域文档路径 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-skills` |
 | grilling | 核心依赖：通过连续追问与压力测试对计划、决策或想法进行审查并形成共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grilling` |
-| batch-grill-me | 基于决策树前沿（Frontier）按轮次批量追问方案，结合子 Agent 异步探查环境事实 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill batch-grill-me` |
 | grill-with-docs | 核心入口：结合项目现有文档（CONTEXT.md / ADRs）通过追问压力测试方案并形成共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grill-with-docs` |
 | to-spec | 核心流程：将对齐的方案合成结构化的技术规格说明书（Spec / PRD）并发布到 Issue Tracker | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill to-spec` |
 | to-tickets | 核心流程：将技术规格说明书拆解为可独立交付、带阻塞关系的纵向任务卡片（Tickets） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill to-tickets` |
