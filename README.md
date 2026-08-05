@@ -182,6 +182,7 @@ Google Stitch 是 Google Labs 的 AI 设计平台，支持 Text-to-UI 设计、s
 | doc-coauthoring | 文档协作编写工作流 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill doc-coauthoring` |
 | internal-comms | 内部通信格式编写 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill internal-comms` |
 | bro | 将上一条回复改写成简洁、通俗、少术语的人话 | [dmmulroy/skills](https://github.com/dmmulroy/skills) | `npx skills add https://github.com/dmmulroy/skills --skill bro` |
+| wait-what | 上一条回复没有说清时，补充上下文并重新解释 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill wait-what` |
 
 ## 开发工具
 
@@ -195,7 +196,7 @@ Google Stitch 是 Google Labs 的 AI 设计平台，支持 Text-to-UI 设计、s
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
 | skill-creator | 新技能创建指南 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill skill-creator` |
-| writing-great-skills | 编写与编辑高质量技能的参考指南——提供让技能行为更可预测的术语和原则 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill writing-great-skills` |
+| writing-for-agents | 面向 Agent 编写和维护技能、AGENTS.md、CLAUDE.md 及其参考文档 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill writing-for-agents` |
 
 ---
 
