@@ -61,6 +61,7 @@
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
 | mcp-builder | MCP 服务器构建 | [anthropics/skills](https://github.com/anthropics/skills) | `npx skills add https://github.com/anthropics/skills --skill mcp-builder` |
+| skill-upper | Agent Skill 评测与演进：生成 eval、运行 skill-up、诊断失败并迭代 | [alibaba/skill-up](https://github.com/alibaba/skill-up) | `npx skills add https://github.com/alibaba/skill-up/tree/main/skills/skill-upper -g`（自动检测并选择 Agent；固定宿主时添加 `-a codex` 等参数） |
 
 ## Agent 工作流与工程规划
 
