@@ -109,6 +109,7 @@ npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-sk
 | setup-matt-pocock-skills | 核心入口（每个仓库运行一次）：配置 Issue Tracker、Triage 标签与领域文档路径 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-skills` |
 | grilling | 核心依赖：通过连续追问与压力测试对计划、决策或想法进行审查并形成共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grilling` |
 | grill-with-docs | 核心入口：结合项目现有文档（CONTEXT.md / ADRs）通过追问压力测试方案并形成共识 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill grill-with-docs` |
+| grill-design | 通过多轮原型构建与对齐审查收敛前端视觉与 UI 风格 | [will-ness-ai/skills](https://github.com/will-ness-ai/skills/tree/main/skills/grill-design) | `npx skills add https://github.com/will-ness-ai/skills --skill grill-design` |
 | to-spec | 核心流程：将对齐的方案合成结构化的技术规格说明书（Spec / PRD）并发布到 Issue Tracker | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill to-spec` |
 | to-tickets | 核心流程：将技术规格说明书拆解为可独立交付、带阻塞关系的纵向任务卡片（Tickets） | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill to-tickets` |
 | implement | 核心流程：基于规格或 Tickets，使用 TDD 实现并完成验证与代码审查 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill implement` |
@@ -249,7 +250,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-08-05
+- **更新日期**: 2026-08-18
 
 ## License
 
