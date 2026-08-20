@@ -17,6 +17,7 @@
 | agent-md-improver | 审计、精简并优化 AGENTS.md 和 CLAUDE.md；先识别项目风险，保护兼容性、迁移、回滚、安全、数据完整性和发布约束 | `npx skills add https://github.com/L-yifan/skills --skill agent-md-improver` |
 | agent-automation-recommender | 分析代码库并从 6 个维度推荐适合 Claude Code、Antigravity、Codex 的 Agent 自动化扩展方案 | `npx skills add https://github.com/L-yifan/skills --skill agent-automation-recommender` |
 | agent-team-prompting | 编写、改进并评估 AI Agent 团队启动提示词，覆盖角色分工、协作规则、质量门槛与最终汇总 | `npx skills add https://github.com/L-yifan/skills --skill agent-team-prompting` |
+| work-tickets | 在 Matt 工作流生成并批准 Tickets 后，沿 tracker frontier 连续实现、验证并提交整个 ticket set；仅允许用户手动调用 | `npx skills add https://github.com/L-yifan/skills --skill work-tickets` |
 
 
 > **注意**：自建技能中，技能源码存放在本仓库（如 deep-wiki、github 等）；外部技能（如下方表格中的技能）仅在 README 中引用，源码存放在其官方仓库。
@@ -73,7 +74,7 @@ Matt Pocock 的技能不是同一层级的独立工具，首次安装建议先�
 setup-matt-pocock-skills
               ↓
 grill-with-docs ─┐
-                 ├→ to-spec → to-tickets → implement
+                 ├→ to-spec → to-tickets → work-tickets → implement（逐票）
 wayfinder ───────┘
 ```
 
@@ -82,6 +83,7 @@ wayfinder ───────┘
 - `wayfinder`：大型、模糊或超过一个 Agent 会话的工作使用；它先解决决策票据，路线清晰后再进入 `to-spec`，不要直接跳到 `implement`。
 - `to-spec`：把已经对齐的讨论合成为结构化规格说明，并发布到已配置的 Issue Tracker。
 - `to-tickets`：将规格拆成带阻塞关系的纵向、可交付 Tickets。
+- `work-tickets`：本仓库提供的可选手动编排层；在 Tickets 获批后持续读取 tracker frontier，并为每张 Ticket 调用实现、TDD、审查与提交流程。
 - `implement`：逐个实现 Tickets，内部使用 `tdd`，完成后使用 `code-review` 检查实现与规格的一致性。
 
 首次安装以下面的核心集合（6 个主流程入口 + 4 个必需运行依赖）为基线，不要选择 Matt 仓库中的全部技能。先检查主机上已有的技能；已经安装且能被当前 Agent 调用的同名技能，可以从安装命令中删去，不必重复安装：
@@ -225,7 +227,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-08-18
+- **更新日期**: 2026-08-20
 
 ## License
 

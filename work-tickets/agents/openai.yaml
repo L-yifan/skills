@@ -1,0 +1,7 @@
+interface:
+  display_name: "Work Tickets"
+  short_description: "Execute an approved ticket set end to end"
+  default_prompt: "Use $work-tickets to execute the approved ticket set to completion."
+
+policy:
+  allow_implicit_invocation: false
