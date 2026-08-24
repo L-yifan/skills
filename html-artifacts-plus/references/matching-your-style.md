@@ -5,7 +5,7 @@ Bad-looking HTML is worse than good markdown. But "not bad" is not the bar — *
 ## Four principles
 
 1. **Restraint over decoration.** A calm typographic layout — real serif body, generous spacing, one or two restrained accent colors — beats a busy "dashboard" almost every time. If you're tempted to add a gradient, don't.
-2. **Use real type.** Default the body to a real serif (Charter, Iowan, Source Serif, Tinos, system serif fallback) for documents and explainers. Sans-serif for tools and editors. 16–18px body, 60–75ch line length, 1.5–1.6 line height. These numbers are not negotiable; they're table stakes.
+2. **Use real type.** Default reading columns to a real serif (Charter, Iowan, Source Serif, Tinos, system serif fallback) for documents and explainers. Sans-serif for tools and editors. For ordinary document prose, start at 16–18px, 60–75ch, and 1.5–1.6 line height; spatial canvases and dense tools need their own width and density.
 3. **Color carries meaning, not mood.** If a color appears in the artifact it should be doing work — severity, status, category, axis. If a color is there for vibe, remove it.
 4. **No filler, no fake.** Never fabricate data, stats, testimonials, or logo walls. When an asset is missing, use a professional placeholder (`[icon]`, initial-letter circle, aspect-ratio image card with a label) rather than a poorly drawn SVG substitute or an emoji stand-in. A gap is more honest than a fake.
 
@@ -19,6 +19,16 @@ Use the first available source in this order:
 4. The neutral warm fallback below.
 
 Treat any sample artifact as evidence about structure, not as a visual theme. Learn its comparison grammar, navigation, diagrams, or export behavior without copying its palette or repeating the same card treatment across unrelated artifacts.
+
+## Compose before styling
+
+Choose the composition before polishing components:
+
+1. State the one decision, understanding, or action the page must make easiest.
+2. Choose one dominant visual anchor: the comparison matrix, diagram, timeline, stage, editor canvas, or key finding. The title supports that anchor; it does not compete with it.
+3. Define the scan path from framing to anchor to evidence to next step. Place secondary detail behind whitespace, alignment, or disclosure instead of giving every section equal weight.
+4. Give surfaces a budget. Start with the page plane and rules; add a contained surface only when grouping or state needs it. Repeated cards are not a layout system.
+5. Assign width roles: `.page-shell` for the canvas, `.prose` for readable text, and dedicated regions for sidebars or controls. Never use the prose measure as the global page width for a spatial artifact.
 
 ## The design-system-from-codebase trick
 
@@ -75,8 +85,10 @@ Use this baseline if the user hasn't specified anything and there's no codebase 
 }
 
 html { background: var(--bg); color: var(--ink); }
-body { font: 17px/1.55 var(--serif); max-width: 70ch;
-       margin: 4rem auto; padding: 0 1.25rem; }
+body { margin: 0; font: 17px/1.55 var(--serif); }
+.page-shell { width: min(1180px, calc(100% - 2.5rem));
+              margin: 4rem auto; }
+.prose { max-width: 70ch; }
 h1 { font-size: 2.2rem; line-height: 1.15; letter-spacing: -.01em; }
 h2 { font-size: 1.4rem; margin-top: 2.4em; }
 code, pre { font-family: var(--mono); font-size: .92em; }
@@ -207,14 +219,16 @@ If the artifact has any **three** of the patterns above, restart from scratch. I
 
 ## Visual quality gate
 
-Before saving any HTML artifact, verify these items. They are the minimum bar, not the aspiration:
+After saving, render the artifact at `1440×900` and `390×844` when browser or screenshot tools are available, then verify these items. They are the minimum bar, not the aspiration:
 
 1. **No rogue colors.** Every color in the rendered output traces back to a declared CSS variable or the design system. No hardcoded hex that wasn't in the plan.
 2. **No filler content.** Every heading, label, and paragraph says something the user asked for or genuinely needs. Placeholders are labeled as placeholders.
 3. **No AI clichés.** Cross-check against the red-line list above.
 4. **Semantic naming.** CSS classes and IDs describe function (`--chart-axis`, `.tier-card`), not appearance (`--blue-thing`, `.big-box`).
-5. **All text readable.** No overflow, no truncation, no text on low-contrast backgrounds. `text-wrap: pretty` applied where available.
-6. **Would you show this?** The visual quality should be at a level you'd share in a portfolio or design review — not "good enough for a prototype."
+5. **All text readable.** No overflow, truncation, horizontal page scroll, or text on low-contrast backgrounds. `text-wrap: pretty` applied where available.
+6. **One focal point.** The title, decoration, cards, and controls do not compete with the page's main visual anchor. A reader can identify the conclusion/current state and next step from the first viewport.
+7. **Responsive meaning.** Narrow-screen reflow preserves relationships, especially comparisons and timelines; stacking every full-size block into a long feed is not automatically responsive.
+8. **Rendered evidence.** Inspect both target viewports and revise visible defects when an existing render path works. Bound QA to one diagnostic/retry and about 90 seconds; do not install tools, start a server, or delegate solely to obtain screenshots. On failure, run source and interaction smoke checks and disclose that visual QA remains unverified.
 
 ## What good looks like
 

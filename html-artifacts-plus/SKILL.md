@@ -1,10 +1,10 @@
 ---
 name: html-artifacts-plus
-description: Produce self-contained HTML artifacts instead of markdown when the request benefits from spatial layout, color, diagrams, interactivity, sharing, or a round-trip editor. Use this skill for substantial docs, writeups, plans, specs, reports, explainers, summaries, comparisons, reviews, PR descriptions, mockups, diagrams, flowcharts, decks, status updates, post-mortems, incident reports, playgrounds, one-off editors, and document-bound editors. Also use it when the user wants to edit an existing markdown, JSON, YAML, prompt, config, or planning document through an HTML tool and export a patch/diff/instruction for an agent to apply. Stay in markdown only for short conversational replies, code-only outputs, terminal-style command answers, and content that is genuinely just a few sentences.
+description: Create self-contained HTML artifacts when spatial layout, visual hierarchy, interaction, or sharing materially improves a substantial deliverable. Use for comparisons, diagrams, timelines, decks, data views, interactive tools, and source-bound editors that export reviewable patches. Keep short chat replies, code-only or command-only answers, and git-first source documents in Markdown or text.
 ---
 
 > [!IMPORTANT]
-> **PRE-REQUISITE DIRECTIVE FOR THE AGENT**: Before generating any HTML codebase or design, you **MUST** read and check `references/matching-your-style.md` first. Use it to resolve the visual source of truth, apply the default CSS baseline when no stronger source exists (editorial spacing, real type, 70ch line limit, warm restrained accent), and avoid AI-default visual traps. It is a baseline and quality gate, not a mandate to make every artifact look editorial.
+> **PRE-REQUISITE DIRECTIVE FOR THE AGENT**: Before generating any HTML codebase or design, you **MUST** read and check `references/matching-your-style.md` first. Use it to resolve the visual source of truth, apply the fallback tokens when no stronger source exists, and avoid AI-default visual traps. Its prose measure applies to reading columns, not to the whole page shell, diagrams, comparisons, decks, or editors.
 > Additionally, if the workspace contains related reference documents, read them to align visual parameters.
 
 # HTML Artifacts Plus
@@ -40,15 +40,17 @@ Resolve visual style in this order. Earlier sources always win:
 
 Examples are structural references, not visual themes. Never copy an example's complete palette, card treatment, or typography without checking the first three sources above. Borrow the upstream `dogum/html-artifacts` approach to whitespace, hairline rules, and content-led layout; do not borrow its purple `#7c3aed` accent.
 
-## 轻量前端设计判断
+## 制作闭环
 
-此技能的目标是做出适合内容的 HTML 制品，不是把每个任务都变成完整的网页设计项目。不要引入 v0、用户确认闸门、设计评分或额外流程；但在开始编码前，先完成以下简短判断，并让它实际影响页面选择。
+此技能的目标是做出适合内容的 HTML 制品，不是把每个任务都变成完整网页设计项目。按下面的轻量闭环完成工作；默认在内部判断，不增加用户确认闸门。
 
-1. **先定页面的阅读情境。** 在心中明确：谁会使用它、主要阅读距离（手机/电脑/投屏）、信息密度、视觉温度（安静/权威/活跃等），以及用户是否真的需要操作。用这些答案决定字号、留白、布局密度、是否使用全屏模式和交互强度；不要只因为 HTML 能做，就添加装饰或交互。
-2. **先做容量检查。** 在写细节前粗略判断首屏和关键区块：内容是否塞不下、是否过于空洞、重点是否被同权重的卡片或模块淹没。必要时先调整信息层级、分栏或叙事顺序，而不是缩小字体或堆叠更多容器。
-3. **品牌任务坚持资产优先。** 当制品围绕明确品牌、产品或现有应用时，优先使用真实 Logo、产品图和界面截图，并从这些资产或既有设计系统提取视觉语言。缺少资产时，使用带标签的诚实占位；不要用 CSS 轮廓、手绘 SVG 或单靠颜色去伪造品牌识别。
+1. **路由。** 根据内容形状选择制品类型并读取对应 reference；先判断页面是让人读、讲还是操作。
+2. **Composition brief。** 写代码前在心中确定四件事：用户在这页完成的一个任务、首屏回答的一句话、唯一主视觉锚点、从标题到结论/操作的阅读顺序。再确定阅读距离、信息密度和视觉温度。
+3. **容量与宽度。** 区分页面外壳、阅读列和空间画布：正文保持 60–75ch；对比、图表、时间线可使用更宽画布；编辑器可全宽。首屏只保留一个最强焦点，每页默认最多一个主视觉和两个辅助结构。
+4. **品牌资产优先。** 围绕明确品牌或产品时，优先使用真实 Logo、产品图、截图与设计 token。缺少资产时使用带标签的诚实占位，不伪造品牌识别。
+5. **生成并有界验收。** 保存后优先使用环境中已经可用的浏览器或截图工具检查桌面 `1440×900` 和手机 `390×844`。检查横向滚动、遮挡、截断、首屏层级、卡片墙、过长移动端比较和控件可达性；发现问题后修改并复查。视觉验收是有界步骤：最多做一次工具诊断或重试，总计不超过约 90 秒；不要仅为 QA 安装浏览器、启动本地服务器或委派子代理。若现有渲染路径失败，立即执行源码与交互 smoke check，并在交付时说明未完成视觉渲染。
 
-这些判断默认在内部完成。只有当用户明确要求设计方向、页面风格探索，或现有上下文无法支撑选择时，才把它们整理成简短说明并向用户确认。
+完成标准：已渲染时，产物在两个目标视口都可用，标题、核心结论/当前状态和下一步能快速识别，且视觉锚点服务内容而不是装饰；无法渲染时，源码检查通过且交付说明准确披露该限制。
 
 ## When to stay in markdown
 
@@ -76,6 +78,7 @@ Every artifact this skill produces must satisfy these rules:
 8. **Document-bound editors do not write files.** They export patch JSON, markdown diff, and agent instructions. The user sends the export to an agent, and the agent applies it to source files.
 9. **Export only when it earns its place.** Editors and document-bound artifacts must export back to text. Read-only reports, explainers, diagrams, and references add Copy Markdown or Copy Patch only when the user requests round-trip reuse or the artifact is explicitly bound to source content.
 10. **Typographic and color baseline.** Default prose to 60–75ch, line-height 1.5–1.6, and a clean serif or sans-serif appropriate to the task. The fallback palette is neutral paper and white surfaces with a restrained warm terracotta accent; large tinted card fields, purple themes, generic Tailwind dashboards, emoji headers, shadows, and gradients are not defaults. Refer to `references/matching-your-style.md` for the exact tokens.
+11. **Width roles.** Keep the page shell wide enough for the chosen artifact, and constrain only prose blocks. A global `body { max-width: 70ch }` is suitable only for a simple reading page; it is a defect when it compresses comparisons, diagrams, timelines, decks, or editors.
 
 ## Category index — 内容特征 → 制品选择
 
@@ -83,7 +86,7 @@ Every artifact this skill produces must satisfy these rules:
 
 | 内容特征（用户给了什么？） | 最佳制品布局 | 读取参考 | 关键交互 | 如果…请改用… |
 |---|---|---|---|---|
-| 多个方案/选项/路径需要对比决策 | 等宽多列对比 + 指标行 + 推荐块 | `exploration-and-planning.md` | 只读，可加折叠 | 内容只有一个方案 → `reports-and-research.md` |
+| 多个方案/选项/路径需要对比决策 | 等宽多列对比 + 指标行 + 推荐块；窄屏优先保留跨方案指标关系，避免只把完整卡片串成长页 | `exploration-and-planning.md` | 只读，可加折叠 | 内容只有一个方案 → `reports-and-research.md` |
 | 设计方向探索、UI 变体展示 | 网格化迷你模型，可展开 | `exploration-and-planning.md` | 只读，点击放大 | 只需要一个组件所有状态 → `design-and-prototypes.md` |
 | 实现计划、里程碑路线图 | 时间线条 + 数据流图 + 风险表 | `exploration-and-planning.md` | 只读 | 只需要图 → `diagrams-and-illustrations.md` |
 | 代码 diff / PR 审查 | annotated diff + 行内批注 + 严重度标签 | `code-review-and-pr.md` | 只读，跳转链接 | 内容是纯文本对比非代码 → `reports-and-research.md` |
@@ -119,23 +122,17 @@ Every artifact this skill produces must satisfy these rules:
 - **投屏 = 只需要翻页交互。** 上一个/下一个，可能需要全屏。
 - **数据探索 = 需要筛选/排序/hover。** 但不要加编辑功能。
 
-## 生成后自检（保存前必查）
+## 渲染验收（交付前必查）
 
-在保存 HTML 文件之前，快速自问 3 个问题：
+源码自检不能替代渲染。保存后按“制作闭环”打开成品并检查：
 
-1. **布局匹配吗？** — 内容的形状是否驱动了布局选择？（对比→列 / 流程→图 / 时间→时间线 / 代码→diff / 配置→表单）还是我用了一个通用报告布局敷衍了事？
-2. **交互恰好吗？** — 加了交互是因为用户需要操作（编辑/排序/筛选/导出），还是因为"好看"？只读内容有没有被多余的交互干扰？
-3. **用户拿到能做什么？** — 这个 HTML 是让人更好地**读**（对比、图示、时间线）、更好地**讲**（投屏）、还是更好地**改**（编辑→导出）？如果三个都不沾，考虑是否应该用 markdown。
+1. **内容匹配。** 对比能同时比较，流程看得出方向，时间线看得出先后，代码呈现 diff，配置提供表单；没有退化成通用报告页。
+2. **首屏层级。** 标题、核心结论/当前状态和下一步一眼可见；标题或装饰没有压过主要信息；只能有一个最强视觉焦点。
+3. **容量。** `1440×900` 与 `390×844` 均无横向滚动、遮挡或截断。窄屏对比仍能追踪同一指标，而不是仅把完整卡片纵向堆到数屏长。
+4. **交互。** 只读页没有装饰性交互；操作型页面完成一次“修改→导出→重置” smoke test；键盘和触摸都有可达路径。
+5. **视觉纪律。** 页面没有同权重卡片墙、无意义色块、填充内容或未解释的颜色；正文、画布和侧栏宽度各司其职。
 
-如果任何一题回答不确定，重新审视 Category Index 决策表，确认选对了制品类型。
-
-再做一次不打分的视觉快速检查：
-
-4. **层级清楚吗？** 用户能否在几秒内看到标题、当前重点和下一步，而不是先看到同样醒目的装饰或卡片？
-5. **容量恰当吗？** 首屏和关键区块是否既没有拥挤、截断、靠缩小字体硬塞内容，也没有因重复容器而显得空洞？
-6. **重点被保护了吗？** 重复布局、边框、色块和控件是否服务内容，而不是把所有区块做成同样的视觉权重？
-
-这三项不替代 `references/matching-your-style.md` 中的 Visual quality gate；前者检查页面的阅读与叙事，后者继续检查配色、可读性和 AI 陈词滥调。
+任何一项失败都先调整信息层级、构图或控件路径，再复查；不要靠缩小字体、增加卡片或添加装饰掩盖容量问题。继续执行 `references/matching-your-style.md` 的 Visual quality gate。
 
 ## Document-bound editor trigger
 
