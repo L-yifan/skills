@@ -4,6 +4,10 @@ MCP (Model Context Protocol) servers extend AI Agent capabilities (Claude Code, 
 
 **Note**: These are common MCP servers. Use web search to find MCP servers specific to the codebase's services and integrations.
 
+## Selection and Safety
+
+Treat MCP as an escalation for live external state, not a default replacement for built-in tools, project documentation, or tests. Recommend the smallest read-only or narrowly scoped capability first. For any write-capable MCP, state its scope, required confirmation, rollback path, and whether production data is reachable.
+
 ## Setup & Multi-Agent Compatibility
 
 **Connection methods by Agent Platform:**
@@ -212,13 +216,17 @@ MCP (Model Context Protocol) servers extend AI Agent capabilities (Claude Code, 
 ### Memory MCP
 **Best for**: Persistent memory across sessions
 
+**Default**: Do not recommend this solely because a project is long-running.
+
 | Recommend When | Examples |
 |----------------|----------|
-| Long-running projects | Remember context |
-| User preferences | Store settings |
-| Learning patterns | Build knowledge |
+| Explicit cross-session need | Information is not recoverable from code or maintained docs |
+| Stable personal preferences | The user wants them persisted outside the repository |
+| Audited learning loop | There is an owner, review cadence, and expiry or deletion path |
 
-**Value**: Claude remembers project context, decisions, and patterns across conversations.
+**Prefer first**: curated project rules for stable constraints, tests/CI for enforceable behavior, and task or issue records for temporary state.
+
+**If recommended**: label it `[persistent]`, describe what is allowed to be stored, and include an audit/expiry plan. Do not use it as a second source of truth for code or architecture.
 
 ---
 

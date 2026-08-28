@@ -7,6 +7,10 @@ Hooks and Guardrails automatically run commands or intercept tool executions in 
 - **Antigravity (Gemini)**: Interceptor rules defined in `RULE[...]` or agent execution policies.
 - **Codex**: Git pre-commit hooks (`.git/hooks/pre-commit`), CI check scripts, or `AGENTS.md` instructions.
 
+## Selection Rule
+
+Use tests or CI for merge-blocking invariants. Use hooks for fast, changed-file feedback and lifecycle actions. Scope hooks to the smallest relevant files; keep slow or full-suite checks in CI. Recommend PostToolUse checks only when they are fast and do not create surprising rewrites or repeated noise.
+
 **Note**: These are common patterns. Use web search to find hooks for tools/frameworks not listed here.
 
 
