@@ -161,6 +161,7 @@ npx skills add https://github.com/mattpocock/skills --skill setup-matt-pocock-sk
 | 技能名 | 描述 | 来源 | 安装命令 |
 |--------|------|------|----------|
 | wait-what | 上一条回复没有说清时，补充上下文并重新解释 | [mattpocock/skills](https://github.com/mattpocock/skills) | `npx skills add https://github.com/mattpocock/skills --skill wait-what` |
+| show-me | 使用简洁图表、调用树、代码结构速写与轻量 HTML 制品可视化解释当前话题 | [humanlayer/skills](https://github.com/humanlayer/skills) | `npx skills add https://github.com/humanlayer/skills --skill show-me` |
 
 ## 开发工具
 
@@ -227,7 +228,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-08-20
+- **更新日期**: 2026-09-03
 
 ## License
 
