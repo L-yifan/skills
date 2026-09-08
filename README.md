@@ -18,6 +18,7 @@
 | agent-automation-recommender | 基于代码库证据，以最小方案推荐 Claude Code、Antigravity、Codex 的 Agent 自动化扩展，并区分文档、测试/CI、Hooks、Skills、MCP、子代理与插件 | `npx skills add https://github.com/L-yifan/skills --skill agent-automation-recommender` |
 | agent-team-prompting | 编写、改进并评估 AI Agent 团队启动提示词，覆盖角色分工、协作规则、质量门槛与最终汇总 | `npx skills add https://github.com/L-yifan/skills --skill agent-team-prompting` |
 | work-tickets | 在 Matt 工作流生成并批准 Tickets 后，沿 tracker frontier 连续实现、验证并提交整个 ticket set；仅允许用户手动调用 | `npx skills add https://github.com/L-yifan/skills --skill work-tickets` |
+| storage-analyzer | macOS / Windows 只读存储分析助手（自动识别系统），扫描整机磁盘占用生成三级分类（可自动清理/需人工判断/谨慎清理）与处置方案，产出交互式 HTML 报告并支持本地服务审查与一键清理 | `npx skills add https://github.com/L-yifan/skills --skill storage-analyzer` |
 
 
 > **注意**：自建技能中，技能源码存放在本仓库（如 deep-wiki、github 等）；外部技能（如下方表格中的技能）仅在 README 中引用，源码存放在其官方仓库。
@@ -228,7 +229,7 @@ npx skills find [query]
 
 ## 版本信息
 
-- **更新日期**: 2026-09-03
+- **更新日期**: 2026-09-08
 
 ## License
 
